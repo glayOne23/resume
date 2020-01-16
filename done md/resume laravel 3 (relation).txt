@@ -1,0 +1,224 @@
+NOTE: Langkah2 secara umum:
+  1. bikin database dan Setting .env
+  2. buat file migration trs di migrate
+     --> Guna file migration : membuat tabel dari laravel
+     --> PENTING: IDEALNYA 1 TABEL memiliki 1 URL/ROUTE sendiri dengan segala CRUDnya
+  3. setting model
+     --> Guna : a. bikin relasi antar tabel
+                b. bikin fillable and guarded
+  4. setting alur oper tangkap dari route ke controller ke view
+     --> Proses querynya di controller
+  5. reference setting :
+      a) ONE TO ONE
+      --> exp: orang > passport ; disini foreign key user ada di passport
+      b) ONE TO MANY
+      --> exp: orang > forum : disini foreign key user ada di forum, soalnya forumnya yang many, makanya referencenya ke orang
+      c) MANY TO MANY
+      --> exp: orang >pelajaran : disini akan dibuat tabel penghubung yang berisi foreign_key dari masing2 tabel yang dihubungkan
+  6. Model setting:
+      a) ONE TO ONE
+      --> orang hasOne
+      --> passport belongsTo
+      b) ONE TO MANY
+      --> orang hasMany
+      --> forum belongsTo
+      c) MANY TO MANY
+      --> orang hasMany
+      --> pelajaran hasMany
+
+A INTRO DAN PERSIAPAN
+  1. Langkah2 :
+     a. Buat databasenya di phpmyadmin
+     b. Setting .env untuk databasenya
+
+
+B INTRO ONE TO ONE
+  --> dari bikin file dan tabel migrasi sampe lempar tangkap dari route(url) ke controller trs menuju view
+  --> File2 migration berada di database/migrations
+  1. Contoh:
+     --> Orang > Passport
+         Passport > Orang
+     --> 1 tabel hanya boleh mempunyai 1 item di tabel lain, dan 1 item ini hanya boleh dimiliki oleh 1 coloumn lain
+  2. Langkah2 buat tabel user dan passport:
+     a) buat table passports:
+        php artisan make:migration create_passport_table --create="passports"
+              //create_passport_table --> nama file migrasinya di laravel
+              //"passports" --> nama table di databasenya
+     b) file migrasi user sudah langsung ada di laravel
+     c) di table passports harus ada foreign key dari id table user, caranya di create_passport_table tambahin:
+          $table->integer('user_id')->unsigned();
+          $table->foreign('user_id')->references('id') //id tu nama id di tabel user
+                ->on('users')->onDelete('cascade');    //users tu nama tabel user
+     d) php artisan migrate
+  3. Langkah2 lempar tangkap buat tabel user:
+     a) Buat route:
+        --> Route::get('user/{id}', 'UserController@showProfile');
+              //ngoper {id} dari url ke UserController
+     b) Buat UserController.php
+        --> Buat fungsi showProfile($id)
+            --> di showProfile:
+                return view('user.profile', ['user' => User::findOrFail($id)]);
+                    //fungsi buat ngarahin ke file profile.blade.php di folder view/user dan ngoper query untuk mencari $id di tabel users yang settingan tabelnya ada di file model User yang nanti disimpan di var user
+     c) di profile.blade.php:
+        <h1>Halo {{$user->name}}</h1>
+            //$user dari var user
+
+  --> Sampe sini Model belum dijelasin
+
+C CARA UBAH LOKASI FILE2 MODEL
+  --> Biar rapi, kita bisa ngubah tempat semua model berada ke folder Models
+  --> Langkah2:
+      1) Buat folder Models
+      2) taro file2 model disana
+      3) ubah namespace file model menjadi:
+         --> namespace App\Models;
+      4) di controller yang berhubungan dengan modelnya juga diubah usenya:
+         --> use App\Models\nama_model;
+
+D ONE TO ONE
+  1. Langkah2 ngehubungin antara tabel use dan tabel passport:
+     a) Buat model user dan model passport:
+        1. User.php sudah otomatis ada
+        2. Passport.php --> php artisan make:model Passport
+     b) Bikin relasi dari users ke passports
+        1. membuat tabel yang ingin dihubungkan menjadi fungsi
+           --> public function passport()
+               {
+                 return $this-> hasOne('App\Models\Passport');
+                     //ini jika konfensional which means jika foreign keynya == user_id atau local keynya == id
+
+                 return $this-> hasOne('App\Models\Passport', 'foreign_key', 'local_id');
+                     //ini jika nggk konfensional which means jika foreign keynya != user_id atau local keynya != id
+                }
+        2. Cara menngunakan di profile.blade.php:
+           <h1>Halo {{$user->name}} dengan nomor passportnya {{user->passport->no_pass}}</h1>
+            //-->passport itu nama fungsi di Model User yang menghubungkannya dengan tabel passports
+            //no_pass itu property yang mw kita akses
+     c) Bikin relasi dari passport ke user (kebalikannya)
+        1. di route:
+           Route::get('passport/{id}','UserController@showPassport');
+                //tetap di UserController
+        2. di UserController:
+           public function showPassport($id)
+           {
+              return view('user.passport', ['passport'=>'Passport::findOrFail($id)']);
+           }
+        3. di passport.blade.php
+           <h1>Pemilik Passport ini adalah{{$passport->user->name}} dengan nomor passportnya {{passport->no_pass}}</h1>
+        4. di Model Passport.php:
+           --> Buat function untuk tabel user:
+               public function user
+               {
+                 return $this->belongsTo('App\Models\User');
+                   //passport ini punya user
+               }
+
+E ONE TO MANY
+  1. Contoh :
+     --> user > postingan
+         postingan > user
+     --> 1 user bisa bikin banyak postingan dan 1 postingan hanya bisa dibikin oleh 1 user
+  2. Langkahnya mirip sama one to one:
+     a) bikin file migrasi postingan dan modelnya, isi biasa, dan kasih reference ke user di file migrasi postingan sebagai foreign key:
+        $table->integer('user_id')->unsigned();
+        $table->foreign('user_id')->references('id') //id tu nama id di tabel user
+              ->on('users')->onDelete('cascade');    //users tu nama tabel user
+     b) php artisan migrate
+     c) di Modelsnya:
+        1. di Model Forum.php kasih fungsi user dengan belongsTo:  // karena forum punya si user
+           public function user(){
+              return $this->belongsTo('App\Models\User');
+           }
+        2. di Model User.php kasih fungsi forums dengan hasMany:
+           public function forums(){
+              return $this->hasMany('App\Models\Forum');
+           }
+    d) lempar tangkap ke profile.blade.php, karena ini di profile.blade.php yang kita tangkap adalah id user yang mempunyai postingan ini dan itu:
+       <ul>
+         @foreach($user->forums as $forum)
+          <li>{{$forum->title}}</li>
+         @endforeach
+       </ul>
+
+F MANY TO MANY
+  1. Contoh:
+     --> user > pelajaran
+         pelajaran > user
+     --> 1 user bisa milih banyak pelajaran, vice versa
+  2. Langkah2:
+     --> ada sedikit perbedaan disini, kita harus membuat 3 tabel: tabel users, tabel pelajarans, dan tabel pelajaran_user(nama konvensionalnya) sebagai penghubung tabel users dan pelajaran
+     1. Bikin file migrasi:
+        --> php artisan make:migration create_pelajarans_table --create="pelajarans"
+        -->  php artisan make:migration create_pelajaran_user_table --create="pelajaran_user"
+     2. Isi file migrasinya dengan:
+        1) di create_pelajarans_table: normal aja kaya biasa
+           $table->increments(id);
+           $table->string('title', 100);
+           $table->timestamps();
+        2) di create_pelajaran_user_table:
+        --> minimal harus ada idnya , foreign_key untuk users, dan foreign_key untuk pelajarans
+           $table->increments(id);
+
+           $table->integer('user_id')->unsigned();
+           $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');    //id tu nama id di tabel users,users tu nama tabel user
+
+           $table->integer('pelajaran_id')->unsigned();
+           $table->foreign('pelajaran_id')->references('id')->on('pelajarans')->onDelete('cascade');    //id tu nama id di tabel pelajarans,pelajarans tu nama tabel user
+
+           $table->timestamps();
+        --> php artisan migrate
+     3. bikin route dan controller dan view untuk pelajaran:
+        1) Route::get('pelajaran/{id}', pelajaranController@showPelajaran);
+        2) Controller:
+           --> Codes:
+           public function showPelajaran($id){
+            return view('pelajaran',['pelajaran' => Pelajaran::findOrFail($id)]);
+           }
+           --> import model Pelajaran jga di Controller
+        3) bikin pelajaran.blade.php
+     4. Di Model:
+        1) di Model User.php bikin relasi untuk lessons:
+           public function lessons(){
+            return $this->belongsToMany("App\Models\Lesson"); //ini jika ngikutin konfensionalnya which means pake users, pelajarans, pelajaran_user(lihat singular pluralnya)
+
+            return $this->belongsToMany("App\Models\Lesson", "pelajaran_user", "usr_id","pelajaran_id");
+           }                                               //nama tabel penghubung //foreign_key masing2 tabel
+        2) di Model Pelajaran.php:
+           public function users(){
+            return $this->belongsToMany("App\Models\User");
+           }
+     5. Di Bladenya:
+        1) user.blade.php:
+            <ul>
+              @foreach($user->pelajarans as $pelajaran)
+               <li>{{$pelajaran->title}}</li>
+              @endforeach
+            </ul>
+        2) pelajaran.blade.php:
+            <ul>
+              @foreach($pelajaran->users as $user)
+               <li>{{$user->name}}</li>
+              @endforeach
+            </ul>
+
+G PIVOT PADA MANY TO MANY
+  --> Secara default pada tabel penghubung many to many (tabel pelajaran_user), laravel nggk akan peduli kolom2 lain selain kolom penghubung antar tabel.
+  --> Oleh karena itu kita punya property bernama pivot untuk  mengakses apa aja kolom yang ada di pelajaran_user.
+  --> Langkah-langkah:
+      1. Di blade : Disini pake pelajaran.blade.php:
+         <ul>
+           @foreach($pelajaran->users as $user)
+            <li> {{$user->name}} </li>
+            <li> {{$user->pivot->created_at}} </li> //khusus timestamps
+            <li> {{$user->pivot->batasPinjam}} </li> //pivot swlain timestamps
+           @endforeach
+         </ul>
+      2. Di modelnya : Pelajaran.php:
+         public function users(){
+          return $this->belongsToMany("App\Models\User")->withTimeStamps() //khusus timestamps
+                      ->withPivot('batasPinjam'); //isi dengan kolom2 selain timestamps,jika kolom lebi dari 1 pisahin pake koma withPivot('col1','col2','setrusnya');
+         }
+         --> Tambahan:
+             --> Jika pengen filter kolom dengan isi tertentu yang ingin ditampilkan :
+                 ->withPivot('batasPinjam')->wherePivot('batasPinjam', 'minggu depan'); //jika cuma satu
+                 ->withPivot('batasPinjam')->wherePivotIn('batasPinjam', ['minggu depan', 'besok']); //masukin dalam array jika data yang ingin ditampilkan lebih dari 1

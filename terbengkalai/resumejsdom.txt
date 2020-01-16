@@ -1,0 +1,279 @@
+1. apa itu?
+2. fungsi?
+3. kind of it?
+4. how to use?
+
+1. Apa itu js dom(document object model)?
+   --> Adalah tingkatan struktur elemen HTML (mulai dari yang paling atas/luas hingga yang paling sempit/spesifik).
+   --> Jadi, DOM bisa diandaikan sebagai silsilah keluarga, mulai dari kepala keluarga, hingga anak, cucu dari suatu HTML.
+   --> Yang termasuk DOM adalah dokumen HTML, seluruh elemen HTML, dan atribut dari elemen HTML, serta teks di dalamnya.
+   --> In other words: The HTML DOM is a standard for how to get, change, add, or delete HTML elements.
+
+2.Apa yang bisa dilakukan javascript dengan dom?
+  1. menghapus, membuat, mengedit element, attribute, isi HTML
+  2. memberi style css
+  3. membaca event
+
+3. DOM Programming interface:
+   a) dalam DOM, semua elements html didefininisikan sebagai object
+   b) programming interface itu methods dan properties dari setiap object
+      --> methods : aksi yang dapat kamu lakukan(menghapus, membaca, membuat)
+      --> property : value yang bisa kamu dapat atau ubah (exp: mengubah isi html)
+  --> exp:
+      document.getElementbyId('id1').innerHtml = 'ubah isi';
+      //getElementbyId()--> methods --> kaya fungsi syntaxnya
+      //innerHtml --> property --> kaya variable syntaxnya
+
+4. DOM document
+   --> The document object represents your web page.
+   --> If you want to access any element in an HTML page, you always start with accessing the document object.
+   exp: document.getElementbyId('hai').innnerHTML = "blabla";
+
+5. Finding HTML element
+   --> Before u manipulate html u must find the element first, u can find element by one of this way:
+        a) Finding HTML elements by id
+        b) Finding HTML elements by tag name
+        c) Finding HTML elements by class name
+        d) Finding HTML elements by CSS selectors
+        e) Finding HTML elements by HTML object collections
+   A) Finding element by id:
+          <p id="demo"></p>
+          <script>
+              document.getElementById("demo").innerHTML = "ini isinya ";
+          </script>
+   B) Finding element by class:
+          <p class="intro">The DOM is very useful.</p>
+          <p class="intro">Intro 2.</p>
+          <p id="demo"></p>
+          <script>
+            document.getElementById("demo").innerHTML =
+            'Ini isinya ditambah dari class intro: '
+            + document.getElementsByClassName("intro")[0].innerHTML;
+                                    //jika class yang sama lebih dari 1
+          </script>
+   C) Finding element by tag:
+          <p></p>
+          <script>
+            document.getElementsByTagName("p")[0].innerHTML = "hai";
+                        //look at this, di tagName, [] harus ditentuin meskipun cuma 1
+          </script>
+   D) Find Element by css selector:
+   --> If u want to find all HTML elements that matches a specified CSS selector (id, class names, types, attributes, values of attributes, etc)
+         <p class="intro">The DOM is very useful.</p>
+         <p id="demo"></p>
+         <script>
+            document.getElementById("demo").innerHTML = document.querySelectorAll("p.intro")[0].innerHTML;
+                                                                                      //butuh [] juga
+         </script>
+   E) Finding HTML element by HTML Object collections
+      <form id="frm1" action="/action_page.php">
+        First name: <input type="text" name="fname" value="Donald"><br>
+        Last name: <input type="text" name="lname" value="Duck"><br><br>
+        <input type="submit" value="Submit">
+      </form>
+        <button onclick="myFunction()">Try it</button>
+      <p id="demo"></p>
+      <script>
+        function myFunction() {
+         var x = document.forms["frm1"];
+         var text = "";
+         var i;
+         for (i = 0; i < x.length ;i++) {
+             text += x.elements[i].value + "<br>";
+         }
+         document.getElementById("demo").innerHTML = text;
+        }
+      </script>
+
+6. Changing Output Stream, Content, and Attribute value, CSS
+   A) Output Stream
+      --> In JavaScript, document.write() can be used to write directly to the HTML output stream:
+          document.write(Date());
+   B) Html Content
+      --> document.getElementById(id).innerHTML = new HTML
+   C) Value of an Attribute
+      --> document.getElementById(id).attribute = new value
+      document.getElementById("myImage").src = "landscape.jpg";
+   D) CSS
+      --> document.getElementById(id).style.property = new style
+      document.getElementById("p2").style.color = "blue";
+
+7. DOM Event
+   --> Can be used to reacting an event:
+       --> syntax:(onblabla=js code)
+           onclick=JavaScript
+   --> Examples of HTML events:
+       --> When a user clicks the mouse
+       --> When a web page has loaded
+       --> When an image has been loaded
+       --> When the mouse moves over an element
+       --> When an input field is changed
+       --> When an HTML form is submitted
+       --> When a user strokes a key
+   --> 2 cara penggunaan :
+       A) dalam tag html:
+           <button onclick="displayDate()">The time is?</button>
+           <p id="demo"></p>
+           <script>
+             function displayDate() {
+               document.getElementById("demo").innerHTML = Date();
+             }
+           </script>
+       B) dalam javacript:
+           <button id="Btn">The time is?</button>
+           <p id="demo"></p>
+           <script>
+             document.getElementbyId("Btn").onclick=displayDate();
+             function displayDate() {
+               document.getElementById("demo").innerHTML = Date();
+             }
+           </script>
+   -->Beberapa contoh:
+      onclick, onload, onunload, onmouseover,onmouseout, dll
+
+8. DOM JS addEventListener() method
+   --> Can be used for:
+       1. The addEventListener() method attaches an event handler to the specified element.
+       2. The addEventListener() method attaches an event handler to an element without overwriting existing event handlers.
+       3. You can add many event handlers to one element.
+       4. You can add many event handlers of the same type to one element, i.e two "click" events.
+       5. You can add event listeners to any DOM object not only HTML elements. i.e the window object.
+       6. The addEventListener() method makes it easier to control how the event reacts to bubbling.
+       7. When using the addEventListener() method, the JavaScript is separated from the HTML markup, for better readability and allows you to add event listeners even when you do not control the HTML markup.
+       8. You can easily remove an event listener by using the removeEventListener() method.
+   --> Syntax:
+       element.addEventListener(event, function, useCapture);
+         // The first parameter is the type of the event (like "click" or "mousedown").
+         // The second parameter is the function we want to call when the event occurs.
+         // The third parameter is a boolean value specifying whether to use event bubbling or event capturing. This parameter is optional.
+   A) exp:
+        <button id="myBtn">Try it</button>
+        <script>
+        document.getElementById("myBtn").addEventListener("click", myFunction);
+        function myFunction() {
+            alert ("Hello World!");
+        }
+        </script>
+   B) Add more than 1 event:
+        element.addEventListener("click", myFunction);
+        element.addEventListener("click", mySecondFunction);
+   C) When window in resized:
+        window.addEventListener("resize", function(){
+            document.getElementById("demo").innerHTML = sometext;
+        });
+   D) removeEventListener()
+       --> Can be used to remove event handlers that have been attached with the addEventListener() method:
+           element.removeEventListener("mousemove", myFunction);
+   E) Event Bubbling and Event Capturing
+       a) There are two ways of event propagation in the HTML DOM, bubbling and capturing.
+       b) Event propagation is a way of defining the element order when an event occurs. If you have a <p> element inside a <div> element,
+          and the user clicks on the <p> element, which element's "click" event should be handled first?
+       c) --> In bubbling the inner most element's event is handled first and then the outer
+          --> In capturing the outer most element's event is handled first and then the inner
+       d) With the addEventListener() method you can specify the propagation type by using the "useCapture" parameter:
+          addEventListener(event, function, useCapture);
+          //The default value is false, which will use the bubbling propagation, when the value is set to true, the event uses the capturing propagation.
+    -->Beberapa contoh:
+      click, load, unload, mouseover,mouseout, resize, dll
+
+9. DOM NAVIGATION
+   --> According to the W3C HTML DOM standard, everything in an HTML document is a node:
+   --> exp:
+      <html>
+        <head>
+          <title>DOM Tutorial</title>
+        </head>
+        <body>
+          <h1>DOM Lesson one</h1>
+          <p>Hello world!</p>
+        </body>
+      </html>
+   --> From the HTML above you can read:
+         <html> is the root node
+         <html> has no parents
+         <html> is the parent of <head> and <body>
+         <head> is the first child of <html>
+         <body> is the last child of <html>
+       and:
+         <head> has one child: <title>
+         <title> has one child (a text node): "DOM Tutorial"
+         <body> has two children: <h1> and <p>
+         <h1> has one child: "DOM Lesson one"
+         <p> has one child: "Hello world!"
+         <h1> and <p> are siblings
+   A) How to NAVIGATE BETWEEN NODES with JavaScript:
+        parentNode
+        childNodes[nodenumber]
+        firstChild
+        lastChild
+        nextSibling
+        previousSibling
+   B) How to Access text in HTML?
+   --> there is 3 way:
+       <title id="demo">DOM Tutorial</title>
+       var myTitle = document.getElementById("demo").innerHTML; //innerHTML
+       var myTitle = document.getElementById("demo").firstChild.nodeValue; //nyari anaknya, terus liat isi anak
+       var myTitle = document.getElementById("demo").childNodes[0].nodeValue; //nyari anaknya, terus liat isi anak
+  C) How to know Tag Name (Using nodeName):
+      <h1 id="id01">My First Page</h1>
+      <p id="id02"></p>
+      document.getElementById("id02").innerHTML = document.getElementById("id01").nodeName;
+  D) Type Node
+  --> It returns the type of a node.
+  --> exp:
+      <h1 id="id01">My First Page</h1>
+      <p id="id02"></p>
+      <script>
+      document.getElementById("id02").innerHTML = document.getElementById("id01").nodeType;
+      </script>
+      //hasil == 1
+  --> Kind of Node Type:
+          Node	            Type	           Example
+      ELEMENT_NODE	         1	    <h1 class="heading">W3Schools</h1>
+      ATTRIBUTE_NODE	       2	    class = "heading" (deprecated)
+      TEXT_NODE	             3   	W3Schools
+      COMMENT_NODE	         8	    <!-- This is a comment -->
+      DOCUMENT_NODE	         9	    The HTML document itself (the parent of <html>)
+      DOCUMENT_TYPE_NODE	  10	    <!Doctype html>
+
+10. DOM NODES
+    A) How to make HTML Element?
+        <div id="div1">
+        <p id="p1">This is a paragraph.</p>
+        <p id="p2">This is another paragraph.</p>
+        </div>
+        <script>
+              //to  create element
+          var para = document.createElement("p");
+          var node = document.createTextNode("This is new.");
+          para.appendChild(node);
+              //to append to <div>
+          var element = document.getElementById("div1");
+          element.appendChild(para);
+        </script>
+    B) To insert element before particular TAG:
+        var element = document.getElementById("div1");
+        var child = document.getElementById("p1");
+        element.insertBefore(para, child);
+    C) How to Remove Tag in HTML?
+       --> It would be nice to be able to remove an element without referring to the parent.
+           But sorry. The DOM needs to know both the element you want to remove, and its parent.
+       --> Gimana Ngakalinnya?
+           var child = document.getElementById("p1");
+           child.parentNode.removeChild(child);
+            //cari yg ingin dihapus, trs cari tw parrentnya pake parentNode, trs hapus pake removeChild
+    D) How to replace?
+        <div id="div1">
+            <p id="p1">This is a paragraph.</p>
+            <p id="p2">This is another paragraph.</p>
+        </div>
+        <script>
+            var para = document.createElement("p");
+            var node = document.createTextNode("This is new.");
+            para.appendChild(node);
+            var parent = document.getElementById("div1");
+            var child = document.getElementById("p1");
+            parent.replaceChild(para, child); //pake replaceChild
+        </script>
+
+11. DOM COLLECTIONS

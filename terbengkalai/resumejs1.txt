@@ -1,0 +1,279 @@
+1 WHAT JS CAN DO?
+
+1. JavaScript Can Change HTML Content
+   <p id="demo">JavaScript can change HTML content.</p>
+   <button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+        //use innerHTML to change html content
+2. JavaScript Can Change HTML Attributes
+   <button onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Turn on the light</button>
+        //use src to change attribute
+   <img id="myImage" src="pic_bulboff.gif" style="width:100px">
+   <button onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Turn off the light</button>
+3. JavaScript Can Change HTML Styles (CSS)
+   <p id="demo">JavaScript can change the style of an HTML element.</p>
+   <button type="button" onclick="document.getElementById('demo').style.fontSize='35px'">Click Me!</button>
+        //use style to change css
+4. JavaScript Can Hide HTML Elements
+   document.getElementById("demo").style.display = "none";
+5. JavaScript Can Show HTML Elements
+   document.getElementById("demo").style.display = "block";
+
+2 WHERE TO PUT JS?
+
+1. js script must be inserted between <script> and </script> tags.
+2. js can be placed internal or external html.
+3. exp: external js and how to call it:
+   a. External call
+      <script src="myScript.js"></script>
+   b. External referencess
+       <script src="https://www.w3schools.com/js/myScript1.js"></script>
+4. Js should be called at lowest coding text
+
+3 JS DISPLAY POSSIBILITIES
+
+1. JavaScript can "display" data in different ways:
+   a. Writing into an HTML element, using innerHTML.
+   b. Writing into the HTML output using document.write().
+   c. Writing into an alert box, using window.alert().
+   d. Writing into the browser console, using console.log().
+
+4 JS SYNTAX
+
+1. Variable:
+   x = x + 5;
+   x = "Me"+" " + "Hey";
+   -->When adding a number and a string, JavaScript will treat the number as a string.
+   var x = 16 + "Volvo"; --> 16Volvo
+2. JS comparasion that differ from other language:
+   == 	equal to
+   === 	equal value and equal type
+   != 	not equal
+   !== 	not equal value or not equal type
+3. If..else..else if.. :
+    if (time < 10) {
+     greeting = "Good morning";
+    } else if (time < 20) {
+     greeting = "Good day";
+    } else {
+     greeting = "Good evening";
+    }
+4. Switch :
+    switch (new Date().getDay()) {
+     case 4:
+     case 5:
+         text = "Soon it is Weekend";
+         break;
+     case 0:
+     case 6:
+         text = "It is Weekend";
+         break;
+     default:
+         text = "Looking forward to the Weekend";
+    }
+5. For...
+   --> for (statement 1; statement 2; statement 3) {
+            code block to be executed
+       }
+       for (i = 0; i < 5; i++) {
+          text += "The number is " + i + "<br>";
+       }
+   --> In js, statement 1, 2, and 3 is optional,u can add more than one separated with koma or omit it
+       --> add more than one values in statement 1:
+           for (i = 0, len = cars.length, text = ""; i < len; i++) {
+             text += cars[i] + "<br>";
+           }
+       --> omit statement 1 (like when your values are set before the loop starts):
+           var i = 2;
+           var len = cars.length;
+           var text = "";
+           for (; i < len; i++) {
+             text += cars[i] + "<br>";
+           }
+6. For/In loop
+   --> The JavaScript for/in statement loops through the properties of an object:
+       var person = {fname:"John", lname:"Doe", age:25};
+       var text = "";
+       var x;
+       for (x in person) {
+          text += person[x];
+       }
+   --> Hasil : John Doe 25
+7. While:
+   while (i < 10) {
+    text += "The number is " + i;
+    i++;
+   }
+8. Break:
+   for (i = 0; i < 10; i++) {
+      if (i === 3) { break; }
+      text += "The number is " + i + "<br>";
+   }
+9. Function:
+   function toCelsius(fahrenheit) {
+      return (5/9) * (fahrenheit-32);
+   }
+   document.getElementById("demo").innerHTML = toCelsius(77);
+
+5 JS OBJECT
+
+1. Objects are variables too. But objects can contain many values.
+   var person = {
+          //properties
+       firstName:"John",
+       lastName:"Doe",
+       age:50,
+       eyeColor:"blue",
+          //method
+       greeting: function() {return "hai"}
+   };
+3. 2 way to call object properties:
+   a) objectName.propertyName : person.firstName
+   b) objectName["propertyName"] : person["firstName"]
+4. To call method:
+   objectName.methodName()
+
+6 JS EVENT
+
+1. HTML events are "things" that happen to HTML elements. When JavaScript is used in HTML pages, JavaScript can "react" on these events.
+2. An HTML event can be something the browser does, or something a user does.
+3. Here are some examples of HTML events:
+   a) An HTML web page has finished loading
+   b) An HTML input field was changed
+   c) An HTML button was clicked
+4. Syntax: <some-HTML-element some-event="some JavaScript">
+5. exp: <button onclick="document.getElementById('demo').innerHTML = Date()">The time is?</button>
+6. Here is a list of some common HTML events:
+   a) onchange 	An HTML element has been changed
+   b) onclick 	The user clicks an HTML element
+   c) onmouseover 	The user moves the mouse over an HTML element
+   d) onmouseout 	The user moves the mouse away from an HTML element
+   e) onkeydown 	The user pushes a keyboard key
+   f) onload 	The browser has finished loading the page
+
+7 JS ARRAY
+
+--> Array in JS in an object
+1. Creating:
+   a) var cars = ["Saab", "Volvo", "BMW"];
+   b) var cars = new Array("Saab", "Volvo", "BMW");
+2. Access the Elements of an Array:
+   var car1 = cars[0];
+3. Access full array:
+   var cars = ["Saab", "Volvo", "BMW"];
+   document.getElementById("demo").innerHTML = cars;
+4. Array properties and method
+   var fruits = ["Banana", "Orange", "Apple", "Mango"];
+   document.getElementById("demo").innerHTML = fruits.length;
+   document.getElementById("demo2").innerHTML = fruits.short();
+5. Looping array element:
+   a) The best way to loop through an array, is using a "for" loop:
+    var fruits, text, fLen, i;
+    fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fLen = fruits.length;
+    text = "<ul>";
+    for (i = 0; i < fLen; i++) {
+     text += "<li>" + fruits[i] + "</li>";
+    }
+6. Adding array element:
+   a) fruits.push("Lemon");
+   b) fruits[fruits.length] = "Lemon"; // cara kedua dengan ngukur panjangnya
+7. Associative Arrays
+   --> Many programming languages support arrays with named indexes.
+       a) Arrays with named indexes are called associative arrays (or hashes).
+       b) JavaScript does not support arrays with named indexes.
+       c) In JavaScript, arrays always use numbered indexes.
+8. The Difference Between Arrays and Objects :
+   a) In JavaScript, arrays use numbered indexes.
+   b) In JavaScript, objects use named indexes.
+9. When to Use Arrays. When to use Objects.
+   a) JavaScript does not support associative arrays.
+   b) You should use objects when you want the element names to be strings (text).
+   c) You should use arrays when you want the element names to be numbers.
+
+8 JS ARRAY METHOD
+--> exp : var fruits = ['strawberry','pear', "melon" ];
+          document.getElementById("demo").innerHTML = fruits.toString();
+--> Methods :
+    a) toSring() --> converts an array to a string of (comma separated) array values.
+    b) join("separator") --> mirip toSring() tapi pake separator
+    c) pop() --> removes the last element from an array
+    d) push("Kiwi") --> adds a new element to an array (at the end)
+    e) shift() --> removes the first array element and "shifts" all other elements to a lower index.
+    f) unshift() --> adds a new element to an array (at the beginning)
+    g) delete fruit[0];
+       --> Using delete may leave undefined holes in the array. Use pop() or shift() instead.
+    h) splice()
+       a) Using splice to add element :
+           fruits.splice(2, 0, "Lemon", "Kiwi");
+       --> The first parameter (2) defines the position where new elements should be added (spliced in).
+           The second parameter (0) defines how many elements should be removed.
+           The rest of the parameters ("Lemon" , "Kiwi") define the new elements to be added
+       b) Using splice to remove element :
+           fruits.splice(0, 1);
+       --> The first parameter (0) defines the position where new elements should be added (spliced in).
+           The second parameter (1) defines how many elements should be removed.
+           The rest of the parameters are omitted. No new elements will be added.
+    i) concat() -->  creates a new array by merging (concatenating) existing arrays.
+        var fruits1 = ["strawberry", "pear", "melon"];
+        var fruits2 = ["kwaci", "lechi"];
+        var fruitss = fruits1.concat(fruits2);
+    j) slice() --> slices out a piece of an array into a new array.
+       var citrus = fruits1.slice(1);
+        // hasil : di sitrus ada ["melon"];
+
+9 JS ARRAY SORT
+1. sort() --> sorts an array alphabetically:
+2. reverse() --> reverses the elements in an array.
+3. How to make numerix short?
+   --> Because sort() is just for alphabet to sort array numerically
+   var points = [40, 100, 1, 5, 25, 10];
+    document.getElementById("demo").innerHTML = points;
+      function myFunction() {
+        points.sort(function(a, b){return b - a});
+        document.getElementById("demo").innerHTML = points;
+      }
+   --> Kok bisa?
+       When the sort() function compares two values, it sends the values to the compare function, and sorts the values according to the returned (negative, zero, positive) value.
+       Example:
+       When comparing 40 and 100, the sort() method calls the compare function(40,100).
+       The function calculates 40-100, and returns -60 (a negative value).
+       The sort function will sort 40 as a value lower than 100.
+       You can use this code snippet to experiment with numerically and alphabetically sorting:
+
+10 JS ERROR
+1. The try statement lets you test a block of code for errors.
+   The catch statement lets you handle the error.
+   The throw statement lets you create custom errors.
+   The finally statement lets you execute code, after try and catch, regardless of the result.
+
+11 JS DEBUGGING
+--> How to activate debugging: press f12 then go to console
+--> If your browser supports debugging, you can use console.log() to display JavaScript values in the debugger window:
+    a = 5;
+    b = 6;
+    c = a + b;
+    console.log(c);
+--> How to set breakpoint?
+    var x = 15 * 5;
+    debugger;
+    document.getElementById("demo").innerHTML = x;
+      //3rd wont be executed if debugging mode is activated
+
+12 JS HOISTING MODE
+
+13 JS STRICT MODE
+-->  "use strict"; Defines that JavaScript code should be executed in "strict mode".
+--> it can be placed either in first script or first function statement
+--> WATCH OUT !!The "use strict" directive is only recognized at the beginning of a script or a function
+--> In normal JavaScript, a developer will not receive any error feedback assigning values to non-writable properties.
+    In strict mode, any assignment to a non-writable property, a getter-only property, a non-existing property,
+    a non-existing variable, or a non-existing object, will throw an error.
+--> not allowed in strict mode:
+    "use strict";
+    x = 3.14; //undeclared variable ar not allowed
+    y = {p1:10, p2:20}; //undeclared object ar not allowed
+    fuction z(){blabala;}
+    delete x,z; //deleting variable and function are not allowed
+    var x = 010; //Octal numeric literals are not allowed
+    var x = "\010"; //Octal escape characters are not allowed
+    //etc

@@ -1,0 +1,151 @@
+vagrant box add laravel/homestead (path to downloaded file)
+https://vagrantcloud.com/laravel/boxes/homestead/versions/6.1.0/providers/virtualbox.box
+tutorial error :
+
+laravel bisa masuk tapi runtime error di localhost:8000 :
+php artisan key:generate
+php artisan config:cache
+
+change owner and group:
+sudo chown glayone23:glayone23 -R <nama-folder>/
+
+installing docker:add repo:
+cd /etc/apt/sources.list.d
+sudo nano additional-repositories.list
+deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
+
+running xampp:
+sudo service apache2 stop
+sudo /opt/lampp/lampp start
+
+vscode as root:
+sudo code --user-data-dir="~/.vscode-root"
+
+running laravel:
+in folder : sudo php artisan serve
+cd /opt/lampp/htdocs/blog/
+
+bootstrap:
+cdnjs.com
+bootswatch.com
+
+mail:
+mailchimp.com or provider
+
+repositiry pattern:
+l5-repository
+
+ngrok.io to make localhost online
+
+uck:
+usr/lib/uck/remaster-live-cd.sh
+
+installing electron :
+sudo npm install -g electron --unsafe-perm=true --allow-root
+npm install --save-dev electron --unsafe-perm=true --allow-root
+
+access failed npm :
+sudo chown -R your_usernamle ~/.npm
+
+
+
+installing laravel:
+sudo apt install php7.2
+sudo apt-get install curl
+sudo apt-get install php7.2-zip
+sudo apt-get install php7.2-mbstring
+sudo apt-get install php-xml
+sudo apt-get install php7.2-mysql
+curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+composer create-project --prefer-dist laravel/laravel project-name
+php artisan key:generate
+php artisan serve
+
+fixing permission:
+sudo chmod -R 777 bootstrap/cache
+sudo chmod -R 777 storage/
+
+renaming column:
+composer require doctrine/dbal
+make controller and for resource:
+php artisan make:controller NamaController --resource
+
+error 191:
+https://laravel-news.com/laravel-5-4-key-too-long-error
+
+laravel debugbar:
+php artisan list
+php artisan help make:controller
+
+laravel unishard tambahan:
+intervention/image
+sudo apt-get install php-imagick
+sudo apt-get install php7.2-gd
+
+
+Import Autmomation:
+PHP Namespace Resolver
+
+apache mysql:
+sudo apt-get install apache2
+sudo apt-get install php-mysql
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+sudo apt-get install phpmyadmin
+
+port tabrakan dengan xampp:
+ubah opt/lampp/etc/my.cnf portnya menjadi 3307
+
+install react native:
+sudo npm install -g expo-cli --unsafe-perm=true --allow-root
+expo init AwesomeProject
+cd AwesomeProject
+npm start 
+
+android studio:
+androidhive : for latest info
+
+gradle 4.10.1
+plugin 3.3.2
+android plugin repository google(), jcenter
+default library repository google(), jcenter
+
+
+arduino ide:
+sudo chmod a+rw /dev/ttyACM0
+
+ngembalin boot windows:
+sudo update-grub
+
+vimeo banned: not working
+sudo nano /etc/host
+
+check vps:
+https://ipleak.net/
+
+accident branch ketinggalan commit diatasnya:
+git checkout master
+sudo git merge kode_commit terbaru
+sudo git push -u origin master
+
+
+react native :
+- buld error :
+make local.properties file inside /file/android, fill with sdk.dir = /home/USERNAME/Android/Sdk
+-ESLint error
+npm install --save-dev eslint babel-eslint
+
+react native bottom navbar :
+npm install react-navigation-material-bottom-tabs react-native-paper
+npm install --save react-native-vector-icons
+sudo install react-native-gesture-handler react-native-reanimated
+npm i jetifier
+npx jetify
+
+
+===============================
+change email to name in uathentication:
+1. dont forget hash
+2. public function username(){
+        return 'name';
+    }
+3.setting blade

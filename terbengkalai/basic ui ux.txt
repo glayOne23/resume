@@ -1,0 +1,115 @@
+Principle o Design :
+
+A Balance (Keseimbangan)
+  --> Guna : Lihat simetris dan asimetris
+  --> Simetris : Divided into same shape
+  --> Simetris can make balance and asimetris can make tension(?)
+
+B Proximity (Kedekatan/Jarak)
+  --> Means:  objects near each other are seen as a unit
+  --> We can take our list further with the law of proximity and create more logical groupings and put space between the items that shouldn’t be grouped together
+  --> the main purpose of proximity is to organize information. You should allow plenty of white space around text and other elements so that you can really see the effect of grouping items together
+
+C Contrast (Perbedaan)
+  --> Contrast terjadi jika:
+      1. different colors between the text and the background color
+      2.  heading set in a big, bold, grungy font
+      3. difference between a large graphic and a small graphic
+      4. rough texture combined with a smooth texture
+  --> Guna :
+      1. grab attention
+      2. aids organization of information
+      3. Contrast creates a focus
+  --> Things to think about when adding contrast to your designs :
+      1. How are you creating contrast? Is it through texture, typography, color, or shape?
+      2. If you want to achieve contrast through typography, which fonts are you using? Are they very different, or just a little bit different? Be bold with your font choices but remember to make sure the text is legible.
+      3. Is contrast strengthening your design idea?
+
+D Value
+  --> Value, also sometimes referred to as tone, is the relative lightness and darkness of an object
+  --> The greater the difference in value between the object and it’s background, the greater the Contrast
+  --> things to think about when using value in your designs :
+      1. If you want to achieve contrast, are the values of each element different enough?
+      2. Are the values you’re choosing eye-catching? Do they help move the viewer’s eye through the design.
+      3. Have you created the right mood with the values you’ve picked. Should the design be subtle or in your face?
+
+D Color
+  --> Look at psychology of color.
+  --> Color bisa berfungsi bwt: grab attention and stimulate interest,contrast, indicate status, for example nobility and royalty is associated with purple, etc
+  --> how do you go about choosing the right colors for your design? There is no single hard and fast rule, but the color wheel is a good place to get started.
+      picture
+  --> The three traditional primary colors are red, blue and yellow. When you combine these you get the three secondary colors: orange, purple and green. When you combine each secondary color with its neighboring primary, you get the six tertiary colors: yellow-orange, yellow-green, blue-green, blue-purple, red-purple, red-orange. That’s where the color wheel comes from.
+  -->  Red is the warmest and blue is the coolest color. Warm tones appear in the red, orange and yellow side of the spectrum, with the cool tones appearing on the opposite side of the color wheel.
+  --> Kind of Color Scheme
+      1. Monochromatic Color Schemes
+         --> What is? The monochromatic color scheme uses variations in lightness and saturation of a single color
+         --> Advantage? his scheme tend to look clean, elegant while producing a soothing effect. The primary color can be integrated with neutral colors such as black, white, or gray.
+         --> Downside ? sometimes lack contrast and appear less vibrant than some other schemes.
+         Pic
+      2. Analogous Color Schemes
+         --> What is? uses colors that are adjacent to each other on the color wheel. One color is set as the dominant color, the other add richness
+         --> Downside ? sometimes lack contrast and appear less vibrant than some other schemes.
+      3. Complimentary Color Schemes
+         --> What is? is made of two colors that are opposite each other on the color wheel
+         --> Advantage? his scheme is very successful for creating strong contrast and for drawing attention.
+      4. Split Complimentary Color Schemes
+         --> What is? is a variation of the standard complementary scheme. Take one color on the wheel and two colors adjacent to its complementary
+         --> Advantage? The advantage of this scheme over a complimentary scheme is that it can be a little more sophisticated while still keeping a strong visual contrast.
+      5. Triadic Color Schemes
+         --> What is? uses three colors equally spaced around the color wheel.
+         --> Advantage? It’s great for providing balance, richness and contrast, although not as much contrast as the complimentary scheme.
+  --> Tips for Using These Color Schemes:
+      1. Choose one color to be used in larger amounts than others. You will get a horrible mess if you try to use equal amounts of every color. Be selective about your main or base color and then use the other colors to add interest.
+      2. If the colors look too gaudy, subdue them.
+      3. There are several tools online for creating color schemes, my favorite is Kuler.
+      4. Black, white and grey can be used in all of these color schemes. You could think of them as neutrals that can be used with any color scheme.
+  --> Things to think about when using color in your designs:
+      1. Are the colors in your design working well together or are they hard on the eye? Is it difficult to read the text on the background?
+      2. Is your design too cool or too warm for what you want to convey? You can cool down overheated designs with small hints of cool colors (and vice versa).
+      3. Does your design work in black and white? If it does then a bit of color experimentation can really bring your design to its full potential.
+      4. If you’re designing for the web (or designing apps), have you thought about how color affects usability?
+
+D Consistency
+  --> Guna : Consistent design is intuitive design
+      1. usability and learnability improve when similar elements have consistent look and function in similar way. When consistency is present in your design, people can transfer knowledge to new contexts and learn new things quickly without pain.
+      2. Users will learn faster how to use your design.
+      3. Consistency eliminates confusion!
+      4. Consistency saves money and time!
+  --> Four Step of Consistency:
+      1. Visual consistency
+      --> Similar elements that are perceived the same way make up the visual consistency.
+      --> It increases learnability of the product
+      --> Fonts, sizes, buttons, labeling and similar need to be consistent across the product to keep visual consistency.
+      2. Functional consistency
+      --> Similar controls that are functioning the same way make up the functional consistency
+      --> It increases the predictability of the product. Predictability leads to users feeling safe and secure.
+      3. Internal Consistency
+      --> This is the combination of both visual and functional consistency in your product design.
+      --> It improves the usability and learnability of the product.
+      --> Even when you introduce new features/pages users will have easy way using them as long as you keep the internal consistency.
+      4. External Consistency
+      --> This type of consistency is achieved when there is design consistency across multiple systems/products.
+      --> Good example of external consistency is the user interface of Adobe products. Once you know Photoshop it is much easier to reuse the same knowledge to start using Illustrator and so on.
+  --> How to be consistent:
+      --> The essence of being consistent is to be able to replicate the same action or element multiple times, and still be able to support the user with achieving the task.
+      A) VISUALS
+         --> Scope(Ruang Lingkup) : Typography, colors, space, grid, size and positions
+         --> Strong Visual Hierarchy:
+             1. The most important things are bigger than the less important ones
+             2. Use the same color palette across the product.
+             3. Everything should be ordered in a grid of your choice that allows arrangement of all components in a nice and aesthetic way.
+         --> Here is a nice source with examples of style guidelines: http://styleguides.io/examples.html    
+      B) VOICE and TONE
+         --> Keep the voice and tone consistent so it feels as one voice speaking to the user. We don't want them to hear many voices, do we? :)
+         --> exp: http://styleguide.mailchimp.com/voice-and-tone/
+      C) USE FAMILIAR PATTERN
+         --> use this as reference:
+             1. for website --> http://ui-patterns.com/patterns
+             2. for mobile --> https://www.mobile-patterns.com/
+      D) BEND CONSISTENCY, DON’T BREAK IT
+         --> how do we keep consistent and still get to where we want to be and drive change?
+         Answer: The “secret” is in understanding your users. All your design decisions should come from that understanding. Make adjustments to the already established and consistent design system only when they are informed by your user’s needs. Making these small changes will evolve the product into a better version and will keep the consistency.
+   --> Final Thought:
+       Know your users as you know your partner. Be capable of looking through their eyes and feel through their hearts. Become one with them.
+D Typography
+Guna : Choosing fonts and creating readable text on the web

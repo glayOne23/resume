@@ -1,0 +1,42 @@
+A Repository dan Clone
+1. cara clone:
+   -->  git clone url nama_baru
+
+B PUSH and PULL
+1. cara push:
+   a. git add .
+   b. git commit -m "keterangan"
+   c. git remote add origin (perlu nggk si(?))
+      git push origin -u nama_brach(red:biasanya master)
+   c. git push origin nama_brach(red:biasanya master)
+      --> origin itu remote repository kita
+2. cara pull:
+   --> git pull
+        --> buata ngambil yang terbaru dari github
+
+C BRANCH and MERGE
+1. membuat branch baru:
+   a. git checkout -b nama_branch
+2. cara merge dari brach ke master:
+   a. klik compare samping branch
+   b. create pull request
+   c. create pull request
+   d. Merge pull request
+   e. Delete brach
+
+D FORK
+--> Ngambil repo orang ke repo kita
+
+E .GITIGNORE
+--> file yang isinya nama2 file yang kita nggk mw keliatan di repo kita( misal nama passsword db)
+cara :
+     a. buat file .gitignore
+     b. masukin nama file yang mw disembunyiin
+
+==============================================================================================================================
+pages.github.com
+--> tempat hosting gratis buatan github
+--> kekurangan : nggk bisa dinamis, cuma bisa statis
+--> cara :
+    1. buat repo dengan nama_akun.github.io
+    2. masukin file2 htmlnya

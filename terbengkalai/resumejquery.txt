@@ -1,0 +1,78 @@
+JQuery Intro
+
+--> Its javascript library
+--> How to call jQuery:
+    1. Downloading jQuery in jQuery.com then call its file:
+       <script src="jquery-3.1.1.min.js"></script>
+    2. via CDN google or Microsoft:
+       //CDN google
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+       //CDN Microsoft
+       <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+--> Advantage using CDN: it may be more faster couse ur browser already downloaded chache from other website
+
+jQuery syntax:
+--> Basic syntax is: $(selector).action()
+    a) A $ sign to define/access jQuery
+    b) A (selector) to "query (or find)" HTML elements
+    c) A jQuery action() to be performed on the element(s)
+--> Example:
+    $(this).hide() - hides the current element.
+    $("p").hide() - hides all <p> elements.
+    $(".test").hide() - hides all elements with class="test".
+    $("#test").hide() - hides the element with id="test".
+--> The Document Ready Event:
+    a) This is to prevent any jQuery code from running before the document is finished loading (is ready):
+        $(document).ready(function(){
+          //put jQuery methods here...
+        });
+--> Selector could be : class, id, this, element, css selector(exp: $("p:first"), $("p.intro"), etc)
+
+jQuery Event:
+--> Some of event handler:
+    ready()
+    click()
+    dblclick()
+    mouseenter()
+    mouseleave()
+    mousedown()
+    hover()
+    focus()
+    blur()
+    on()
+--> exp:
+    1. Untuk menyembunyikan p ketika di klik
+        <script>
+        $(document).ready(function(){ //ready() used to execute script when document fully loaded
+          $("p").click(function(){    //U must define what should happen when the event fires. You must pass a function to the event
+              $(this).hide();
+          });
+        });
+    2. beberapa event sekaligus:
+        <script>
+          $(document).ready(function(){
+          $("p").on({
+              mouseenter: function(){
+                  $(this).css("background-color", "lightgray");
+              },
+              mouseleave: function(){
+                  $(this).css("background-color", "lightblue");
+              },
+              click: function(){
+                  $(this).css("background-color", "yellow");
+              }
+          });
+          });
+        </script>
+
+jQuery Effect:
+hide()
+show()
+toggle()
+fadeIn()
+fadeOut()
+fadeToggle()
+fadeTo()
+slideDown()
+slideUp()
+slideToggle()

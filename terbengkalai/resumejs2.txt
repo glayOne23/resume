@@ -1,0 +1,57 @@
+1 JavaScript 6 - ECMAScript 6
+--> What is?
+    ECMAScript 6 is also known as ES6 and ECMAScript 2015
+    This chapter will introduce some of the new features in ES6.
+      1. JavaScript let
+      2. JavaScript const
+      3. JavaScript default parameter values
+a) let
+b) Const
+    --> It is similar to let, except that the value of the variable cannot be changed.
+    --> exp :
+        var x = 10;
+
+c) Default Parameter Values
+   --> ES6 allows function parameters to have default values.
+   --> exp:
+   function myFunction(x, y = 10) {
+        // y is 10 if not passed or undefined
+        return x + y;
+    }
+    myFunction(5); // will return 15
+
+d) New Number Properties
+   1) EPSILON --> var x = Number.EPSILON; //result : 2.220446049250313e-16
+   2) MIN_SAFE_INTEGER --> var x = Number.MIN_SAFE_INTEGER; //result : -9007199254740991
+   3) MAX_SAFE_INTEGER --> var x = Number.MAX_SAFE_INTEGER; //result : 9007199254740991
+
+e) New Number Methods
+   1) Number.isInteger(10);
+   2) NumberisSafeInteger(10);
+
+f) New Global Method
+   1) isFinite()
+   --> method returns false if the argument is Infinity or NaN.
+   --> exp:
+      isFinite(10/0);       // returns false
+      isFinite(10/1);       // returns true
+  2) isNaN()
+  --> returns true if the argument is NaN. Otherwise it returns false:
+  --> exp:
+         isNaN("Hello");       // returns true
+
+g) Arrow Function
+   --> Arrow functions allows a short syntax for writing function expressions.
+   --> You don't need the function keyword, the return keyword, and the curly brackets.
+   --> exp:
+        // ES5
+        var x = function(x, y) {
+             return x * y;
+        }
+        // ES6
+        const x = (x, y) => x * y;
+   --> Arrow functions do not have their own this. They are not well suited for defining object methods.
+   --> Arrow functions must be defined before they are used. Using const is safer than using var, because a function expression is a constant value.
+   --> You can only omit the return keyword and the curly brackets if the function is a single statement.
+   --> It might be a good habit to keep them:
+        const x = (x, y) => { return x * y };

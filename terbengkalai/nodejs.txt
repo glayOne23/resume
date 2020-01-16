@@ -1,0 +1,151 @@
+  1. npm --> cara untuk mendownload package2 di node js
+2. syntax :
+        //import modul http
+   conts http = require('http');
+        //modul bawaan untuk berinteraksi dengan file
+   conts fs = require('fs');
+
+    //bwt server
+   function kelolaRequest(req, response){
+        //response.end('selamat datang di node js');
+      response.writeHead(200, {"Content-Type:" "text/html"});
+   }
+   const servernya = http.createServer(kelolaRequest);
+        //3000 which means berjalan di port 3000
+        //argumen 2 sebagai keterangan di command line
+   servernya.listen(3000,function(){
+    console.log('sedang berjalan pada port 3000');
+   });
+================================================================================
+1 HELLO WORD ON NODE JS
+
+    //unclude modul http
+  var http = require('http');
+
+    //create a server which runs on port 8080
+    //res = response req = request its just a name
+  http.createServer((req, res) => {
+      res.writeHead(200, {'Content-Type': 'text/html'});
+      res.end('Hello World!');
+  }).listen(8080);
+
+--------------------------------------------------------------------------------
+2 NODE JS MODULE
+
+1. To include a module, use the require() function with the name of the module:
+    var http = require('http');
+2. to create a modul:
+    //untuk bikin modul pakenya exports
+   exports.waktu = () => {
+   Date();
+   };
+3. Manggil modul kita tadi:
+    var http = require('http');
+    var hokya = require('./namaFileModul');
+
+    http.createServer(function (req, res) {
+     res.writeHead(200, {'Content-Type': 'text/html'});
+     res.write("The date and time are currently: " + hokya.waktu());
+     res.end();
+    }).listen(8080);
+
+--------------------------------------------------------------------------------
+3. NODE JS HTTP MODULE
+
+1. Guna : allows Node.js to transfer data over the Hyper Text Transfer Protocol (HTTP).
+2. http.createServer() --> used to create an HTTP server
+3.1 Add an HTTP Header
+    --> If the response from the HTTP server is supposed to be displayed as HTML, you should include an HTTP header with the correct content type
+        res.writeHead(200, {'Content-Type': 'text/html'});
+          //The first argument of the res.writeHead() method is the status code,
+          //200 means that all is OK, the second argument is an object containing the response headers.
+3.1 Read the Query String
+    --> The function passed into the http.createServer()
+       has a req argument that represents the request from the client, as an object (http.IncomingMessage object).
+    --> Object ini memiliki property bernama "url" yang memegang bagian url (domain),
+        --> misal: www.google.com/peta.html?kota=solo
+    --> exp:
+        const http = require('http');
+        http.createServer((req,res) => {
+          res.writeHead(200, {'Content-Type': 'text/html'});
+          res.write(req.url); //liat disiniii
+          res.end();
+        }).listen(8080, () => {console.log('port 8080....');})
+    --> parameter setelah localhost:8080 akan tercetak semua
+3.2 Split the Query String
+    --> dari coding diatas tambahin:
+          //tambah module ini
+       var url = require('url');
+          //dalam createServer tambah ini
+       var q = url.parse(req.url, true).query;
+       var txt = q.year + " " + q.month;
+    --> Jika berjalan pada http://localhost:8080/?year=2017&month=July
+       maka hasilnya : 2017 July
+--------------------------------------------------------------------------------
+4 NODE JS FILE SYSTEM MODULE
+1. The Node.js file system module allow you to work with the file system on your computer.
+2. u can read, create, update, delete, rename files
+3. using :
+   --> var fs = require('fs');
+4.1 fs.appendFile()
+    --> method appends the specified content at the end of the specified file. If the file doesnt exist, file will be created
+        var fs = require('fs');
+          //arg1 = file name, arg2 = content that want to be added
+        fs.appendFile('mynewfile1.txt', ' This is my text.', function (err) {
+        if (err) throw err;
+        console.log('Updated!');
+        });
+4.2 fs.open()
+    --> method takes a "flag" as the second argument,
+    --> if the flag is "w" for "writing", the specified file is opened for writing. If the file does not exist, an empty file is created
+        var fs = require('fs');
+
+        fs.open('mynewfile2.txt', 'w', function (err, file) {
+        if (err) throw err;
+        console.log('Saved!');
+        });
+4.3 fs.writeFile()
+    --> method replaces the specified file and content if it exists.
+    --> If the file does not exist, a new file, containing the specified content, will be created:
+        var fs = require('fs');
+
+        fs.writeFile('mynewfile3.txt', 'Hello content!', function (err) {
+        if (err) throw err;
+        console.log('Saved!');
+        });
+4.4 fs.unlink()
+    --> Used to delete file:
+        var fs = require('fs');
+          //this code will delete file with name 'mynewfile2.txt'
+        fs.unlink('mynewfile2.txt', function (err) {
+        if (err) throw err;
+        console.log('File deleted!');
+        });
+4.5 fs.rename()
+    --> As its name:
+        var fs = require('fs');
+          //arg1 =nama file awal, arg2 =nama file baru
+        fs.rename('mynewfile1.txt', 'myrenamedfile.txt', function (err) {
+        if (err) throw err;
+        console.log('File Renamed!');
+        });
+--------------------------------------------------------------------------------
+5 NODE JS URL MODULE
+1. The URL module splits up a web address into readable parts.
+2. using:
+   var url = require('url');
+3. Parse an address with the url.parse() method, and it will return a URL object with each part of the address as properties:
+    var url = require('url');
+    var address  = 'http://localhost:8080/default.htm?year=2017&month=february';
+    var q = url.parse(address, true);
+      //host = domain main, pathname = / nya, search = setelah tanda tanya(?), query = setelah tanda tanya(?) dalam bentuk object
+    console.log(q.host); //returns 'localhost:8080'
+    console.log(q.pathname); //returns '/default.htm'
+    console.log(q.search); //returns '?year=2017&month=february'
+
+    var qdata = q.query; //returns an object: { year: 2017, month: 'february' }
+    console.log(qdata.month); //returns 'february'
+4. Contoh nyambungin url ke file ada di:
+   1. folder node2(bikin sistem route)
+   2. cobaurl.js
+--------------------------------------------------------------------------------

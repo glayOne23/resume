@@ -1,0 +1,150 @@
+1 PAGINATION
+
+1. Tampilan home :
+   a. di fungsi index() pada BlogController:
+      $blogs = Blog:all(); //all kan nampilin semua data
+        //ganti dengan ;
+      $blogs = Blog:paginate(5);
+        //paginate nampilin bayak data sesuai parameter yang diberikan
+   b. di view homenya yaitu di home.blade.php tambahin:
+      1. {{$blogs->links()}} //atau {{blogs->render()}}
+            //buat <<  1  2  3  4  >>
+      2. jika uri nya ada parameter lain, misal:
+            localhost:8000/blog?cat=satu&page=5
+         semua parameter lain akan hilang jika dipindah ke page lain, biar nggk hilang beri tambahan:
+            {{ $blogs ->appends(Request::input())->links() }}
+2. Tampilan <<  1  2  3  4  >> bisa diedit karena laravel secara otomatis akan membuat ini dengan class bernama pagination
+
+
+2 RESOURCE CONTROLLER
+
+1. Guna; memudahkan kita membuat create, update, delete, dengan 1 routes dan command
+2. Langkah :
+   a. php artisan make:controller PhotoController --resource
+      -->secara otomatis di PhotoController akan membuat fungsi:
+      index(), create(), store(Request $request), show(), edit(), destroy()
+   b. untuk mendaftarkan routesnya:
+      Route::resource('photos', 'PhotoController');
+                      //urinya    //controllernya
+   --> Route tersebut akan menghasilkan : meskipun nggk tertulis:
+
+   --> untuk liat routesnya yang nggk tertulis:
+       php artisan route:list
+
+3 MORE ABOUT ROUTES
+
+1. Route::match(['get','post'], 'blog/testing', 'BlogController@testing');
+  --> Cara guna:
+      1. di controller :pake if..else.../ switch:
+        public function testing (Request $request)
+        {
+          if($request->method()=="GET")  //untuk GET
+          {
+            ..............//beri perintah jika get yg terjadi
+          }
+          else //untuk POST
+          {
+            ...............//beri perintah jika post yg terjadi
+          }
+        }
+2. Memberi nama route:
+   a. Route::get('/blog', 'BlogController@index')->name('coba');
+                                                //ini
+   b. Cara gunain:
+      return redirect()->route('coba'); //sesuai nama routenya
+3. Prefix
+   a. Jika di route ada kata sama yang banyak(exp:/blog)kata tersebut bisa disingkat dengan:
+   Route::group(['prefix'=>'blog'], function()
+   {
+    Route::get('/', 'BlogController@index');
+    Route::get('/create', 'BlogController@create');
+      //semua kata 'blog' pada route bisa dihilangkan
+   }
+   );
+
+4  SYSTEM AUTH 101
+
+1. php artisan make:auth
+2. yang terbentuk dari command ini:
+   a. di Controller:
+      1. HomeController.php //untuk page setelah berhasil login
+      2. auth directory:
+         1. ForgotPasswordController.php
+         2. LoginController.php
+         3. RegisterController.php
+         4. ResetPasswordController.php
+   b. di views:
+      1. Home.blade.php
+      2. auth directory:
+         1. register.blade.php
+         2. login.blade.php
+      3. layout directory:
+         app.blade.php //authetikasi apakah dia guest/user disini
+   c. di routes:
+      1. Auth::routes();
+         Routes::get('/home', 'HomeController@index');
+3. Langkah2:
+   1. php artisan make;auth
+   2. edit .env untuk databasenya:DB_DATABASE, DB_HOST, etc
+   3. php artisan migrate
+      --> lgnsng bisa karena sebelumnya di migration dir sudah ada file migration untuk table users dan reset_password
+
+5 CONTOH HALAMAN PROFILE
+
+1. di LoginController.php :
+   ada var $reditecTo = '/home'; //yang berisi jika berhasil login akan redirect ke /home, bisa diganti ke redirect lain
+2. di HomeController.php ada:
+     public function __construct()
+      {
+          $this->middleware('auth');
+      }
+   --> fungsi __construct akan dipanggil secara otomatis jika controller dipanggil
+   --> $this->middleware('auth'); berguna untuk authentikasi(boleh masuk nggk nya)
+    // paling penting disini.
+3. middleware bisa ditaruh langsung di route:
+   Route::get('/profile','UserController@profie')->middleware('auth');
+                                                  //ini
+4. Cara ngambil data user di database yang memakai system authentikasi laravel:
+   a. di Controller yang ingin memakai:
+      1. use Illuminate\Support\Facades\Auth;
+      2. di fungsi:
+         public function profile()
+         {
+          $auth = Auth::user()->email; //untuk ngambil email user
+         }
+
+6 CARA UPLOAD GAMBAR
+
+1. Langkah2:
+   a. di viewnya (create.blade.php) beri:
+      --> <input type="file" name="featured_image">
+      --> di form beri tambahan:
+          enctype="multipart/form_data"
+   b. di controller di fungsi store():
+      $request->file('featured_image')->store('simpan_sini')
+                      //namenya dari form      //dir tempat nyimpannya
+      --> file gambar akan tersimpan di storage/app/nama_dir_nyimpannya
+      --> cara nyimpan gambar dengan nama ttn:
+          $beri_nama_gambarnya = time().'.png';
+          $request->file('featured_image')->storeAs('dir_simpannya','$beri_nama_gambarnya');
+          //masukin nama ke database
+          $blog->featured_image = $beri_nama_gambarnya;
+      --> validasi:
+          1. $this->validate($request,
+              [
+                'featured_image' =>'mimes:jpeg,jpg,png|max:10000'
+              ]);
+          2. di view beri tahu jika error
+
+7 MENGELUARKAN GAMBAR DARI STORAGE
+
+1. Yang harus dipahami, secara default file gambar akan tersimpan di storage/app/nama_dirnya,
+   agar bisa mengaksesnya kita harus membuat visibilitynya jadi public, caranya:
+   a. di controller:
+      $request->file('featured_image')->storeAs('public/dir_simpannya','$beri_nama_gambarnya');
+                                            //liat taro di storage/app/public/...
+   b. beri akses dari dir public ke storage/app/public nya dengan cara:
+      php artisan storage:link
+   c. Lalu cara aksesnya dari view:
+      <image src=" {{asset('storage/nama_dir_nyimpannya/'blog->featured_image)}} " alt="">
+                                                      //nama_tablenya->coloum_gambarnya
