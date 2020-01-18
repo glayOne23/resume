@@ -30,7 +30,7 @@
         use Notifiable;
     }
     ```
-    - di Model sama kaya gtu tinggal ganti Admin jdi Jajang
+    - di Model Jajang sama kaya gtu tinggal ganti Admin jdi Jajang
 2. Bikin data dummy pake tinker, ingat password harus di Hash : https://medium.com/hello-laravel/tinker-with-the-data-laravel-2d08e8250fc8
 3. bikin route2nya isinya :
     ```php
