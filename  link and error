@@ -47,9 +47,10 @@ npm install --save-dev electron --unsafe-perm=true --allow-root
 access failed npm :
 sudo chown -R your_usernamle ~/.npm
 
+for installing php:
+https://thishosting.rocks/install-php-on-ubuntu/
 
-
-installing laravel:
+installing laravel:jika dah pake atas bawah mngkin nggk guna
 sudo apt install php7.2
 sudo apt-get install curl
 sudo apt-get install php7.2-zip
