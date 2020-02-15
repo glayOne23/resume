@@ -68,6 +68,7 @@ sudo chmod -R 777 storage/
 
 renaming column:
 composer require doctrine/dbal
+
 make controller and for resource:
 php artisan make:controller NamaController --resource
 
