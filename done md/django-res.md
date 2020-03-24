@@ -5,11 +5,12 @@
 3. mkdir frontend && mkdir backend
 4. cd back-end
 5. virtualenv env -p python3
-6. activate it with : source env/bin/activate
-7. pip install Django==2.2.5
-8. pip install djangorestframework && pip install markdown && pip install django-filter
-9. mkdir src && cd src
-10. django-admin startproject project_name .
+6. cara 2 :  python3 -m venv env 
+7. activate it with : source env/bin/activate
+8. pip install Django==2.2.5
+9. pip install djangorestframework && pip install markdown && pip install django-filter
+10. mkdir src && cd src
+11. django-admin startproject project_name .
 # 2. Beginning Phase 2
 1. Add 'rest_framework' to your INSTALLED_APPS setting.
     ```python
