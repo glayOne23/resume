@@ -36,6 +36,7 @@ repositiry pattern:
 l5-repository
 
 ngrok.io to make localhost online
+heroku
 
 uck:
 usr/lib/uck/remaster-live-cd.sh
