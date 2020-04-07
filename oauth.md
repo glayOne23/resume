@@ -1,3 +1,4 @@
+# Intro
 - OAuth2 is used for authorization and not for authentication
 - OAuth2 is used for authorization (to communicate between 2 machine to giving or getting grant access)
 # Terms in OAuth2 :
@@ -48,6 +49,44 @@
 ### Grant Type 4 : Password
 - Use case : 1st party app . Exp : twiiter app to twitter api
 - Steps : 1, 2, 6, 7, 8
+
+---
+---
+# OAuth League
+
+## 1. Database Setup :
+- The documentation for each of the repository interfaces describes what sort of data you might want to store in database :
+    - Access Token Repository Interface documentation
+    - Client Repository Interface documentation
+    - Refresh Token Repository Interface documentation
+    - Scope Repository Interface documentation
+    - Auth Code Repository Interface documentation
+    - User Repository Interface documentation
+
+### 1. Access Token Repository Interface documentation
+- getNewToken() : AccessTokenEntityInterface
+- persistNewAccessToken() : void
+- revokeAccessToken() : void
+- isAccessTokenRevoked() : boolean
+### 2. Client Repository Interface documentation
+- getClientEntity() : ClientEntityInterface
+- validateClient() : bool
+### 3. Refresh Token Repository Interface documentation
+- getNewRefreshToken() : RefreshTokenEntityInterface
+- persistNewRefreshToken() : void
+- revokeRefreshToken() : void
+- isRefreshTokenRevoked() : boolean
+### 4. Scope Repository Interface documentation
+- getScopeEntityByIdentifier() : ScopeEntityInterface
+- finalizeScopes() : ScopeEntityInterface[]
+### 5. Auth Code Repository Interface documentation
+- getNewAuthCode() : AuthCodeEntityInterface
+- persistNewAuthCode() : void
+- revokeAuthCode() : void
+- isAuthCodeRevoked() : boolean
+### 6. User Repository Interface documentation
+- getUserEntityByUserCredentials() : UserEntityInterface
+
 
 
 
