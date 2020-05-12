@@ -19,6 +19,7 @@
     4. models
     5. init.php
     6. .htaccess
+    7. config/config.php --> konstanta-konstanta konfigurasi
 - Dari index.php bisa dipanggil aplikasi mvcnya melalui init.php
     ```php
     <?php
@@ -433,11 +434,11 @@
         return new $model;
     }
     ```
-2. Buat model baru : disini models/User.php : (di contoh ini hanya untuk memanggil $nama)
+2. Buat model baru : disini models/UserModel.php : (di contoh ini hanya untuk memanggil $nama)
     ```php
     <?php
 
-    class User {
+    class UserModel {
 
         private $nama="Hammam";
 
@@ -454,7 +455,7 @@
         $data['judul'] = "My Pages";
 
         // ini modelnya
-        $data['nama'] = $this->model('User')->getUser();
+        $data['nama'] = $this->model('UserModel')->getUser();
 
         $this->view('template/header', $data);
         $this->view('about/page', $data);
@@ -468,4 +469,625 @@
     <?=$data['nama'];?>
     ```
 
-# 7.1. Model and Database (Using PDO) Part 1
+# 8.1. Model and Database Menggunakan PDO [Menampilkan Semua Data]
+- Sebelumnya, bikin folder baru untuk mengatur semua konfigurasi : app/config/config.php, isinya konstanta-konstanta konfigurasi global
+- Karena semua konstanta-konstanta konfigurasi ada disitu, konstanta pada Constants.php dapat dipindah ke app/config/config.php, file core/Constants.php dihapus aja, dan ubah file init.phpnya :
+    ```php
+    <?php
+
+    require_once "core/App.php";
+    require_once "core/Controller.php";
+    require_once "config/config.php";
+    ```
+- di app/config/config.php
+    ```php
+    <?php
+
+    define('BASEURL', 'http://localhost/mvc-sandika/public');
+
+    // DB
+    define('DB_HOST', '127.0.0.1');
+    define('DB_USER', 'root');
+    define('DB_PWD', '');
+    define('DB_NAME', 'mvc_sandika');
+    ```
+- Steps menyambungkan DB ke MVC : misal buat DB bernama mvc_sandika, disana terdapat tabel achievements yang berisi prestasi-prestasi user yang akan ditampilkan pada halaman Achievement
+1. buat core/Database.php yang berisi setting database :
+    ```php
+    <?php
+
+    class Database {
+
+        // mengambil dari kontanta di config/config.php
+        private $host = DB_HOST;
+        private $user = DB_USER;
+        private $pwd = DB_PWD;
+        private $db_name = DB_NAME;
+
+        // $dbh stands for database handler (for connecting to db)
+        private $dbh;
+        // stmt stands for statement (for saving query)
+        private $stmt;
+
+        public function __construct()
+        {
+            // data source name
+            $dsn = "mysql:host=$this->host;dbname=$this->db_name";
+
+            // untuk optimasi
+            $option = [
+                PDO::ATTR_PERSISTENT =>true,
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+            ];
+
+            try {
+                $this->dbh = new PDO ($dsn, $this->user, $this->pwd, $option);
+            } catch (PDOException $e) {
+                die($e->getMessage());
+            }
+        }
+
+
+        // buat function generic untuk query (bisa dipake untuk query apapun)
+        public function query($query){
+            $this->stmt = $this->dbh->prepare($query);
+        }
+
+        // untuk binding data (misal ada where nya, maka untuk menghidari sql injection bersihin dulu querynya)
+        public function bind($param, $value, $type = null){
+            if (is_null($type)){
+                switch(true){
+                    case is_int($value) :
+                        $type = PDO::PARAM_INT;
+                        break;  
+                    case is_bool($value) :
+                        $type = PDO::PARAM_BOOL;
+                        break;
+                    case is_null($value) :
+                        $type = PDO::PARAM_NULL;
+                        break;    
+                    default :
+                        $type = PDO::PARAM_STR;
+                }
+            }
+
+            $this->stmt->bindValue($param, $value, $type);
+        }
+
+        // eksekusi querynya
+        public function execute(){
+            $this->stmt->execute();
+        }
+
+        // untuk menampilkan semua hasil
+        public function all(){
+            $this->execute();
+            return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        // untuk menampilkan 1 hasil
+        public function single(){
+            $this->execute();
+            return $this->stmt->fetch(PDO::FETCH_ASSOC);
+        }
+    }
+    ```
+2. daftarkan Database.php pada file init.php :
+    ```php
+    <?php
+
+    require_once "core/App.php";
+    require_once "core/Controller.php";
+    require_once "core/Database.php";
+
+    require_once "config/config.php";
+    ```
+3. menggunakan Database.php untuk men-query-kan semua data achievements pada model AchievementModel.php
+    ```php
+    <?php
+
+    class AchievementModel {
+
+        // table related to this model
+        private $table = "achievements";
+        
+        private $db;
+
+        // begitu manggil model ini, maka akan langsung instansiasi class Database untuk konek ke db 
+        public function __construct()
+        {
+            $this->db = new Database;
+        }
+
+        public function getAll()
+        {
+            $this->db->query("SELECT * FROM $this->table");
+            return $this->db->all();
+        }
+    }
+    ```
+4. masukkan ke template. bikin controller, dan view untuk menampilkan Achievement :
+5. di template/header.php , tambahkan :
+    ```php
+    <li class="nav-item">
+    <a class="nav-link" href="<?=BASEURL?>/achievement/index">Achievement</a>
+    </li>
+    ```
+6. buat controller Achievement.php :
+    ```php
+    <?php
+
+    class Achievement extends Controller{
+
+        public function index() 
+        {
+            $data['judul'] = "Achievement";
+            // menampilkan semua achievement
+            $data['achievements'] = $this->model('AchievementModel')->getAll();
+
+            $this->view('template/header', $data);
+            $this->view('achievement/index', $data);
+            $this->view('template/footer');
+        }
+    }
+    ```
+7. buat view achievement/index.php :
+    ```html
+    <ul class="list-group">
+    <?php foreach ($data['achievements'] as $achievement) :?>
+    <li class="list-group-item"><h3><?= $achievement['judul']?></h3></li>
+    <li class="list-group-item"><?= $achievement['caption']?> </li>
+    <?endforeach?>
+    </ul>
+    ```
+# 8.2. Model and Database Menggunakan PDO [Menampilkan 1 Data]
+- Steps : Idenya adalah membuat badge detail pada tiap achievement yang muncul, ketika badge diklik, maka akan mempilkan detail achievementnya :
+1. ubah view achievement/index.php :
+    ```html
+    <div class="row">
+        <div class="col-6">
+            <ul class="list-group">
+            <?php foreach ($data['achievements'] as $achievement) :?>
+            <li class="list-group-item d-flex justify-content-between align-items-center" >
+            <?= $achievement['judul']?>
+            <a href="<?= BASEURL?>/achievement/detail/<?= $achievement['id']?>" class="badge badge-primary" >detail</a>
+            </li>
+            <?endforeach?>
+            </ul>
+        </div>
+    </div>
+    ```
+2. di AchievementModel, buat method untuk menampilkan detail achievement :
+    ```php
+        public function getAchievementById($id)
+        {
+            // :id untuk bind data
+            $this->db->query("SELECT * FROM $this->table WHERE id=:id");
+            $this->db->bind('id', $id);
+            return $this->db->single();
+        }
+    ```
+3. di controller Achievement, panggil method  tersebut :
+    ```php
+    public function detail($id) 
+    {
+        $data['judul'] = "Achievement";
+        $data['achievement'] = $this->model('AchievementModel')->getAchievementById($id);
+
+        $this->view('template/header', $data);
+        $this->view('achievement/detail', $data);
+        $this->view('template/footer');
+    }
+    ```
+4. buat view achievement/detail :
+    ```html
+    <div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+        <div class="card-body">
+            <h5 class="card-title"><?= $data['achievement']['judul']?></h5>
+            <p class="card-text"><?= $data['achievement']['caption']?></p>
+            <a href="<?= BASEURL?>/achievement/" class="btn btn-primary">Kembali</a>
+        </div>
+        </div>
+    </div>
+    </div>
+    ```
+# 8.3. Model and Database Menggunakan PDO [Insert Data]
+- Steps :
+1. di view achievement/index.php : tambahkan button dan modal untuk insert data :
+    ```html
+    ---
+    
+    <div class="mt-3 mb-3">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#achievementModal">
+    Add Achievement
+    </button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="achievementModal" tabindex="-1" role="dialog" aria-labelledby="achievementModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="achievementModalLabel">Add Achievement</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+            <form action="<?= BASEURL; ?>/achievement/insert" method="post">
+                <div class="modal-body">
+                    <div class="form-group">                    
+                        <input type="text" class="form-control" id="judul" name="judul" placeholder="Judul">
+                    </div>
+                    <div class="form-group">                    
+                        <input type="text" class="form-control" id="judul" name="caption" placeholder="Caption">
+                    </div>
+                </div>
+                <div class="modal-footer">                
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
+    ---
+    ``` 
+2. di contoller Achievement :buat method untuk tambahkan data achievement dan masuk ke halaman /achievement jika data berhasil masuk:
+    ```php
+    public function insert()
+    {
+        if($this->model('AchievementModel')->addData($_POST) > 0) {
+            header('Location:' . BASEURL . '/achievement' );
+            exit;
+        }
+    }
+    ```
+3. di model AchievementModel : buat method untuk tambah data achievement
+    ```php
+    public function addData($data)
+    {
+        $this->db->query("INSERT INTO `achievements` (`id`, `judul`, `caption`) VALUES (NULL, :judul, :caption);" );
+        $this->db->bind('judul', $data['judul']);
+        $this->db->bind('caption', $data['caption']);
+        $this->db->execute();       
+        
+        // untuk menghitung data agar bisa redirect
+        return $this->db->rowCount();
+    }
+    ```
+4. di core/Database, buat fungsi rowCount untuk menhitung data :
+    ```php
+    // menhitung ada berapa baris pda statement
+    public function rowCount()
+    {
+        return $this->stmt->rowCount();
+    }
+    ```
+# 8.4. Model and Database Menggunakan PDO [Flash Message]
+- Menggunakan session
+- Steps :
+1. di core buat Flasher.php : untuk mengelola flash message :
+    ```php
+    <?php
+
+    class Flasher {
+
+        // set session untuk flash
+        public static function setFlash($message, $action, $type)
+        {
+            $_SESSION['flash'] =[
+                'message' => $message,
+                'action' => $action,
+                'type' => $type
+            ];
+        }
+
+        // jika session flash ada maka tampilkan flash
+        public static function flash() 
+        {
+            if (isset($_SESSION['flash'])) {
+                echo '<div class="alert alert-' . $_SESSION['flash']['type'] . ' alert-dismissible fade show" role="alert">
+                        Achievement data<strong> ' . $_SESSION['flash']['message'] . '</strong> ' . $_SESSION['flash']['action'] . ' 
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>';
+                unset($_SESSION['flash']);
+            }
+        }
+
+    }
+    ```
+2. require class Flasher pada init.php :
+    ```php
+    <?php
+
+    require_once "core/App.php";
+    require_once "core/Controller.php";
+    require_once "core/Database.php";
+    require_once "core/Flasher.php";
+
+    require_once "config/config.php";
+    ```
+3. di public/index.php aktifkan sessionnya :
+    ```php
+    <?php
+
+    if(!session_id()) session_start();
+
+    require_once "../app/init.php";
+
+    $app = new App;
+
+    ```
+4. letakkan class Flash pada achievement/index untuk menampilkan flash di sana :
+    ```php
+    <div class="row" >
+    <div class="col-6">
+        <?php Flasher::flash();?>
+    </div>
+    </div>
+    ```
+5. Pada controller Achievement/insert : beri flash jika berhasil atau gagal :
+    ```php
+    public function insert()
+    {
+        if($this->model('AchievementModel')->addData($_POST) > 0) {
+            Flasher::setFlash("successfully", "added", "success");
+            header('Location:' . BASEURL . '/achievement' );
+            exit;
+        }else{
+            Flasher::setFlash("failed", "to add", "danger");
+            header('Location:' . BASEURL . '/achievement' );
+            exit;
+        }
+    }
+    ```
+# 8.5. Model and Database Menggunakan PDO [Delete]
+- Steps :
+1. di view achievement/index.php : tambahankan button delete
+    ```php
+    <!-- index achievements -->
+    <div class="row">
+        <div class="col-6">
+            <ul class="list-group">
+            <?php foreach ($data['achievements'] as $achievement) :?>
+            <li class="list-group-item" >
+            <?= $achievement['judul']?>
+            <a href="<?=BASEURL?>/achievement/delete/<?=$achievement['id']?>" class="badge badge-danger float-right ml-1" onclick="return confirm ('Are you want do delete?')" >delete</a>
+            <a href="<?= BASEURL?>/achievement/detail/<?= $achievement['id']?>" class="badge badge-primary float-right" >detail</a>
+            </li>
+            <?endforeach?>
+            </ul>
+        </div>
+    </div>
+    ```
+2. di Achievement.php : buat delete method yang menerima $id dari url
+    ```php
+        public function delete($id)
+        {
+            if($this->model('AchievementModel')->deleteData($id) > 0) {
+                Flasher::setFlash("successfully", "deleted", "success");
+                header('Location:' . BASEURL . '/achievement' );
+                exit;
+            }else{
+                Flasher::setFlash("failed", "to delete", "danger");
+                header('Location:' . BASEURL . '/achievement' );
+                exit;
+            }
+        }
+    ```
+3. di model AchievementModel.php :
+    ```php
+    public function deleteData($id)
+    {
+        $this->db->query("DELETE FROM `achievements` WHERE id = :id;" );
+        $this->db->bind('id', $id);
+        $this->db->execute();       
+        
+        return $this->db->rowCount();
+    }
+    ```
+# 8.6. Model and Database Menggunakan PDO [Update + AJAX]
+1. buat tombol update
+2. buat js baru bernama script.js pada /public/js dan insert dalam view footer :
+    ```html
+    </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="<?=BASEURL?>/js/bootstrap.min.js"></script>
+    <script src="<?=BASEURL?>/js/script.js"></script>
+    </html>
+    ```
+3. di achievement/index :
+    ```html
+    <div class="row" >
+    <div class="col-6">
+        <?php Flasher::flash();?>
+    </div>
+    </div>
+    <div class="mt-3 mb-3">
+    <!-- Button trigger modal -->
+    <!-- 3) tambahkan id addDataButton untuk jquery (kata Add Achievement biar naggak keganti Update Achievement) -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#achievementModal" id="addDataButton">
+    Add Achievement
+    </button>
+    </div>
+
+    <!-- Modal Insert Achievement-->
+    <div class="modal fade" id="achievementModal" tabindex="-1" role="dialog" aria-labelledby="achievementModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="achievementModalLabel">Add Achievement</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <form action="<?= BASEURL; ?>/achievement/insert" method="post">
+            <!-- 6 tambahkan hidden input type untuk update data -->
+            <input type="hidden" name="id" id="id">
+            <div class="modal-body">
+                <div class="form-group">                    
+                    <input type="text" class="form-control" id="judul" name="judul" placeholder="Judul">
+                </div>
+                <div class="form-group">                    
+                    <input type="text" class="form-control" id="caption" name="caption" placeholder="Caption">
+                </div>
+            </div>
+            <div class="modal-footer">                
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+        </div>
+    </div>
+    </div>
+
+    <!-- index achievements -->
+    <div class="row">
+        <div class="col-6">
+            <ul class="list-group">
+            <?php foreach ($data['achievements'] as $achievement) :?>
+            <li class="list-group-item" >
+            <?= $achievement['judul']?>
+            <a href="<?=BASEURL?>/achievement/delete/<?=$achievement['id']?>" class="badge badge-danger float-right ml-1" onclick="return confirm ('Are you want do delete?')" >delete</a>
+            <!-- 1) href nggak perlu ada isinya soalnya ntar pake ajax -->
+            <!-- 2) class showUpdateModal buat nandain jquery kalo link ini diclick maka akan menampilkan modal untuk update -->
+            <!-- 4) data-id adalah attribute buatan agar nanti bisa ditangkap jquery -->
+            <a href="" class="badge badge-success float-right ml-1 showUpdateModal" data-toggle="modal" data-target="#achievementModal" data-id= "<?=$achievement['id'];?>" > update</a>
+            <a href="<?= BASEURL?>/achievement/detail/<?= $achievement['id']?>" class="badge badge-primary float-right" >detail</a>
+            </li>
+            <?endforeach?>
+            </ul>
+        </div>
+    </div>
+
+    ```
+4. di script.js :
+    ```js
+    // 1) ketika dokumen sudah siap, jalankan fungsi dibawah ini
+    $(function () {
+
+        $('#addDataButton').on('click', function(){
+            // 3) Biar nggak berubah menjadi Update Achievement Modal Labelnya
+            $('#achievementModalLabel').html('Add Achievement');
+            // 5.5) Biar datanya kosong ketika klik Add Achievement
+            $('#judul').val('');
+            $('#caption').val('');
+        });
+
+        // 2) kenapa yang ditangkap class bukan id? karena tombol updatenya kan banyak, nggak bisa pake id
+        $('.showUpdateModal').on('click', function(){
+            $('#achievementModalLabel').html('Update Achievement');
+
+            // 4) menangkap data-id update yang berisi id achievement
+            const id = $(this).data('id');
+
+            // 6.1) ubah action menuju method updateAchievement
+            $('.modal-content form').attr('action', 'http://localhost/mvc-sandika/public/achievement/update');
+            
+            $.ajax({
+                // 5.1) mengambil data ke url ini untuk mendapatkan data achievement sesuai id yang kita kirimkan
+                url : 'http://localhost/mvc-sandika/public/achievement/getDataForUpdate',
+                // 5.2) mengirim id dari const id ke url dengan nama id
+                data : {id:id},
+                // 5.3) data dikirimkan dengan method post, agar ntar bis datangkep pake $_POST
+                method : 'post',
+                dataType : 'json',
+                // 5.4) jika permintaan ajax di url berhasil, jika ada data yang dikembalikan, maka akan ditangkap pada variabel data
+                success : function(data){
+                    // 5.5) menampilkan data achievement yang akan diubah pada modal
+                    $('#judul').val(data.judul);
+                    $('#caption').val(data.caption);
+                    // 6.2) ubah value input type hidden untuk id menjadi id sesuai dengan id achievement
+                    $('#id').val(data.id);
+                }
+
+            });
+
+        });
+
+    });
+    ```
+5. di controller Achievement :
+    ```php
+    public function getDataForUpdate()
+    {
+        echo json_encode($this->model('AchievementModel')->getAchievementById($_POST['id']));
+    }
+
+    public function update()
+    {
+        if($this->model('AchievementModel')->updateData($_POST) > 0) {
+            Flasher::setFlash("successfully", "updated", "success");
+            header('Location:' . BASEURL . '/achievement' );
+            exit;
+        }else{
+            Flasher::setFlash("failed", "to update", "danger");
+            header('Location:' . BASEURL . '/achievement' );
+            exit;
+        }
+    }
+    ```
+6. di model AchievementModel :
+    ```php
+    public function updateData($data)
+    {
+        $this->db->query("UPDATE `achievements` SET `judul` = :judul, `caption` = :caption WHERE `id` = :id;" );
+        $this->db->bind('id', $data['id']);
+        $this->db->bind('judul', $data['judul']);
+        $this->db->bind('caption', $data['caption']);
+        $this->db->execute();       
+        
+        return $this->db->rowCount();
+    }
+    ```
+# 9. Searching
+1. di achievement/index :
+    ```html
+    <!-- Searching -->
+    <div class="row">
+    <div class="col-6">  
+        <form action="<?= BASEURL?>/achievement/search" method="post">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" name="keyword" placeholder="Search Achievement" aria-label="Search Achievement" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+            <button class="btn btn-primary" type="submit">Search</button>
+            </div>
+        </div>
+        </form>
+    </div>
+    </div>
+    ```
+2. di controller achievement :
+    ```php
+    public function search()
+    {
+        $data['judul'] = "Achievement";
+        $data['achievements'] = $this->model('AchievementModel')->searchData();
+
+        $this->view('template/header', $data);
+        $this->view('achievement/index', $data);
+        $this->view('template/footer');              
+    }
+    ```
+3. di model AchievementModel :
+    ```php
+    public function searchData()
+    {
+        $keyword = $_POST['keyword'];
+        $query = "SELECT * FROM `achievements` WHERE `judul` LIKE :keyword";
+        $this->db->query($query);
+        $this->db->bind('keyword', "%$keyword%");
+        return $this->db->all();
+    }
+    ```
+
+
+
+
+

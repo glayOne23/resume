@@ -144,11 +144,4 @@ sudo install react-native-gesture-handler react-native-reanimated
 npm i jetifier
 npx jetify
 
-
-===============================
-change email to name in uathentication:
-1. dont forget hash
-2. public function username(){
-        return 'name';
-    }
-3.setting blade
+wget -r nama-domain
