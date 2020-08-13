@@ -663,3 +663,606 @@
 ---
 ## Part 11 - Practical Components Exercise III () - fsdaf
 
+---
+## Part 12 - Components Communication I - Communication from child to parent
+- One component notify another component
+- Example before it: alert message when on blur in one component :
+1. index.html
+    ```html
+    <body>
+
+        <div id="root" class="container">        
+            
+            <coupon></coupon>
+
+        </div>
+
+        <script src="vue.js"></script>
+
+    </body>
+
+    <script src="main.js"></script>
+    ```
+2. main.js
+    ```js
+    Vue.component ('coupon', {
+        
+        data () {
+            return {
+            message : "" ,
+            }
+        }, 
+
+        template : 
+            `
+            <input type="text" @blur="onCouponApplied" v-model="message">
+            ` ,
+        
+        methods : {
+            onCouponApplied(){
+                alert(this.message);            
+            }        
+        }
+
+    });
+
+    new Vue ({
+
+        el : '#root',
+
+    });
+
+    ```
+- Example : alert message when on blur (communication from child to parent ) :
+1. index.html
+    ```html
+    <body>
+
+        <div id="root" class="container">    
+
+            <!-- @applied is custom event -->
+            <!-- onCouponApplied() is method -->
+            <!-- $val catch value from $emit in coupon component -->
+            <coupon @applied="onCouponApplied($val)" ></coupon>
+
+        </div>
+
+        <script src="vue.js"></script>
+
+    </body>
+
+    <script src="main.js"></script>
+    ```
+2. main.js
+    ```html
+    Vue.component ('coupon', {
+        
+        data () {
+            return {
+            message : "" ,
+            }
+        }, 
+
+        <!-- on blur trigger onCouponApplied method -->        
+        template : 
+            `
+            <input type="text" @blur="onCouponApplied" v-model="message">
+            ` ,
+        
+        methods : {
+            
+            onCouponApplied(){            
+                <!-- emit custom event 'applied' in parent -->
+                <!-- this.message send a value to custom event 'applied' -->
+                this.$emit('applied', this.message);
+            }
+        }
+
+    });
+
+    new Vue ({
+
+        el : '#root',
+
+        methods :{
+            <!-- parent method -->
+            onCouponApplied(message){
+                alert(message);
+            }
+        }
+    });
+
+    ```
+---
+## Part 13 - Components Communication II - Communication between Component
+- https://medium.com/@jeffochoa/vue-basic-component-communication-using-an-event-dispatcher-be4823f006bf
+
+---
+## Part 14 - Named Slot
+1. in index.html
+    ```html
+    <body>
+
+        <div id="root" class="container">        
+            
+            <modal>
+                <!-- named slot -->
+                <template slot="header">Header</template>
+                Content of Modal
+            </modal>
+
+        </div>
+
+        <script src="vue.js"></script>
+
+    </body>
+    ```
+2. in main.js
+    ```html
+    Vue.component ('modal', {
+        
+        props : [],
+
+        data () {
+            return {
+            message : "" ,
+            }
+        }, 
+
+        template : 
+            `
+            <div class="modal is-active">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                    <p class="modal-card-title">
+                        <!-- named slot -->
+                        <slot name="header"></slot>
+                    </p>
+                    <button class="delete" aria-label="close"></button>
+                    </header>
+                    <section class="modal-card-body">
+                    <!-- default slot -->
+                    <slot>
+                        Default content here
+                    </slot>
+                    </section>
+                    <footer class="modal-card-foot">
+                    <button class="button is-success">Save changes</button>
+                    <button class="button">Cancel</button>
+                    </footer>
+                </div>
+            </div>
+            ` ,
+        
+    });
+
+    new Vue ({
+
+        el : '#root',
+
+        data : {
+
+        },
+
+    });
+
+    ```
+
+---
+## 15. Single Use Components and Inline Components
+1. in index.html 
+    ```html
+    <!-- inline template -->
+    <progress-view inline-template>
+        <div>
+            <h1>Your progress through this course is {{completionRate}} %</h1>
+
+            <button class="button is-info" @click="completionRate += 1">Add Completion</button>
+        </div>
+    </progress-view>
+    ```
+2. in main.js
+    ```js
+    Vue.component ('progress-view', {
+        
+        data () {
+            return {
+            completionRate : 50,
+            }
+        }, 
+        
+    });
+
+    new Vue ({
+
+        el : '#root',
+
+    });
+
+    ```
+
+---
+## 16. Webpack and Vue CLI
+- vue-loader is a loader for webpack that allows you to author Vue components in a format called Single-File Components (SFCs):
+- Webpack is a static module bundler for modern JavaScript applications. When webpack processes your application, it internally builds a dependency graph which maps every module your project needs and generates one or more bundles.
+- SFCs : https://vue-loader.vuejs.org/spec.html
+- Vue CLI is a full system for rapid Vue.js development : https://cli.vuejs.org/guide/
+- Steps :
+    ```sh
+    # installing vue cli
+    $ sudo npm install -g @vue/cli
+    $ sudo npm install -g @vue/cli-init
+    # create new vue + webpack bundle
+    $ vue init webpack-simple my-app
+    # open bundle
+    $ cd my-app
+    $ subl .
+    # install package
+    $ npm install
+    # run vue in hot reload
+    $ npm run dev
+    ```
+- syntax in file .vue is inunderstandable by the browser, therefore we use webpack to make it understandable by using package bundle that already installed inside webpack
+- .vue syntax :
+    ```html
+    <template>
+    <!-- template inside here   -->
+    </template>
+
+    <script>
+    // script inside here
+    </script>
+
+    <style>
+    /* css style inside here */
+    </style>
+    ```
+- Example : 
+1. in App.vue :
+    ```js
+    // 1) define component
+    <template>
+    <div id="app">
+
+        <message>
+        Hello There
+        </message>
+        
+    </div>
+    </template>
+
+    <script>
+
+    // 2) import any components that app requires
+    import Message from './components/Message.vue';
+
+    export default {
+    name: 'app',
+    
+    // 3) nested them here
+    components : {Message},
+
+    data () {
+        return {
+        msg: ''
+        }
+    }
+    }
+    </script>
+
+    // 4) style css
+    <style>
+    #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+    }
+
+    h1, h2 {
+    font-weight: normal;
+    }
+
+    ul {
+    list-style-type: none;
+    padding: 0;
+    }
+
+    li {
+    display: inline-block;
+    margin: 0 10px;
+    }
+
+    a {
+    color: #42b983;
+    }
+    </style>
+    ```
+2. in components/Message.vue
+    ```html
+    <template>
+
+    <h1> <slot></slot> </h1>
+
+    </template>
+
+    <script>
+    export default {
+    
+    }
+    </script>
+
+    <style>
+
+    </style>
+    ```
+
+---
+## 17. Hot-Module-Replacement (HMR)
+- "Hot Reload" is not simply reloading the page when you edit a file. With hot reload enabled, when you edit a *.vue file, all instances of that component will be swapped in without reloading the page.
+
+---
+## 18. Axios Introduction (GET)
+- the example below using laravel + vue
+1. in web.php make simple API :
+    ```php
+    Route::get('/skills', function () {
+        return ['Laravel', 'Vue', 'React', 'Node'];
+    });
+    ```
+2. in welcome.blade.php :
+    ```php
+    <body>
+        <div id="root">
+
+            // syntax 1 
+            <ul>
+                <li v-for="skill in skills" v-text="skill"></li>
+            </ul>
+
+            // syntax 2 : @ to make laravel ignore {{}}
+            <ul>
+                <li v-for="skill in skills">@{{skill}}</li>
+            </ul>
+
+        </div>
+        // cdn vue
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>        
+    </body>
+    // cdn axios
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/js/main.js"></script>
+    ```
+3. in /js/main.js :
+    ```js
+    new Vue({
+
+        el : '#root',
+
+        data : {
+            skills : [],
+        },
+
+        mounted () {
+            axios.get('/skills')
+            .then(response => this.skills = response.data);	
+        }
+        
+    });
+    ```
+
+---
+## 19. Object Oriented Form Part 1
+- The idea is to make simple form that contains of 2 input : name and description.
+- Feature :
+    1. onSubmit input data to database
+    2. validation error from db to js
+    3. onkeydown delete error message
+    4. disable button when there is a error
+    5. onSuccess clear input and show alert message
+- Steps :
+1. set .env
+2. in terminal : 
+    ```sh
+    $ php artisan make:controller ProjectsController -r
+    $ php artisan make:model Project -m
+    ```
+3. in web.php
+    ```php
+    <?php
+
+    use Illuminate\Support\Facades\Route;
+    
+    Route::get('/projects/create', 'ProjectsController@create');
+    Route::post('/projects', 'ProjectsController@store');
+    ```
+4. in Project model :
+    ```php
+    <?php
+
+    namespace App;
+
+    use Illuminate\Database\Eloquent\Model;
+
+    class Project extends Model
+    {
+        protected $guarded = [];
+    }
+
+    ```
+5. in ProjectController :
+    ```php
+    <?php
+
+    namespace App\Http\Controllers;
+
+    use Illuminate\Http\Request;
+    use App\Project;
+
+    class ProjectsController extends Controller
+    {
+
+        public function create()
+        {        
+            return view('projects.create');
+        }
+
+        
+        public function store(Request $request)
+        {        
+            $this->validate(request(), [
+                'name' => 'required',
+                'description' => 'required'
+            ]);
+
+            Project::forceCreate([
+                'name' => request('name'),
+                'description' => request('description')
+            ]);
+
+            return ['message' => "Project Created"];
+        }
+    }
+
+    ```
+6. in view/projects/layout.blade.php :
+    ```html
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Document</title>	
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.min.css">
+        <style type="text/css">
+            body {
+                padding-top: 40px;			
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="container" id="root">
+            @yield("main")
+        </div>	
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>        
+    </body>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="/js/main.js"></script>
+    </html>
+    ```
+7. in view/projects/create.blade.php :
+    ```html
+    @extends("projects.layout")
+
+    @section("main")
+
+
+    {{-- ada hal baru @submit.prevent mencegah submit untuk melakukan behaviour normal, makanya disini nggak ada @csrf --}}
+    {{-- errors is property in data that contains Errors class we have created in main.js --}}
+    {{-- .clear(), .get(), .has() is artificial methods from class Errors that we created --}}
+    <form method="POST" action="/projects" @submit.prevent="onSubmit" @keydown="errors.clear($event.target.name)">
+        <div class="field">
+        <div class="control">
+            {{-- v-model --}}
+            <input class="input is-success" type="text" name="name" placeholder="Name" v-model="name">	    
+            <span class="help is-danger" v-if="errors.has('name')" v-text="errors.get('name')" ></span>
+        </div>
+        </div>
+        <div class="field">
+        <div class="control">
+            {{-- v-model --}}
+            <input class="input is-success" type="text" name="description" placeholder="Description" v-model="description">
+            <span class="help is-danger" v-if="errors.has('description')" v-text="errors.get('description')" ></span>
+        </div>
+        </div>
+        {{-- if there is an error, submit button is disabled --}}
+        <button type="submit" class="button is-success" :disabled="errors.anyError()" >Save</button>
+    </form>
+    @endsection
+    ```
+8. in main.js
+    ```js
+    class Errors {
+
+        // create local property
+        constructor() {
+            this.salah = {}
+        }
+
+        // if there is an error with specified field, get message
+        get(field) {
+            if (this.salah[field]) {
+                return this.salah[field][0];
+            }
+        }
+
+        // record error if available from backend to local property
+        record(salah) {
+            this.salah = salah;
+        }
+
+        // on keydown clear message
+        clear(field) {
+            delete this.salah[field];
+        }
+
+        // if there is an error with specified field, show html tag
+        has(field) {
+            return this.salah.hasOwnProperty(field);
+        }
+
+        // if there is an error, disable the button
+        anyError() {
+            return Object.keys(this.salah).length > 0
+        }
+    }
+
+    new Vue({
+
+        el : '#root',
+        
+        data : {
+            // related to v-model in create.blade.php
+            name : '',
+            description : '',
+            // property to create Errors class that contains error message
+            errors : new Errors(),
+        },
+
+        methods : {
+            onSubmit() {
+                // this.$data is all data in new Vue()
+                axios.post('/projects', this.$data)
+                // if submit success, trigger onSuccess() method
+                .then(this.onSuccess)
+                // this.errors is property in data that contains Errors class
+                .catch(error => this.errors.record(error.response.data.errors));
+            },
+
+            onSuccess(response) {
+                // data.message is from backend
+                alert(response.data.message);
+
+                // clear all input after successfully posted data to db
+                this.name = '';
+                this.description ='';
+            }
+        }
+        
+    });
+    ```
+
+---
+## 20. Object Oriented Form Part 2
+1. data dimasukkan dalam class Form
+2. errors dimasukkan dalam class Form
+3. submit dimasukkan dalam class Form
+4. reset dimasukkan dalam class Form
+
+
+
+
+
+

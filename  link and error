@@ -6,6 +6,11 @@ laravel bisa masuk tapi runtime error di localhost:8000 :
 php artisan key:generate
 php artisan config:cache
 
+cache :
+php artisan clear-compiled
+composer dump-autoload
+php artisan optimize
+
 change owner and group:
 sudo chown glayone23:glayone23 -R <nama-folder>/
 
@@ -145,3 +150,7 @@ npm i jetifier
 npx jetify
 
 wget -r nama-domain
+
+lumen :
+- to set database in heroku you must create config/database.php and set the necessary configuration, nggak bisa kalau nggak dikasih
+- setiap request nggak usah dikasih / dibelakangnya

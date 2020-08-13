@@ -53,7 +53,7 @@
       2. file migrasi user sudah langsung ada di laravel
       3. isi coloumn untuk pasports seperti id dan nama + di table passports harus ada foreign key dari id table user, caranya di create_passport_table tambahin:
           ``` php
-          $table->integer('user_id')->unsigned();
+          $table->bigInteger('user_id')->unsigned();
           $table->foreign('user_id')->references('id') //id tu nama id di tabel user
                 ->on('users')->onDelete('cascade');    //users tu nama tabel user
           ```      
@@ -146,7 +146,7 @@
    2. Langkahnya mirip sama one to one:
       1. bikin file migrasi postingan dan modelnya, isi biasa, dan kasih reference ke user di file migrasi postingan sebagai foreign key:
          ``` php
-         $table->integer('user_id')->unsigned();
+         $table->bigInteger('user_id')->unsigned();
          $table->foreign('user_id')->references('id') //id tu nama id di tabel user
                ->on('users')->onDelete('cascade');    //users tu nama tabel user
          ```        
@@ -195,11 +195,11 @@
             ``` php
             $table->increments(id);
 
-            $table->integer('user_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             //id tu nama id di tabel users,users tu nama tabel user
 
-            $table->integer('pelajaran_id')->unsigned();
+            $table->bigInteger('pelajaran_id')->unsigned();
             $table->foreign('pelajaran_id')->references('id')->on('pelajarans')->onDelete('cascade');
             //id tu nama id di tabel pelajarans,pelajarans tu nama tabel user
 
@@ -263,7 +263,7 @@
            @foreach($pelajaran->users as $user)
             <li> {{$user->name}} </li>
             <li> {{$user->pivot->created_at}} </li> //khusus timestamps
-            <li> {{$user->pivot->batasPinjam}} </li> //pivot swlain timestamps
+            <li> {{$user->pivot->batasPinjam}} </li> //pivot selain timestamps
            @endforeach
          </ul>
          ```
@@ -272,7 +272,7 @@
          ``` php
          public function users(){
           return $this->belongsToMany("App\Models\User")->withTimeStamps() //khusus timestamps
-                      ->withPivot('batasPinjam'); //isi dengan kolom2 selain timestamps,jika kolom lebi dari 1 pisahin pake koma withPivot('col1','col2','setrusnya');
+                      ->withPivot('batasPinjam'); //isi dengan kolom2 selain timestamps,jika kolom lebih dari 1 pisahin pake koma withPivot('col1','col2','setrusnya');
          }
          ```
          - Tambahan:
@@ -298,7 +298,7 @@
       2. di create_likes_table :
          ``` php
          $table->increments(id);
-         $table->integer(likeable_id);
+         $table->bigInteger(likeable_id);
          $table->string('likeable_type', 100);
          ``` 
       3. `php artisan:migrate`
@@ -313,7 +313,7 @@
          public function likes(){
             return $this->morphMany('App\Models\Like', 'likeable')
             //'App\Models\Like' --> tabel polimorfinya
-            //'likeable' --> fungsi morph di Model like
+            //'likeable' --> nama penanda id dan type di table likes untuk menghubungkan ke model lain (disini likeable karena untuk menghubungkan id dan model ke table likes menggunakan likeable_id dan likeable_type)
          }
          ```
       6. di forum.blade.php : buat nampilin likenya berapa :
@@ -347,8 +347,8 @@
          ``` 
       4. di create_taggables_table :
          ``` php
-         $table->intege(tag_id);
-         $table->integer(taggable_id);
+         $table->bigInteger(tag_id);
+         $table->bigInteger(taggable_id);
          $table->string('taggable_type', 100);
          ```
       5. `php artisan:migrate`   
