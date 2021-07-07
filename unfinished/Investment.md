@@ -1,5 +1,5 @@
 # Akademi Ternak Uang
-
+- class="woodmart-title-container woodmart-text-block font-primary woodmart-font-weight-"
 ## Daftar Akademi
 |No |Akademi                        |Waktu      |Priority|
 |---|-------------------------------|-----------|--------|
@@ -239,6 +239,10 @@
 
 ## 4. Equity Valuation 101
 ## 4.1. Basic of Valuation
+1. Link Video:
+    1. Apa dan Kenapa Valuasi: https://s3-ternakuang-video.s3-ap-southeast-1.amazonaws.com/module/6-equity-valuation/1-basic-of-valuation/1-apa-dan-kenapa-valuasi/1.1+Equity-Valuation-101-Basic-Of-Valuation-Apa-dan-Kenapa-Valuasi.m3u8
+    2. 5 Mitos Valuasi: https://s3-ternakuang-video.s3-ap-southeast-1.amazonaws.com/module/6-equity-valuation/1-basic-of-valuation/2-5-mitos-valuasi/1.2+Equity-Valuation-101-Basic-of-Valuation-5-Mitos-Valuasi.m3u8
+    3. Jenis Valuasi: https://s3-ternakuang-video.s3-ap-southeast-1.amazonaws.com/module/6-equity-valuation/1-basic-of-valuation/3-jenis-valuasi/1.3+Equity-Valuation-101-Basic-of-Valuation-Jenis-Valuasi.m3u8 
 - Valuasi : Metode untuk menghitung nilai intristik saham.
 - Jenis-jenis Valuasi:
 ![](data_investment/files/3.png?raw=true)
@@ -256,9 +260,11 @@
         - Kapan dipakai? Kepada sector yang sangat bergantung pada asset yang dia miliki (kelapa sawit, semen, property)    
 
 ## 4.2. Relative Valuation
+- Link Video : 
+    1. Priciple of Relative Valuation : https://s3-ternakuang-video.s3-ap-southeast-1.amazonaws.com/module/6-equity-valuation/2-relative-valuation/1-principle-of-relative-valuation/2.1+Equity-Valuation-101-Relative-Valuation-Principle-of-Relative-Valuation.m3u8
 - Konsep dasar dari relative valuation adalah mengalikan dengan earnings-nya atau dengan book value-nya atau revenue-nya (konsep of multiple)
 - Kelebihan:
-    1. Lebih desikit asumsinya
+    1. Lebih sedikit asumsinya
     2. Lebih mudah dimengerti
     3. Merefleksikan current mood of market (lagi bullish atau berrish)
 - Kekuarangan: 
@@ -267,6 +273,33 @@
         - reflect to under valuation
         - kurang transparan
 ### 4.2.1 P/E
+- Link Video : https://s3-ternakuang-video.s3-ap-southeast-1.amazonaws.com/module/6-equity-valuation/2-relative-valuation/2-pe/2.2+Equity-Valuation-101-Relative-Valuation-PE.m3u8
+- Yang ingin dicari adalah nilai intristik berdasarkan Earningnya
+- Istilah-istilah yang harus diketahui:
+    1. Mean, Median, Standard Deviation
+    2. EPS
+    3. Trailing (TTM) PER
+    4. Forward PER
+    5. PE Standard Deviation Band:
+        - Mean PE Standard Deviation
+        - +1 PE Standard Deviation
+        - -1 PE Standard Deviation
+        - Current PE Standard Deviation
+- `Nilai Intristik atau Stock Price = EPS * PER`
+
+### 4.2.2 P/BV
+- Link Video : https://s3-ternakuang-video.s3-ap-southeast-1.amazonaws.com/module/6-equity-valuation/2-relative-valuation/3-pbv/2.3+Equity-Valuation-101-Relative-Valuation-PBV.m3u8
+- Yang ingin dicari adalah nilai intristik berdasarkan Book Valuenya
+- `Nilai Intristik atau Stock Price = BVPS * PBV`
+- Perusahaan yang cocok dengan rasio PBV : Perusahaan yang bisa diprediksi revenue/earningnya(banking, tlelco, consumer, komoditas, infrastruktur)
+### 4.2.3 EV/EBITDA
+- Link Video : https://s3-ternakuang-video.s3-ap-southeast-1.amazonaws.com/module/6-equity-valuation/2-relative-valuation/4-ev-ebitda/2.4+Equity-Valuation-101-Relative-Valuation-EV-EBITDA.m3u8
+- EV adalah Enterprise Value dan EBITDA adalah Earning Before Interest, Tax, Depreciation dan Amortisation.
+- `EV (Enterprise Value) = EBITDA / EV/EBITDA`
+
+### 4.2.4 PE/G
+-
+### 4.2.5 P/S
 -
 
 ## 4.3. DCF Valuation
