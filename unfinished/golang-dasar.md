@@ -1178,15 +1178,128 @@ import (
 func main() {		
 	fmt.Println(helpers.SayHello("Anto"))
 }
-
 ```
 
+## 44. Access Modifier
+- Di bahasa pemrograman lain, biasanya ada kata kunci yang bisa digunakan untuk menentukan access modifier terhadap suatu function atau variable
+- Di Go-Lang, untuk menentukan access modifier, cukup dengan nama function atau variable
+- Jika nama nya diawali dengan hurup besar, maka artinya bisa diakses dari package lain, jika dimulai dengan hurup kecil, artinya tidak bisa diakses dari package lain
+	```go
+	package helpers
+
+	// tidak bisa diakses dari luar
+	var version int = 1
+	// bisa diakses dari luar
+	var Application string = "Golang"
+
+	// bisa diakses dari luar
+	func SayHello(name string) string{
+		return "Hello " + name
+	}
+
+	// tidak bisa diakses dari luar
+	func sayThanks(name string) string{
+		return "Thank you! " + name
+	}
+	```
+
+## 45. Package Initialization
+#### Package Initialization
+- Saat kita membuat package, kita bisa membuat sebuah function yang akan diakses ketika package kita diakses
+- Ini sangat cocok ketika contohnya, jika package kita berisi function-function untuk berkomunikasi dengan database, kita membuat function inisialisasi untuk membuka koneksi ke database
+- Untuk membuat function yang diakses secara otomatis ketika package diakses, kita cukup membuat function dengan nama init
+#### Blank Identifier
+- Kadang kita hanya ingin menjalankan init function di package tanpa harus mengeksekusi salah satu function yang ada di package
+- Secara default, Go-Lang akan komplen ketika ada package yang di import namun tidak digunakan
+- Untuk menangani hal tersebut, kita bisa menggunakan blank identifier (_) sebelum nama package ketika melakukan import
+- Code: 
+- di `main.go`:
+	```go
+	package main
+
+	import _ "golang-dasar/database"
+
+	func main() {				
+	}
+	```
+- di `database/database.go`:
+	```go
+	package database
+
+	import "fmt"
+
+	var connection string
+
+	// ketika pakcage dipanggil otomatis function init akan dijalankan
+	func init() {
+		fmt.Println("Init dipanggil")
+		connection = "MySQL"
+	}
+
+	func GetDatabase() string {
+		return connection
+	}
+	```
+- Hasil:
+	```go
+	Init dipanggil
+	```
+
+## 46. Package OS
+- Package os berisikan fungsionalitas untuk mengakses fitur sistem operasi secara independen (bisa digunakan  disemua sistem operasi)
+#### Args
+- mengambil data argumen. Data pertamanya adalah letak file dicompile, data kedua dan seterusnya adalah argumentnnya
+- Code:
+- di `main`:
+	```go
+	package main
+
+	import (
+		"fmt"
+		"os"
+	)
+
+	func main() {	
+		// mengambil data argumen	
+		args := os.Args
+		fmt.Println(args)
+		fmt.Println(args[1])
+	}
+	```
+- di `terminal`: go run main.go anto
+- Hasil : 
+	```go
+	anto
+	```
+#### Hostname
+- Mengambil data host system operasi
+	```go
+	package main
+
+	import (
+		"fmt"
+		"os"
+	)
+
+	func main() {	
+			// mengambil data argumen	
+		args := os.Args
+		fmt.Println(args)		
+
+		name, err := os.Hostname()	
+		if err == nil{
+			fmt.Println(name)
+		}else{
+			fmt.Println("Error", err)
+		}	
+	}
+
+	```
+#### dll
 
 
+## 47. Package Flag
 
-
-
-
-
-
+## 48. Package String
+- Memanipulasi String
 
