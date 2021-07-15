@@ -30,7 +30,7 @@
 
 ## 1. Scrum Overview
 #### What is Scrum?
-    - Scrum is the most commonly used method according to the Agile statement applied in product development, especially software products. Calling Agile is a statement because it hasn't materialized into a method. From the Agile statement, people concretize into methods like Scrum, Lean. Scrum is a flexible framework that can be used to manage any project even though its deadlines are tight, its requirements are very complex, or it is highly specialized. With the Scrum method, projects are continued non-stop by repeating an activity period called a Sprint . Each sprint usually lasts 2 to 4 weeks.
+- Scrum is the most commonly used method according to the Agile statement applied in product development, especially software products. Calling Agile is a statement because it hasn't materialized into a method. From the Agile statement, people concretize into methods like Scrum, Lean. Scrum is a flexible framework that can be used to manage any project even though its deadlines are tight, its requirements are very complex, or it is highly specialized. With the Scrum method, projects are continued non-stop by repeating an activity period called a Sprint . Each sprint usually lasts 2 to 4 weeks.
 ![title](img_scrum/1.png)
 #### Phrases used in Scrum:
 1. **Scrum team** (a group that follows the Scrum method): 
