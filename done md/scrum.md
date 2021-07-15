@@ -1,19 +1,3 @@
-## Reference
-- https://docs.microsoft.com/en-us/devops/plan/what-is-scrum
-- https://longnguyen.site/t%E1%BB%95ng-quan-v%E1%BB%81-scrum-trong-vi%E1%BB%87c-ph%C3%A1t-tri%E1%BB%83n-ph%E1%BA%A7n-m%E1%BB%81m-theo-ph%C6%B0%C6%A1ng-ph%C3%A1p-agile-a02b1386069b
-- https://hygger.io/guides/agile/scrum/scrum-of-scrums/
-- https://longnguyen.site/scrum-team-de5d1505b68f
-- https://longnguyen.site/scrummaster-tr%C3%B9m-scrum-8929c5df5f5d
-- https://longnguyen.site/scrum-product-backlog-636d03902259
-- https://longnguyen.site/sprint-planning-meeting-cu%E1%BB%99c-h%E1%BB%8Dp-l%C3%AAn-k%E1%BA%BF-ho%E1%BA%A1ch-8b76f1c84bda
-- https://longnguyen.site/daily-scrum-meeting-cu%E1%BB%99c-h%E1%BB%8Dp-h%C3%A0ng-ng%C3%A0y-856aa506d475
-- https://longnguyen.site/sprint-backlog-7320951ad47e
-- https://pt.slideshare.net/KhushSlideShare/agile-methodologyscrum/23-The_Sprint_Backlog_Day_of
-- https://longnguyen.site/scrum-task-board-b%E1%BA%A3ng-c%C3%A1c-c%C3%B4ng-vi%E1%BB%87c-c%E1%BA%A7n-l%C3%A0m-2c1e3205f01a
-- https://longnguyen.site/release-burndown-chart-c1c5bb898b3a
-- https://longnguyen.site/sprint-review-meeting-cu%E1%BB%99c-h%E1%BB%8Dp-r%C3%BAt-kinh-nghi%E1%BB%87m-968db31b1a5f
-- https://longnguyen.site/sprint-retrospective-nh%C3%ACn-l%E1%BA%A1i-3149126b241e
-
 # SCRUM
 - [Scrum Overview](#1-scrum-overview)
 - [Scrum Team](#2-scrum-team)
@@ -115,6 +99,7 @@
 
 ## 10. Release Burndown Chart
 - Progress on a Scrum project can be tracked using the tools of a release burndown chart . The Scrum Master should update the release burndown chart at the end of each sprint.
+
 ![title](img_scrum/6.jpg)
 
 ## 11. Sprint Review Meeting
@@ -131,5 +116,20 @@
     3. Keep doing
 - After discussing an initial list of ideas, the team will vote on the items to focus on for the next sprint. At the end of the sprint, the next retrospective usually begins with a review of the list of things selected to focus on in the previous sprint retrospective.
 
+## Reference
+- https://docs.microsoft.com/en-us/devops/plan/what-is-scrum
+- https://longnguyen.site/t%E1%BB%95ng-quan-v%E1%BB%81-scrum-trong-vi%E1%BB%87c-ph%C3%A1t-tri%E1%BB%83n-ph%E1%BA%A7n-m%E1%BB%81m-theo-ph%C6%B0%C6%A1ng-ph%C3%A1p-agile-a02b1386069b
+- https://hygger.io/guides/agile/scrum/scrum-of-scrums/
+- https://longnguyen.site/scrum-team-de5d1505b68f
+- https://longnguyen.site/scrummaster-tr%C3%B9m-scrum-8929c5df5f5d
+- https://longnguyen.site/scrum-product-backlog-636d03902259
+- https://longnguyen.site/sprint-planning-meeting-cu%E1%BB%99c-h%E1%BB%8Dp-l%C3%AAn-k%E1%BA%BF-ho%E1%BA%A1ch-8b76f1c84bda
+- https://longnguyen.site/daily-scrum-meeting-cu%E1%BB%99c-h%E1%BB%8Dp-h%C3%A0ng-ng%C3%A0y-856aa506d475
+- https://longnguyen.site/sprint-backlog-7320951ad47e
+- https://pt.slideshare.net/KhushSlideShare/agile-methodologyscrum/23-The_Sprint_Backlog_Day_of
+- https://longnguyen.site/scrum-task-board-b%E1%BA%A3ng-c%C3%A1c-c%C3%B4ng-vi%E1%BB%87c-c%E1%BA%A7n-l%C3%A0m-2c1e3205f01a
+- https://longnguyen.site/release-burndown-chart-c1c5bb898b3a
+- https://longnguyen.site/sprint-review-meeting-cu%E1%BB%99c-h%E1%BB%8Dp-r%C3%BAt-kinh-nghi%E1%BB%87m-968db31b1a5f
+- https://longnguyen.site/sprint-retrospective-nh%C3%ACn-l%E1%BA%A1i-3149126b241e
 
 
