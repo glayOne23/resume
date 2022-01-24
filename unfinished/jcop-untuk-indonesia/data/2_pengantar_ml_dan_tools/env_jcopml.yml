@@ -1,0 +1,31 @@
+name: jcopml
+
+channels:
+# installnya dari mana
+- conda-forge
+- anaconda 
+
+dependencies:
+# Essential
+- python
+- nb_conda_kernels
+- pip
+- ipython
+- tqdm
+# Data Science
+- numpy
+- scipy
+- pandas
+# Machine Learning
+- scikit-learn
+# Visualization
+- matplotlib
+- seaborn
+- ipywidgets
+
+- pip:
+  # Machine Learning
+  - xgboost
+  - scikit-optimize
+  - jcopml
+  - luwiji
