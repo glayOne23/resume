@@ -37,6 +37,7 @@
 - Materi ada pada folder data
 ## Pandas
 - Materi ada pada folder data
-
+## Matplotlib
+- Materi ada pada folder data
 
     

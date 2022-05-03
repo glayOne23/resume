@@ -22,8 +22,10 @@
 |17 |Ajaib                          |12:52 menit|Low     |
 |18 |Corporate Action               |29:28 menit|High    |
 |19 |Financial Checkup              |9:54 menit |Medium  |
+|20 |Ruang Lingkup Ekonomi          |1:00 jam   |High    |
 
 
+---
 ## 2. Saham 101
 
 ## 2.1. Basic of Stock
@@ -156,6 +158,7 @@
             3. Valution Band = Membandingkan rasio valuasinya(PE dan PBV) di masa lalu
 
 
+---
 ## 3. Laporan Keuangan 101
 ## 3.1. Kenalan Dengan Laporan Keuangan dan 3 Jenisnya
 1. Laporan Laba Rugi:
@@ -303,5 +306,58 @@
 -
 
 ## 4.3. DCF Valuation
+
+---
+## 20. Ruang Lingkup Ekonomi
+- Jenis Ekonomi: 
+    - Yang membedakan mikro dan makro adalah `ruang lingkupnya`
+        - Mikro:
+        - Makro:
+## 20.3. Permintaan:	
+- `Permintaan dari pembeli, penawaran dari penjual`
+- komoditas barang/jasa yang diinginkan oleh konsumen
+- Jenis permintaan:
+    - Langsung:
+    - Tidak langsung: permintaan tambahan atas permintaan dari produk lainnya
+        - exp: permintaaan headset karena meningkatnya permintaan hp
+    - Teori permintaan: `harga naik, permintaan turun. harga turun, permintaaan naik`
+- Faktor yang mempengaruhi permintaan:
+    1. Perubahan selesa/preferensi
+    2. Perubahan pendapatan
+    3. perubahan ketersediaan barang, perubahan harga barang subtitusi atau komplementer
+    4. Perubahan jumlah dan skala pembeli
+    5. perubahan kepercayaan pembeli terhadap masa depan -> misal takut phk, maka permintaan akan menurun dan dana darurat akan naik
+- Fungi Permintaan: `Qd = a - b(P)`
+    - Qd = Quantity demand (jumlah permintaan)
+    - P = Price (harga barang)
+    - A = Angka konstanta (harus bernilai positif)
+    - b = Gradien (harus bernilai negatif)
+- Hubungan permintaan dengan harga saham:
+    - Contoh: Ketika covid meledak, permintaan oksigen akan meningkat, karena langkanya tabung oksigen, Presiden meminta AGII untuk memaksimalkan produksi tabung oksigen. Permintaan tinggi, persediaan langka, dan instruksi presiden membuat saham AGII meningkat. Karena investor yakin dengan meningkatnya produksi == meningkatnya pendapatan perusahaan. Tapi ini tidak bertahan terus. Karena di suatu titik akan mencapai titik equilibrum baru.
+
+## 20.3. Penawaran:
+- adalah: banyaknya barang/jasa yang tersedia dan dapat ditawarkan pada konsumen pada setiap tingkat harga pada periode tertentu
+- Hukum penawaran: `penawaran dan harga akan berbanding lurus`. Dalam arti, ketika harga naik, perusahaan akan berusaha memproduksi barang lebih banyak
+- Faktor yang mempengaruhi penawaran:
+    1. perubahan harga barang baku
+        - contoh: meningkatnya harga kedelai, harga tempe dan tahu bisa naik. Jika penjual tahu/tempe mempertahankan harga jualnya, keuntungan akan berkurang, sehingga produksi tempe/tahun akan menurun
+    2. Perubahan teknologi untuk produksi 
+    3. perubahan jumlah seller/penjual
+    4. adanya perubahan keyakinan penjual terhadap masa depan
+        - misal: gaya hidup vegan menjadi gaya hidup masa depan
+- Fungsi penawaran: `Qs = a + bP`
+    - Qs = Quantity suply (jumlah barang yang ditawarkan)
+    - P = Price
+    - a = angka konstanta (bisa positif/negatif)
+    - b = gradien (harus positif)
+## 20.4. Ekuilibrium / Keseimbangan Pasar:
+- adalah: Kondisi dimana kuantitas permintaan dan penawaran berjumlah sama dan membentuk harga keseimbangan. 
+ - Pada kondisi ini, penjual dan pembeli sama-sama tidak ingin menambah atau mengurangi barang/jasa yang dijual atau dikonsumsi
+ 
+
+
+
+
+
 
 
