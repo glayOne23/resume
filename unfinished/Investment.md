@@ -352,7 +352,61 @@
     - b = gradien (harus positif)
 ## 20.4. Ekuilibrium / Keseimbangan Pasar:
 - adalah: Kondisi dimana kuantitas permintaan dan penawaran berjumlah sama dan membentuk harga keseimbangan. 
- - Pada kondisi ini, penjual dan pembeli sama-sama tidak ingin menambah atau mengurangi barang/jasa yang dijual atau dikonsumsi
+- Pada kondisi ini, penjual dan pembeli sama-sama tidak ingin menambah atau mengurangi barang/jasa yang dijual atau dikonsumsi
+```
+Permintaan = Penawaran
+Qd(Quantity Demand) = Qs (Quantity Supply)
+Pd(Price Demand) = Ps(Price Supply)
+```
+- Excess Demand = jumlah permintaan lebih dari jumlah penawaran karena harga turun
+- Excess Supply = jumlah permintaan kurang dari jumlah penawaran karena harga naik
+- Equilibrium akan terjadi jika:
+    1. Pada harga tertentu, Qd = Qs
+    2. Terjadinya perpotongan pada kurva permintaan dan kurva penawaran pada 1 titik keseimbangan
+- Contoh:
+    - Detergen dengan fungsi permintaan Qd = 45-2,5p dan fungsi penawaran Qs = 5+2,5p. Berapa harga equilibriumnya?
+    - Jawab: 
+        ```
+        # Step 1 - untuk mencari harga keseimbangan
+        Qd = Qs
+        45-2,5p = 5+2,5p
+        40 = 5p
+        8 = p            
+
+        # Step 2 - untuk mencari jumlah keseimbangan
+        Qd = Qs = 45-2,5p
+        = 45-2,5(8)
+        = 25
+        ```
+        - Maka keseimbangan harga dan jumlah detergen ada pada 8k dan 25.000kg
+- Contoh kasus excess demand: Pada maret 2021, Bu Sri Mulyani bebaskan PPnBM mobil. Dampaknya? harga mobil turun karena adanya diskon pajak yang mengakibatkan permintaan mobil naik. Jika penawaran tidak mampu memenuhi kenaikan permintaan, maka bisa terjadi shortage supply(kelangkaan penawaran).
+
+---
+## 21. Makro Ekonomi
+- 4 faktor makro yang mempengaruhi pergerakan saham:
+    1. Inflasi
+    2. suku bunga
+    3. siklus ekonomi
+    4. kebijakan moneter
+## 21.1 Inflasi
+- Fenomena kenaikan harga secara umum yang terjadi pada sekelompok barang yang sudah ditentukan.
+- Cara menghitung: membandingkan tingkat nilai harga periode sekarang dengan periode sebelumnya. Biasanya 1 tahun sebelumnya.
+- Jenis inflasi:
+    1. Inflasi Umum: Tingkat inflasi yang menggambarkan harga secara keseluruhan
+    2. Inflasi Inti: tingkat inflasi yang sudah dikeluarkan faktor2 volatil, sepertinya harga makanan, harga energi, dan harga barang2 lainya. Sehingga dapat menggambarkan tren harga di perekonomian
+    - Kenapa barang volatil dikeluarkan? karena akan menghilangkan trend secara umum. karena sifatnya yang volatil, cepat naik dan cepat turun.
+- Hubungan inflasi dan suku bunga? 
+    - ada ungkapan populer mengatakan: inflation is always and everywhere monetary phenomena. Sehingga tingkat inflasi dipengaruhi oleh tingkat jumlah uang yang beredar. Kebijakan ini, biasanya central bank menggunakan suku bunga sebagai instrumen yang penting
+- Kenapa tingkat peredaran uang menjadi penting?
+    - Karena jika fenomena pertumbuhan uang beredar lebih cepat dari tingkat ekonomi sektoril, mengakibatkan inflasi tinggi.
+        - Contoh tahun 2013, pertumbuhan ekonomi cepat tetapi suku bunga tidak terlalu tinggi, inflasi pada waktu tsb cenderung tinggi vice versa.
+    - beberapa skip ...
+    - Inflasi yang baik adalah ketika seimbang. Tidak tinggi dan rendah. jika tinggi maka menurunkan daya beli, jika rendah pertumbuhan ekonominya rendah.
+    - Inflasi berbanding lurus dengan pertumbuhan ekonomi (pada titik tertentu(?))
+- Pernahkan Inflasi lebih tinggi dari GDP Growth?
+
+
+
  
 
 
