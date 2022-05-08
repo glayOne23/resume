@@ -1,5 +1,4 @@
 # Akademi Ternak Uang
-- class="woodmart-title-container woodmart-text-block font-primary woodmart-font-weight-"
 ## Daftar Akademi
 |No |Akademi                        |Waktu      |Priority|
 |---|-------------------------------|-----------|--------|
@@ -23,6 +22,7 @@
 |18 |Corporate Action               |29:28 menit|High    |
 |19 |Financial Checkup              |9:54 menit |Medium  |
 |20 |Ruang Lingkup Ekonomi          |1:00 jam   |High    |
+|21 |Makro Ekonomi                  |1:00 jam   |High    |
 
 
 ---
@@ -76,9 +76,9 @@
             1. bagaimana potensi pertumbuhan industri itu? apakah pasar yang tersedia besar? apakah potensi kustomernya besar.
             2. Bagaimana performa perusahaan di industri yang sama?
             3. bagaimana efek dari peraturan pemerintah, terhadap perusahaan ini?
-        - Porter 5 Forces (Untuk mengetahui situasi industri):
-        ![](data_investment/files/1.jpg?raw=true)
-        ![](data_investment/files/2.png?raw=true)
+        - Porter 5 Forces (Untuk mengetahui situasi industri):        
+            ![](data_investment/files/1.jpg?raw=true)
+            ![](data_investment/files/2.png?raw=true)
             - dari sini dapat dilihat kalau situasi industri telekomunikasi dari segi penawaran pembeli dan persaingan cukup berat, tapi dari segi pendatang baru kecil.    
     2. Hal-hal yang perlu diperhatikan dalam menganalisa kualitas suatu perusahaan
     - Kualitas Perusahaan:
@@ -404,6 +404,43 @@ Pd(Price Demand) = Ps(Price Supply)
     - Inflasi yang baik adalah ketika seimbang. Tidak tinggi dan rendah. jika tinggi maka menurunkan daya beli, jika rendah pertumbuhan ekonominya rendah.
     - Inflasi berbanding lurus dengan pertumbuhan ekonomi (pada titik tertentu(?))
 - Pernahkan Inflasi lebih tinggi dari GDP Growth?
+    - Pernah, pada beberapa kondisi. Contoh krismon 1998, penyesuaian harga bbm 2005, kelebihan likuiditas pada tahun 2005
+    - Merupakan hal yang tidak disukai karena menurunkan purchasing power. Bagusnya adalah tingkat ekonomi yang tinggi dan inflasi stabil
+- Siklus ekonomi (pasti):
+    1. Fase 1 (Expansion): Pertumbuhan ekonomi tinggi, inflasi rendah
+    2. Fase 2 (Peak): Pertumbuhan ekonomi tinggi, inflasi tinggi
+    3. Fase 3 (Contraction): Pertumbuhan ekonomi rendah, inflasi tinggi
+    4. Fase 4 (Trough): Pertumbuhan ekonomi rendah, inflasi rendah
+- Apa itu Imported Inflation?
+    - Tingkat inflasi yang terjadi karena suatu negara berdagang dengan negara lainnya. Jadinya tingkat inflasi di suatu negara akan mempengaruhi inflasi mitra dagangnya.
+    - Contoh : harga minyak naik -> inflasi naik -> walaupun di Indonesia, harga minyak diatur pemerintah -> sehingga kebijakan pemerintah terkait harga minyak juga mempengaruhi inflasi
+- Apa itu kebijakan moneter?
+    - Kebijakan yang dilakukan bank central negara untuk merubah tingkat uang beredar
+- Instrumen kebijakan moneter?
+    1. merubah tingkat suku bunga
+        - contoh: jika pemerintah ingin mengatur tingkat ekspansi dan pertumbuhan ekonomi lebih tinggi, maka suku bunga diturunkan
+    2. Kebijakan pasar terbuka (open market operation)
+        - Bank central membeli obligasi dan instrument2 surat berharga lainnya untuk mencapai kebijakan ttn
+    3. Merubah Giro Wajib Minimum yang menentukan seberapa lebar bank menentukan kredit
+- Tujuan kebijakan moneter?
+    - Kestabilan mata uang. Yang diukur dari kestabilan nilai rupiah yang tercermin dari inflasi yang terkendali dan nilai tukar yang stabil terhadap mata uang lainnya
+- Inflasi umum dapat mempengaruhi inflasi inti. Misal jika minyak naik, dicek apakah shock yang terjadi akan lama atau tidak, jika lama, maka suku bunga juga perlu diatur meskipun inflasi inti stabil
+## 21.2. Faktor lain
+- Apa itu siklus ekonomi?
+    - Sebuah perubahan fase2 dalam pertumbuhan GDP Growth
+- Siklus ekonomi (pasti):
+    1. Fase 1 (Expansion): Pertumbuhan ekonomi tinggi, inflasi rendah
+    2. Fase 2 (Peak): Pertumbuhan ekonomi tinggi, inflasi tinggi
+    3. Fase 3 (Contraction): Pertumbuhan ekonomi rendah, inflasi tinggi
+    4. Fase 4 (Trough): Pertumbuhan ekonomi rendah, inflasi rendah
+- Kenapa siklus ekonomi naik dan turun?
+    - Banyak teori, salah satunya greed and fear
+    1. Fase 1 (Expansion): Ketika ekonomi bagus, maka orang akan berbondong-bondong untuk melakukan bisnis (greed)
+    2. Fase 2 (Peak): di saat greed mendominasi, fear hilang, disini lah terjadi peak
+    3. Fase 3 (Contraction): ketika sudah puncak, maka ekonomi akan turun dan fear mendominasi
+    4. Fase 4 (Trough): ketika turun
+- Kebijakan bank sentral apa saja yang diperlukan untuk menjaga perekonomian tetap baik?
+    - Setiap siklus ekonomi, bank sentral akan bereaksi untuk membuat siklus ekonomi tidak ekstrim.
 
 
 
