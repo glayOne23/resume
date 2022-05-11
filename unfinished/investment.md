@@ -383,12 +383,16 @@ Pd(Price Demand) = Ps(Price Supply)
 
 ---
 ## 21. Makro Ekonomi
-- 4 faktor makro yang mempengaruhi pergerakan saham:
+- Penting: pelajari perihal kebijakan moneter dan kebijakan fiskal terlebih dahulu yang dapat dipelajari pada tautan-tautan berikut:
+    1. https://www.ocbcnisp.com/en/article/2021/08/12/kebijakan-fiskal-adalah#:~:text=Selanjutnya%2C%20perbedaan%20kebijakan%20fiskal%20dan,%2C%20pekerja%2C%20sampai%20pelaku%20usaha.
+    2. https://www.ocbcnisp.com/en/article/2021/07/27/kebijakan-moneter-adalah
+    3. https://pintu.co.id/blog/jumlah-uang-beredar-pengertian-dan-cara-menghitungnya
+    4. https://cerdasco.com/jumlah-uang-beredar/
+## 21.1. 3 Hal Penting dari Makro Ekonomi Part 1
+- 3 faktor makro yang mempengaruhi pergerakan saham:
     1. Inflasi
     2. suku bunga
     3. siklus ekonomi
-    4. kebijakan moneter
-## 21.1 Inflasi
 - Fenomena kenaikan harga secara umum yang terjadi pada sekelompok barang yang sudah ditentukan.
 - Cara menghitung: membandingkan tingkat nilai harga periode sekarang dengan periode sebelumnya. Biasanya 1 tahun sebelumnya.
 - Jenis inflasi:
@@ -425,7 +429,7 @@ Pd(Price Demand) = Ps(Price Supply)
 - Tujuan kebijakan moneter?
     - Kestabilan mata uang. Yang diukur dari kestabilan nilai rupiah yang tercermin dari inflasi yang terkendali dan nilai tukar yang stabil terhadap mata uang lainnya
 - Inflasi umum dapat mempengaruhi inflasi inti. Misal jika minyak naik, dicek apakah shock yang terjadi akan lama atau tidak, jika lama, maka suku bunga juga perlu diatur meskipun inflasi inti stabil
-## 21.2. Faktor lain
+## 21.2. 3 Hal Penting dari Makro Ekonomi Part 1
 - Apa itu siklus ekonomi?
     - Sebuah perubahan fase2 dalam pertumbuhan GDP Growth
 - Siklus ekonomi (pasti):
@@ -436,11 +440,86 @@ Pd(Price Demand) = Ps(Price Supply)
 - Kenapa siklus ekonomi naik dan turun?
     - Banyak teori, salah satunya greed and fear
     1. Fase 1 (Expansion): Ketika ekonomi bagus, maka orang akan berbondong-bondong untuk melakukan bisnis (greed)
-    2. Fase 2 (Peak): di saat greed mendominasi, fear hilang, disini lah terjadi peak
+    2. Fase 2 (Peak): di saat greed mendominasi, fear hilang, di sini lah terjadi peak
     3. Fase 3 (Contraction): ketika sudah puncak, maka ekonomi akan turun dan fear mendominasi
     4. Fase 4 (Trough): ketika turun
 - Kebijakan bank sentral apa saja yang diperlukan untuk menjaga perekonomian tetap baik?
     - Setiap siklus ekonomi, bank sentral akan bereaksi untuk membuat siklus ekonomi tidak ekstrim.
+    - exp: Jika siklus ekonomi menjelang kenaikan luar biasa, bank central lebih dulu akan menaikkan suku bunga yang mengakibatkan uang beredar tidak terlalu tinggi agar tingkat harga terkontrol meskipun pertumbuhan ekonomi akan melambat, vice versa.
+- Bagaimana cara memprediksi siklus ekonomi?
+    - lihat variable-variable penting:
+        1. Harga komoditas penting
+            - jika turun:
+        2. Inflasi
+            - inflasi rendah: kedepan ekonomi akan membaik
+ Strategi disetiap siklus:
+    1. ekspansi -> perbanyak di saham, terutama cyclical
+    2. peek -> harga raw material cenderung naik, yang mengakibatkan inflasi naik, saham2 cyclical marginnya mulai tergerus, saham2 komoditas mulai naik, maka mengurangi obligasi dan memperbanyak money market fund
+    3. Contraction -> suku bunga masih tinggi warisan dari siklus peek, piliahn ada pada deposito di tengah ketidak pastian
+    4. Trough -> tingkat harga turun, beli obligasi karena ekonomi pertumbuhannya rendah
+## 21.3. 5 Kebijakan Fiskal Yang Harus Diketahui
+1. Pemotongan Pajak Perusahaan
+    - Akibat: Net income lebih besar
+2. Kebijakan Subsidi:
+    1. BBM
+    2. Listrik
+    3. Pangan
+    4. Sektor Pertanian
+    - Untuk menurunkan harga komoditas, agar koncumsi masyarakat meningkat
+3. Meningkatkan Belanja Pemerintah
+4. Pemotongan Pajak Penghasilan
+    - Jarang dilaksanakan
+5. Tax Amnesty
+    - Tujuan: Untuk meningkatkan jumlah pendapatan negara
+    - Dampak: Aset-aset warga Indonesia yang ada di luar negri banyak yang maasuk kembali ke dalam negeri
+## 21.4. GPD Part 1
+- 4 pelaku makroekonomi:
+    1. Household
+    2. Perusahaan
+    3. Pemerintah
+    4. Trade (eksport dan import)
+- Alur Kerja Makroekonomi:
+![](data_investment/files/5.PNG?raw=true)
+- Apa itu GDP?
+    - Growth Domestic Product:monetary value of all goods and services produced within Indonesia in a given period
+    - Rumus GDP: `GDP (Y) = C + I + G + (X - M)` 
+    - 4 faktor GDP:
+        1. C = Consumption -> sekitar 57% penyumbang besar GDP
+        2. I = Investment -> sekitar 13% penyumbang besar GDP
+        3. G = Government -> sekitar 6% penyumbang besar GDP
+        4. Net Export (X-M) -> sekitar 1% penyumbang besar GDP
+    - Setiap kapan GDP? 1 bulan sekali tiap 1 kuartal selesai
+### 1. Konsumsi?
+    - Kegiatan rumah tangga, pemerintah, atau perusahaan untuk menggunakan/membeli barang/jasa pada periode tertentu
+    - Indikator2: penjualan mobil, property, semen, retail. Karena data yang dikeluarkan data bulanan
+    - Faktor yang mempengaruhi daya konsumsi:
+        1. daya beli masyarakat
+        2. tingkat kepercayaan masyarakat
+### 2.  Investment?
+    - Proses dimana arus dana asing maupun domestik  berjalan di suatu negara yang membuat pertumbuhan ekonomi menjadi lebih baik
+    - Contoh: 
+        1. FDI  (Foreign Direct Investment) dan DDI (Domestic Direct Investment) -> bikin pabrik di Indonesia
+        2. Portfolio Inflow -> Arus dana yang masuk pasar saham/obligasi
+    - Sentimen yang mempengaruhi masuknya investor asing:
+        1. kebijakan moneter dan fiskal
+        2. nilai tukar rupiah
+        3. valuasi saham ataupun obligasi
+### 3.  Belanja Pemerintah?
+    1. Biasanya terjadi di kuartal 3 akhir dan 4
+    2. Biasanya digunakan untuk infrastruktur dan operasional pemerintah, exp: gaji pegawai pemerintah
+### 4.  Next Export (Neraca Perdagangan)?
+    - Terbit setiap bulan
+    - eksport import terbesar: China dan ASEAN
+    - Komoditas eksport terbesar: Batubara dan CPO
+    - Komoditas import terbesar: Minyak bumi, bahan pangan, dan barang modal(capital goods)
+    
+
+
+
+
+
+
+
 
 
 
