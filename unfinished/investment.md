@@ -23,6 +23,7 @@
 |19 |Financial Checkup              |9:54 menit |Medium  |
 |20 |Ruang Lingkup Ekonomi          |1:00 jam   |High    |
 |21 |Makro Ekonomi                  |1:00 jam   |High    |
+|22 |Analisis Fundamental: Top Down |29:25 jam  |High    |
 
 
 ---
@@ -481,7 +482,7 @@ Pd(Price Demand) = Ps(Price Supply)
 - Alur Kerja Makroekonomi:
 ![](data_investment/files/5.PNG?raw=true)
 - Apa itu GDP?
-    - Growth Domestic Product:monetary value of all goods and services produced within Indonesia in a given period
+    - Growth Domestic Product: monetary value of all goods and services produced within Indonesia in a given period
     - Rumus GDP: `GDP (Y) = C + I + G + (X - M)` 
     - 4 faktor GDP:
         1. C = Consumption -> sekitar 57% penyumbang besar GDP
@@ -512,20 +513,84 @@ Pd(Price Demand) = Ps(Price Supply)
     - eksport import terbesar: China dan ASEAN
     - Komoditas eksport terbesar: Batubara dan CPO
     - Komoditas import terbesar: Minyak bumi, bahan pangan, dan barang modal(capital goods)
+## 21.5. Pengaruh Cadangan Devisa Terhadap Investasi
+- Cadangan Devisa? Total aset dalam mata uang asing yang dimiliki bank sentral atau otoritas moneter dalam suatu negara
+- Guna? memastikan ketersediaan suply mata uang asing untuk memenuhi transaksi perdagangan international dan aliran modal yang masuk dan keluar
+- Cara mengetahui perubahan cadangan devisa: dilihat dari perubahan neraca pembayaran. Misal jika neraca pembayaran negara surplus $10 milyar, maka kenaikan devisa pada periode tersebut akan mirip. Adapun selisihnya biasanya cerminan perubahan nilai mata uang pada cadangan devisa tersebut.
+- 2 Neraca pembayaran (balance of payment) yang mempengaruhi cadangan devisa:
+    1. neraca berjalan (current account)
+        - tercermin kebutuhan mata uang asing suatu negara yang disebabkan oleh transaksi perdagangan
+        - kalau bulan tersebut neraca perdagangan surplus, cenderung akan meningkatkan cadangan devisa dengan catatan bank sentral tidak melakukan interfensi terhadap supply mata uang asing
+        - komponen pembentuk neraca berjalan: 
+            1. neraca perdagangan
+            2. neraca sektor jasa
+            3. pembayaran primer
+            4. pembayaran sekunder
+        - Jika current account negara defisit, maka harus memiliki curplus di neraca modal untuk menjaga ketersediaan supply mata uang asing
+    2. neraca modal (financial and capital account)
+        - terdiri 2: 
+            1. FDI
+            2. Portfolio flow 
+## 21.6. The Federal Reserve Part 1
+- Target the fed:
+    1. menstabilkan nilai US Dolar
+    2. unemplyoment
+    3. menstabilkan tingkat suku bunga
+- Belum selesai...
+
+---
+## 22. Analisis Fundamental: Top Down Analisis
+- Analisis Fundamental: Analisis yang dilakukan untuk mempelajari kondisi perusahaan dalam segala aspek:
+    1. keuangan
+    2. operasional
+    3. bisnis
+    4. prospek ke depan
+- Fundamental dibagi 2:
+    1. Top Down Analisis
+        - dari atas ke bawah (dari skala makro menuju perusahaaannya)
+    2. Bottom Up Analisis
+        - dari bawah ke atas (dari skala makro menuju perusahaaannya)
+- 3 Komponen penting analisis fundamental:
+    1. Ekonomi yang mencakup:
+        1. suku bunga
+        2. inflasi
+        3. nilai tukar
+        4. harga komoditas
+        5. aspek lain tergantung jenis perusahaan
+        - Akses suku bunga, inflasi, dan nilai tukar di: https://www.bi.go.id/id/default.aspx
+        - akses harga komoditas: https://id.investing.com/commodities/
+    2. Industri yang mencakup:
+        1. Regulasi
+        2. Supply
+        3. Demand 
+        4. Persaingan dalam industrinya
+    3. Perusahaan yang mencakup:
+        1. Prospek pertumbuhan
+        2. manajemen
+        3. valuasi
+        4. katalis/sentimen yang akan terjadi dari.
+            - Katalis bisa dari perusahaan/institusi eksternal
+            - katalis bisa didapat dari:
+                1. Baca berita di:
+                    ![](data_investment/files/6.PNG?raw=true)
+                2. kondisi ekonomi:
+                    - kebijakan apbn di: https://www.kemenkeu.go.id/
+                    - data statistik di: https://www.bps.go.id/
+                    - https://tradingeconomics.com/
+                3. perusahaan:
+                    - laporan public expose/ corporate presentation
+                    - laporan tahunan dan keuangan yang memuat performa perusahaan melalui: 
+                        1. income statement
+                        2. balance sheet
+                        3. cash flow
+## 22.1. Komponen Ekonomi
+## 22.2. Komponen Industri
+## 22.3. Komponen Perusahaan
+
     
 
 
-
-
-
-
-
-
-
-
- 
-
-
+    
 
 
 
