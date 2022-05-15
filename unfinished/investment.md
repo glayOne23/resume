@@ -24,12 +24,13 @@
 |20 |Ruang Lingkup Ekonomi          |1:00 jam   |High    |
 |21 |Makro Ekonomi                  |1:00 jam   |High    |
 |22 |Analisis Fundamental: Top Down |29:25 jam  |High    |
+|23 |Coorporate Action              |29:47 jam  |High    |
 
 
 ---
 ## 2. Saham 101
 
-## 2.1. Basic of Stock
+### 2.1. Basic of Stock
 - Untung bisa ada 2 : Capital gain dan dividen.
 - Mindset: Berfikir sebagai bisnis owner:
     1. Mendapat untung dari mana?
@@ -39,7 +40,7 @@
     5. Analisa secara menyeluruh: economic moat, competitive advantages, survive in 10 years later
 - Kenapa saham? Bisa tahu gimana bisnis itu bekerja
 
-## 2.2. Memulai Investasi Saham
+### 2.2. Memulai Investasi Saham
 - Pilih saham pertama: Yang long term
     1. Saham bluechip
     2. Bisnis modal yang solid dan prospektik
@@ -55,7 +56,7 @@
     |Momentum - Price               |Value               |
     |Active Income                  |Passive Income      |
     
-## 2.3. Cara Analisa Saham
+### 2.3. Cara Analisa Saham
 1. Analisa Kualitatif
 2. Analisa Kuantitatif
 3. Teknikal
@@ -67,7 +68,7 @@
     3. laporan arus kas        
 ### 2.3. Cara Analisa Saham
 
-### 2.3.1. Analisa Kualitatif (Kualitas)
+#### 2.3.1. Analisa Kualitatif (Kualitas)
 - Warren Buffet: Asset tak berwujud perusahaan (reputasi, kekuatan merk dagang perusahaan, dan keunggulan kompetitif yang dimilikinya) lebih berharga daripada asset2 berwujud(tanah, banGunan, mesin2 pabrik)
 - Dibagi 2:
     1. Cara melakukan analisa industri secara sederhana
@@ -90,7 +91,7 @@
         3. Corporate governance
             - Apakah perusahaan melindungi pemilik saham minoritas
 
-### 2.3.2. Analisa Kuantitatif (Rasio Keuangan)
+#### 2.3.2. Analisa Kuantitatif (Rasio Keuangan)
 - Intinya adalah laporan keuangan.
 - Dapat menjawab:
     1. Apakah perusahaan dapat menghasilkan keuntungan yang baik?
@@ -161,7 +162,7 @@
 
 ---
 ## 3. Laporan Keuangan 101
-## 3.1. Kenalan Dengan Laporan Keuangan dan 3 Jenisnya
+### 3.1. Kenalan Dengan Laporan Keuangan dan 3 Jenisnya
 1. Laporan Laba Rugi:
     - gainnya perusahaan dan beban-bebannya
 2. Neraca Keuangan:
@@ -184,7 +185,7 @@
         2. investing
         3. Financing
 
-## 3.2. 5 Rasio Keuangan Ini Perlu Kamu Catat
+### 3.2. 5 Rasio Keuangan Ini Perlu Kamu Catat
 - Bandingkan apple to apple: Bandingkan sesama sector dan sub-sectornya
     - Contoh: 
         1. Pertambangan: kurang cocok kalau bandingin pertambangan nikel dengan batubara
@@ -195,13 +196,13 @@
     - Growth -> EPS
     - Value -> PE, PBV
 - Bandingkan dengan sub sector dengan perusahaan-perusahaan sejenis
-### 3.2.1. Sehat
+#### 3.2.1. Sehat
 - Ada pada neraca keuangan
 1. DER (Debt to Equity Rasio)
     - Untuk membandingkan hutang dengan modal perusahaan 
     - Rumus: `Hutang / Ekuitas(modal sendiri) * 100`
         - Jika lebih dari 100%, maka kurang sehat (hutang lebih besar dan modal)    
-### 3.2.2. Profitabilitas
+#### 3.2.2. Profitabilitas
 - Ada pada laporan laba rugi
 1. ROE (Return on Equity)
     - Dari ekuitas(modal bersih yang dia punya), berapa dia bisa menghasilkan keuntungan
@@ -211,7 +212,7 @@
     - Dari total keuntungan penjualan yang dia lakukan, berapa dia bisa menghasilkan keuntungan
     - Rumus: `laba bersih / penjualan netto * 100`
         - Jika kurang dari 10%, maka kurang bagus
-### 3.2.3. Growth
+#### 3.2.3. Growth
 1. EPS (Earning per Share)
     - Ketahui ini dulu untuk berhubungan dengan EPS:
         - stock split: https://www.akseleran.co.id/blog/stock-split-adalah/  
@@ -219,7 +220,7 @@
         - outstanding shares: https://quant.id/2018/11/13/taksonomi-pasar-modal-tipe-tipe-saham/ 
     - Rumus: `laba bersih / jumlah saham yang beredar pada akhir periode(outstanding shares)`
         - Kalau terus bertumbuh, maka bagus
-### 3.2.4. Valuation
+#### 3.2.4. Valuation
 - Market price dipengaruhi suply dan demand
 1. PER (Price to Earning Value)
     - mengidentifikasi bahwa harga saham saat ini, setara dengan berapa kali pendapatan bersih selama 1 tahun.
@@ -231,18 +232,18 @@
         - BVPS -> Book Value per Share
             - rumus BVPS: `Total Ekuitas / Jumlah saham yang beredar pada akhir periode`
         - bencmark < 1
-## 3.3. #YukPraktek
+### 3.3. #YukPraktek
 - Buka idx -> Perusahaan Tercatat -> Laporan Keuangan dan Tahunan
 - liabilitas = TOTAL LIABILITAS
 - ekuitas = TOTAL EKUITAS
 - laba bersih = Laba tahun berjalan yang dapat diatribusikan kepada: Pemilik entitas induk
 - penjualan netto = PENJUALAN NETTO atau PENJUALAN BERSIH atau NET SALES atau NET REVENUES
 - jumlah saham yang beredar pada akhir periode = Modal ditempatkan dan disetor penuh ... saham
-### 3.3.1 Cosumer Goods (INDF v.s MYOR)
+#### 3.3.1 Cosumer Goods (INDF v.s MYOR)
 
 
 ## 4. Equity Valuation 101
-## 4.1. Basic of Valuation
+### 4.1. Basic of Valuation
 1. Link Video:
     1. Apa dan Kenapa Valuasi: https://s3-ternakuang-video.s3-ap-southeast-1.amazonaws.com/module/6-equity-valuation/1-basic-of-valuation/1-apa-dan-kenapa-valuasi/1.1+Equity-Valuation-101-Basic-Of-Valuation-Apa-dan-Kenapa-Valuasi.m3u8
     2. 5 Mitos Valuasi: https://s3-ternakuang-video.s3-ap-southeast-1.amazonaws.com/module/6-equity-valuation/1-basic-of-valuation/2-5-mitos-valuasi/1.2+Equity-Valuation-101-Basic-of-Valuation-5-Mitos-Valuasi.m3u8
@@ -263,7 +264,7 @@
         - Menghitung berdasarkan asset bersih yang dia miliki
         - Kapan dipakai? Kepada sector yang sangat bergantung pada asset yang dia miliki (kelapa sawit, semen, property)    
 
-## 4.2. Relative Valuation
+### 4.2. Relative Valuation
 - Link Video : 
     1. Priciple of Relative Valuation : https://s3-ternakuang-video.s3-ap-southeast-1.amazonaws.com/module/6-equity-valuation/2-relative-valuation/1-principle-of-relative-valuation/2.1+Equity-Valuation-101-Relative-Valuation-Principle-of-Relative-Valuation.m3u8
 - Konsep dasar dari relative valuation adalah mengalikan dengan earnings-nya atau dengan book value-nya atau revenue-nya (konsep of multiple)
@@ -276,7 +277,7 @@
         - Lead to over valuation
         - reflect to under valuation
         - kurang transparan
-### 4.2.1 P/E
+#### 4.2.1 P/E
 - Link Video : https://s3-ternakuang-video.s3-ap-southeast-1.amazonaws.com/module/6-equity-valuation/2-relative-valuation/2-pe/2.2+Equity-Valuation-101-Relative-Valuation-PE.m3u8
 - Yang ingin dicari adalah nilai intristik berdasarkan Earningnya
 - Istilah-istilah yang harus diketahui:
@@ -291,22 +292,22 @@
         - Current PE Standard Deviation
 - `Nilai Intristik atau Stock Price = EPS * PER`
 
-### 4.2.2 P/BV
+#### 4.2.2 P/BV
 - Link Video : https://s3-ternakuang-video.s3-ap-southeast-1.amazonaws.com/module/6-equity-valuation/2-relative-valuation/3-pbv/2.3+Equity-Valuation-101-Relative-Valuation-PBV.m3u8
 - Yang ingin dicari adalah nilai intristik berdasarkan Book Valuenya
 - `Nilai Intristik atau Stock Price = BVPS * PBV`
 - Perusahaan yang cocok dengan rasio PBV : Perusahaan yang bisa diprediksi revenue/earningnya(banking, tlelco, consumer, komoditas, infrastruktur)
-### 4.2.3 EV/EBITDA
+#### 4.2.3 EV/EBITDA
 - Link Video : https://s3-ternakuang-video.s3-ap-southeast-1.amazonaws.com/module/6-equity-valuation/2-relative-valuation/4-ev-ebitda/2.4+Equity-Valuation-101-Relative-Valuation-EV-EBITDA.m3u8
 - EV adalah Enterprise Value dan EBITDA adalah Earning Before Interest, Tax, Depreciation dan Amortisation.
 - `EV (Enterprise Value) = EBITDA / EV/EBITDA`
 
-### 4.2.4 PE/G
+#### 4.2.4 PE/G
 -
-### 4.2.5 P/S
+#### 4.2.5 P/S
 -
 
-## 4.3. DCF Valuation
+### 4.3. DCF Valuation
 
 ---
 ## 20. Ruang Lingkup Ekonomi
@@ -314,7 +315,7 @@
     - Yang membedakan mikro dan makro adalah `ruang lingkupnya`
         - Mikro:
         - Makro:
-## 20.3. Permintaan:	
+### 20.3. Permintaan:	
 - `Permintaan dari pembeli, penawaran dari penjual`
 - komoditas barang/jasa yang diinginkan oleh konsumen
 - Jenis permintaan:
@@ -336,7 +337,7 @@
 - Hubungan permintaan dengan harga saham:
     - Contoh: Ketika covid meledak, permintaan oksigen akan meningkat, karena langkanya tabung oksigen, Presiden meminta AGII untuk memaksimalkan produksi tabung oksigen. Permintaan tinggi, persediaan langka, dan instruksi presiden membuat saham AGII meningkat. Karena investor yakin dengan meningkatnya produksi == meningkatnya pendapatan perusahaan. Tapi ini tidak bertahan terus. Karena di suatu titik akan mencapai titik equilibrum baru.
 
-## 20.3. Penawaran:
+### 20.3. Penawaran:
 - adalah: banyaknya barang/jasa yang tersedia dan dapat ditawarkan pada konsumen pada setiap tingkat harga pada periode tertentu
 - Hukum penawaran: `penawaran dan harga akan berbanding lurus`. Dalam arti, ketika harga naik, perusahaan akan berusaha memproduksi barang lebih banyak
 - Faktor yang mempengaruhi penawaran:
@@ -351,7 +352,7 @@
     - P = Price
     - a = angka konstanta (bisa positif/negatif)
     - b = gradien (harus positif)
-## 20.4. Ekuilibrium / Keseimbangan Pasar:
+### 20.4. Ekuilibrium / Keseimbangan Pasar:
 - adalah: Kondisi dimana kuantitas permintaan dan penawaran berjumlah sama dan membentuk harga keseimbangan. 
 - Pada kondisi ini, penjual dan pembeli sama-sama tidak ingin menambah atau mengurangi barang/jasa yang dijual atau dikonsumsi
 ```
@@ -389,7 +390,7 @@ Pd(Price Demand) = Ps(Price Supply)
     2. https://www.ocbcnisp.com/en/article/2021/07/27/kebijakan-moneter-adalah
     3. https://pintu.co.id/blog/jumlah-uang-beredar-pengertian-dan-cara-menghitungnya
     4. https://cerdasco.com/jumlah-uang-beredar/
-## 21.1. 3 Hal Penting dari Makro Ekonomi Part 1
+### 21.1. 3 Hal Penting dari Makro Ekonomi Part 1
 - 3 faktor makro yang mempengaruhi pergerakan saham:
     1. Inflasi
     2. suku bunga
@@ -430,7 +431,7 @@ Pd(Price Demand) = Ps(Price Supply)
 - Tujuan kebijakan moneter?
     - Kestabilan mata uang. Yang diukur dari kestabilan nilai rupiah yang tercermin dari inflasi yang terkendali dan nilai tukar yang stabil terhadap mata uang lainnya
 - Inflasi umum dapat mempengaruhi inflasi inti. Misal jika minyak naik, dicek apakah shock yang terjadi akan lama atau tidak, jika lama, maka suku bunga juga perlu diatur meskipun inflasi inti stabil
-## 21.2. 3 Hal Penting dari Makro Ekonomi Part 1
+### 21.2. 3 Hal Penting dari Makro Ekonomi Part 1
 - Apa itu siklus ekonomi?
     - Sebuah perubahan fase2 dalam pertumbuhan GDP Growth
 - Siklus ekonomi (pasti):
@@ -458,7 +459,7 @@ Pd(Price Demand) = Ps(Price Supply)
     2. peek -> harga raw material cenderung naik, yang mengakibatkan inflasi naik, saham2 cyclical marginnya mulai tergerus, saham2 komoditas mulai naik, maka mengurangi obligasi dan memperbanyak money market fund
     3. Contraction -> suku bunga masih tinggi warisan dari siklus peek, piliahn ada pada deposito di tengah ketidak pastian
     4. Trough -> tingkat harga turun, beli obligasi karena ekonomi pertumbuhannya rendah
-## 21.3. 5 Kebijakan Fiskal Yang Harus Diketahui
+### 21.3. 5 Kebijakan Fiskal Yang Harus Diketahui
 1. Pemotongan Pajak Perusahaan
     - Akibat: Net income lebih besar
 2. Kebijakan Subsidi:
@@ -473,7 +474,7 @@ Pd(Price Demand) = Ps(Price Supply)
 5. Tax Amnesty
     - Tujuan: Untuk meningkatkan jumlah pendapatan negara
     - Dampak: Aset-aset warga Indonesia yang ada di luar negri banyak yang maasuk kembali ke dalam negeri
-## 21.4. GPD Part 1
+### 21.4. GPD Part 1
 - 4 pelaku makroekonomi:
     1. Household
     2. Perusahaan
@@ -490,13 +491,13 @@ Pd(Price Demand) = Ps(Price Supply)
         3. G = Government -> sekitar 6% penyumbang besar GDP
         4. Net Export (X-M) -> sekitar 1% penyumbang besar GDP
     - Setiap kapan GDP? 1 bulan sekali tiap 1 kuartal selesai
-### 1. Konsumsi?
+#### 1. Konsumsi?
     - Kegiatan rumah tangga, pemerintah, atau perusahaan untuk menggunakan/membeli barang/jasa pada periode tertentu
     - Indikator2: penjualan mobil, property, semen, retail. Karena data yang dikeluarkan data bulanan
     - Faktor yang mempengaruhi daya konsumsi:
         1. daya beli masyarakat
         2. tingkat kepercayaan masyarakat
-### 2.  Investment?
+#### 2.  Investment?
     - Proses dimana arus dana asing maupun domestik  berjalan di suatu negara yang membuat pertumbuhan ekonomi menjadi lebih baik
     - Contoh: 
         1. FDI  (Foreign Direct Investment) dan DDI (Domestic Direct Investment) -> bikin pabrik di Indonesia
@@ -505,15 +506,15 @@ Pd(Price Demand) = Ps(Price Supply)
         1. kebijakan moneter dan fiskal
         2. nilai tukar rupiah
         3. valuasi saham ataupun obligasi
-### 3.  Belanja Pemerintah?
+#### 3.  Belanja Pemerintah?
     1. Biasanya terjadi di kuartal 3 akhir dan 4
     2. Biasanya digunakan untuk infrastruktur dan operasional pemerintah, exp: gaji pegawai pemerintah
-### 4.  Next Export (Neraca Perdagangan)?
+#### 4.  Next Export (Neraca Perdagangan)?
     - Terbit setiap bulan
     - eksport import terbesar: China dan ASEAN
     - Komoditas eksport terbesar: Batubara dan CPO
     - Komoditas import terbesar: Minyak bumi, bahan pangan, dan barang modal(capital goods)
-## 21.5. Pengaruh Cadangan Devisa Terhadap Investasi
+### 21.5. Pengaruh Cadangan Devisa Terhadap Investasi
 - Cadangan Devisa? Total aset dalam mata uang asing yang dimiliki bank sentral atau otoritas moneter dalam suatu negara
 - Guna? memastikan ketersediaan suply mata uang asing untuk memenuhi transaksi perdagangan international dan aliran modal yang masuk dan keluar
 - Cara mengetahui perubahan cadangan devisa: dilihat dari perubahan neraca pembayaran. Misal jika neraca pembayaran negara surplus $10 milyar, maka kenaikan devisa pada periode tersebut akan mirip. Adapun selisihnya biasanya cerminan perubahan nilai mata uang pada cadangan devisa tersebut.
@@ -531,7 +532,7 @@ Pd(Price Demand) = Ps(Price Supply)
         - terdiri 2: 
             1. FDI
             2. Portfolio flow 
-## 21.6. The Federal Reserve Part 1
+### 21.6. The Federal Reserve Part 1
 - Target the fed:
     1. menstabilkan nilai US Dolar
     2. unemplyoment
@@ -565,10 +566,11 @@ Pd(Price Demand) = Ps(Price Supply)
         3. Demand 
         4. Persaingan dalam industrinya
     3. Perusahaan yang mencakup:
-        1. Prospek pertumbuhan
-        2. manajemen
-        3. valuasi
-        4. katalis/sentimen yang akan terjadi dari.
+        1. Economic Moat -> Keunggulan perusahaan/signature perusahaan dibanding kompetitornya
+        2. Prospek pertumbuhan
+        3. manajemen
+        4. valuasi
+        5. katalis/sentimen yang akan terjadi dari.
             - Katalis bisa dari perusahaan/institusi eksternal
             - katalis bisa didapat dari:
                 1. Baca berita di:
@@ -583,16 +585,65 @@ Pd(Price Demand) = Ps(Price Supply)
                         1. income statement
                         2. balance sheet
                         3. cash flow
-## 22.1. Komponen Ekonomi
-## 22.2. Komponen Industri
-## 22.3. Komponen Perusahaan
+### 22.1. Komponen Ekonomi
+- Sudah di bahas di modul makro ekonomi
+### 22.2. Komponen Industri
+- Pahami dinamikanya, misal harga batu bara naik, bagi penjual dan penproduksi batu bara akan merasakan keuntungan, bagi perusahaan pengguna batubara, costnya akan naik, seperti perusahaan semen
+- Analisis tren yang terjadi di pasaran, misal tren batu bara akan menguat pada akhir tahun. Kenapa? karena akhir tahun terjadi musim dingin, dan demand batu bara meningkat. 
+### 22.3. Komponen Perusahaan
 
-    
-
-
-    
-
-
-
-
-
+---
+## 23 Coorporate Action
+- Meliputi:
+    1. IPO (Initial Public Offering)
+    2. Pembagian Dividen
+    3. Right Issue
+    4. Private Placement
+    5. Stock Split & Reverse Stock Split
+    6. RUPS
+    7. Merger dan Akuisisi
+    8. Tender Offer
+### 23.1 IPO
+- Pengertian: Proses penawaran saham sebuah perusahaan untuk pertama kalinya 
+- Tujuan: Menghimpun dana publik
+- Ketika akan IPO perusahaan memerlukan underwriter -> Pihak yang bekerjasama dengan emiten untuk membantu mengevaluasi nilai perusahaan dan menentukan berapa nilai saham yang akan dijual. Biasanya adalah investment bank, bank konvensional, atau broker/perusahaan pialang.
+- Proses IPO:
+    1. Para underwriter menyajikan proposal dan valuasi
+    2. perusahaan memilih underwriter dan menyetujui proposal secara formal
+    3. Membentuk tim. Tim merangkum beragam informasi terkait perusahaan untuk melengkapi dokumentasi yang diperlukan untuk IPO
+    4. Perusahaan membentuk dewan direksi serta menata manajemen
+    5. Perusahaan merilis saham-nya pada tanggal IPO 
+- Hal yang diperhatikan ketika IPO -> lihat prospektusnya di https://www.idx.co.id/perusahaan-tercatat/prospektus/
+    - Pada prospektus lihat beberapa hal penting diantaranya:
+        1. BAB II. Rencana Penggunaan Dana
+            - Untuk dana IPO digunakan 
+        2. BAB III. Pernyataan Utang
+        3. BAB IV. Ikhtisar Data Keuangan Penting
+            - Laporan keuangan perusahaan 4-5 tahun kebelakang
+        4. BAB V. Analisis dan Pembahasan Oleh Manajemen
+        5. BAB VIII.A.2. Kejadian penting yang mempengaruhi perkembangan usaha perseroan
+        6. BAB XVIII. Laporan Auditor Independen dan Laporan Keuangan Konsolidasian
+            - Memastikan tidak ada kesalahan material pada laporan keuangan (Profiding Assurance)
+### 23.2. Pembagian Dividen
+- Beberapa bentuk dividen:
+    1. Cash Dividen
+    2. Stock Dividen
+        - Jumlah saham beredar akan meningkat
+- Istilah dalam dividen:
+    1. cum date -> tanggal akhir seseorang sebagai pemegang hak saham
+    2. ex date -> hari lepas cum date, orang yang membeli saham perusahaan pada hari ini tidak berhak mendapatkan dividen yang dia beli
+        - biasanya sehari lepas cum date, saham akan arb karena banyak yang menjual sahamnya
+### 23.3. Right Issue(HMETD) 
+- pengertian: Hak bagi pemegang saham sekarang untuk membeli saham baru pada harga tertentu dan dalam jangka waktu tertentu
+- yang berhak -> pemegang saham yang memegang saham perusahaan sampai batas akhir cum date
+- tujuan right issue: 
+    1. meningkatkan modal perusahaan
+    2. membayar hutang
+- dampak right issue:
+    1. jangka pendek:
+        - jika current price < harga exercise: kemungkinan harga naik; vice versa
+    2. jangka panjang:
+        - jika uang hasil right issue digunakan dengan baik akan meningkatkan kinerja perusahaan
+- lihat prospektus right issue untuk melihat akan digunakan seperti apa dana yang terkumpul dari right issue
+### 23.4. Private Placement
+-  
