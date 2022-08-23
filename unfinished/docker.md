@@ -1,5 +1,10 @@
 # Docker
-
+- Part 1:
+    - Slide : https://docs.google.com/presentation/d/1LoCIoqR68t-y7P7eOs_TVoooZy4mq-tc2cwInQAtfy0/edit?usp=sharing
+    - Source Code : https://github.com/ProgrammerZamanNow/belajar-docker-dasar
+- Part 2:
+    - Slide : https://docs.google.com/presentation/d/1bW0-88g_s54-X_rBLaZ-N2EhW3HngAZSN6UInyBlIn8/edit?usp=sharing
+    - Source Code : https://github.com/ProgrammerZamanNow/belajar-docker-dockerfile
 ## 1. Pengenalan Docker
 ![](img_docker/1.png?raw=true)
 
@@ -38,7 +43,12 @@ $ docker images
 // download image mongo dengan versi 4.1, jika versi tidak disebutkan maka otomatis akan mendonload latest 
 $ docker pull mongo:4.1
 ```
-## 9. Membuat Container
+## 9. Menghapus Docker Image
+- Untuk menghapus image, kita juga harus menghapus container yang menggunakan image tersebut.
+```js
+$ sudo docker image rm mongo:4.1
+```
+## 10. Membuat Container
 ```js
 // melihat container yang sedang jalan
 $ sudo docker container ls
@@ -48,14 +58,14 @@ $ sudo docker container ls --all
 // --name digunakan untuk memberi nama pada container, disini diberi nama mongoserver1
 $ sudo docker container create --name mongoserver1  mongo:4.1
 ```
-## 10. Menjalankan Container
+## 11. Menjalankan Container
 ```js
 // menjalankan container
 $ sudo docker container start mongoserver1
 ```
 - Setelah container dibuat, ketika menjalankan `sudo docker container ls`, maka akan terdapat port untuk mongoserver1 yaitu port 27017. Tapi level akses port ini hanya sebatas pada container ini saja, agar dapat diakses dari luar container dibutuhkan tambahan step yag akan dijelaskan nanti (perlu diekxpose).
 
-## 11. Menghapus Container
+## 12. Menghapus Container
 ```js
 // menghentikan container
 $ sudo docker stop mongoserver1
@@ -64,18 +74,107 @@ $ sudo docker stop mongoserver1 mongoserver2
 // menghapus container (ini juga dapat dihapus sekaligus)
 $ sudo docker rm mongoserver1
 ```
-## 12. Membuka Port untuk Container
+## 13. Container Log
+```js
+// melihat log di container
+$ sudo docker logs mongoserver1
+// melihat log secara realtime
+$ sudo docker logs -f mongoserver1
+```
+## 14. Container Exec
+- Guna: mengeksekusi program yang ada di containernya
+```js
+$ sudo docker container exec -i -t mongoserver1 /bin/bash
+// -i -> argumen interaktif, menjaga input tetap aktif
+// -t -> argumen untuk alokasi pseudo-TTY (terminal akses)
+```
+## 15. Membuka Port untuk Container (Port Forwarding)
 - Guna agar dapat diakses dari luar container
+- Harus dilakukan ketika membuat containernya, jika sudah dibuat, maka tidak bisa dibuka
 ```js
 // 8080 -> port jika ingin diakses dari luar
 // 27017 -> port didalam container
-$ sudo docker container create --name mongoserver1 -p 8080:27017  mongo:4.1
+// -p -> untuk melakukan port forwarding
+// --publish == -p
+$ sudo docker container create --name ngix1 -p 8080:80  nginx:latest
 ```
-## 13. Menghapus Docker Image
-- Untuk menghapus image, kita juga harus menghapus container yang menggunakan image tersebut.
+## 16. Container Environment Variable
+- Adalah konfigurasi global yang berubah-ubah sesuai peletakkan program (mirip .env di Laravel  atau .settings di Django)
+- Guna: bisa mengubah-ubah konfigurasi aplikasi, tanpa harus mengubah kode aplikasinya lagi
+- Contoh: username dan password mysql, seperti .env di laravel
 ```js
-$ sudo docker image rm mongo:4.1
+$ sudo docker container  create --name mongoserver1 -p 27017:27017 --env MONGO_INITDB_ROOT_USERNAME=anto --env MONGO_INITDB_ROOT_PASSWORD=kewer mongo:latest
 ```
+## 17. Container Stats
+- Saat menjalankan beberapa container, di sistem Host, penggunaan resource seperti CPU dan Memory hanya terlihat digunakan oleh Docker saja
+- Kadang kita ingin melihat detail dari penggunaan resource untuk tiap container nya
+- Untungnya docker memiliki kemampuan untuk melihat penggunaan resource dari tiap container yang sedang berjalan
+```js
+$ sudo docker container stats
+```
+## 18. Container Resources Limit
+- Saat membuat container, secara default dia akan menggunakan semua CPU dan Memory yang diberikan ke Docker (Mac dan Windows), dan akan menggunakan semua CPU dan Memory yang tersedia di sistem Host (Linux)
+- Jika terjadi kesalahan, misal container terlalu banyak memakan CPU dan Memory, maka bisa berdampak terhadap performa container lain, atau bahkan ke sistem host
+- Oleh karena itu, ada baiknya ketika kita membuat container, kita memberikan resource limit terhadap container nya
+    ### 18.1. Memory
+    - Saat membuat container, kita bisa menentukan jumlah memory yang bisa digunakan oleh container ini, dengan menggunakan perintah --memory diikuti dengan angka memory yang diperbolehkan untuk digunakan
+    - Kita bisa menambahkan ukuran dalam bentu b (bytes), k (kilo bytes), m (mega bytes), atau g (giga bytes), misal 100m artinya 100 mega bytes
+    ### 18.2. CPU
+    - Selain mengatur Memory, kita juga bisa menentukan berapa jumlah CPU yang bisa digunakan oleh container dengan parameter --cpus
+    - Jika misal kita set dengan nilai 1.5, artinya container bisa menggunakan satu dan setengah CPU core
+    ```js    
+    $ sudo docker container create --name smallnginx -p 8081:80 --memory 100m --cpus 0.5 nginx:latest
+    // memorynya limit 100 mb
+    // cpunya limit 1/2 cpu
+    ```
+## 19. Bind Mounts
+- Bind Mounts merupakan kemampuan melakukan mounting (sharing) file atau folder yang terdapat di sistem host ke container yang terdapat di docker
+- Guna: mengirim konfigurasi dari luar container, atau misal menyimpan data yang dibuat di aplikasi di dalam container ke dalam folder di sistem host
+- Untuk melakukan mounting, kita bisa menggunakan parameter --mount ketika membuat container
+- Isi dari parameter --mount memiliki aturan tersendiri
+    |Parameter  |Keterangan                        
+    |-----------|----------------------------------
+    |type       |Tipe mount, bind atau volume
+    |source     |Lokasi file atau folder di sistem host
+    |destination|Lokasi file atau folder di container
+    readonly    |Jika ada, maka file atau folder hanya bisa dibaca di container, tidak bisa ditulis
+
+```js
+$ sudo docker container create --name mongodata --mount "type=bind, source=/home/btiums/projects/django/docker/mongo-data,destination=/data/db" -p 27017:27017 --env MONGO_INITDB_ROOT_USERNAME=anto --env MONGO_INITDB_ROOT_PASSWORD=kewer mongo:latest
+```
+## 20. Docker Volume
+- Fitur Bind Mounts sudah ada sejak Docker versi awal, di versi terbaru direkomendasikan menggunakan Docker Volume
+- Docker Volume mirip dengan Bind Mounts, bedanya adalah terdapat management Volume, dimana kita bisa membuat Volume, melihat daftar Volume, dan menghapus Volume
+- Volume sendiri bisa dianggap storage yang digunakan untuk menyimpan data, bedanya dengan Bind Mounts, pada bind mounts, data disimpan pada sistem host, sedangkan pada volume, data di manage oleh Docker
+- Saat kita membuat container, dimanakah data di dalam container itu disimpan? secara default semua data container disimpan di dalam volume
+- Jika kita coba melihat docker volume, kita akan lihat bahwa ada banyak volume yang sudah terbuat, walaupun kita belum pernah membuatnya sama sekali
+```js
+// melihat semua volume
+$ docker volume ls
+// membuat volume
+$ docker volume create mongo-volume
+// menghapus volume
+$ docker volume rm mongo-volume
+```
+## 21. Container Volume
+- Volume yang sudah kita buat, bisa kita gunakan di container
+- Keuntungan menggunakan volume adalah, jika container kita hapus, data akan tetap aman di volume
+- Cara menggunakan volume di container sama dengan menggunakan bind mount, kita bisa menggunakan parameter --mount, namun dengan menggunakan type volume dan source nama volume
+
+```js
+// membuat volume
+$ sudo docker volume create mongodata
+// membuat container yang datanya ditaruh di volume yang kita buat
+$ $ sudo docker container create --name mongo1 --mount "type=volume, source=mongodata,destination=/data/db" -p 27017:27017 --env MONGO_INITDB_ROOT_USERNAME=anto --env MONGO_INITDB_ROOT_PASSWORD=kewer mongo:latest
+```
+## 22. Backup Volume
+## 23. Restore Volume
+## 24. Docker Network
+
+
+
+---
+## Mungkin Akan Tidak Terpakai:
 ## 14. Membuat Image dengan Dockerfile (Cara Membuat Image Sendiri)
 - Untuk membuat image, kita harus belajar membuat Dockerfile.
 - Steps :
@@ -123,17 +222,6 @@ $ sudo docker image rm mongo:4.1
 3. lihat sub menu `Tags` untuk command membuat image baru dari lokal (agar terdapat reponamenya)
 4. `sudo docker login`
 5. push sesuai dengan Docker Command
-## 16. Environment Variable di Docker
-- Adalah konfigurasi global yang berubah-ubah sesuai peletakkan program (mirip .env di Laravel  atau .settings di Django)
-- Ketika membuat container, buat environment variablenya: 
-    ```js    
-    // ada di flag -e nama_variablenya=isi_variable
-    $ sudo docker container create --name app1 -p 8080:8080 -e NAME=Namanya app-golang:1.0    
-    // jika lebih dari 1 variable
-    $ sudo docker container create --name app1 -p 8080:8080 -e NAME=Namanya -e APP_VERSION=1.0 app-golang:1.0    
-    // melihat isi container 
-    $ sudo docker container inspect app1
-    ``` 
 ## 17. Integrasi Container dengan Network (Integrasi Antar Beberapa Container)
 - Pada dasarnya, antar container itu terisolasi sendiri-sendiri, agar dapat terhubung, maka kita harus membuat container-container tersebut dalam Network yang sama.
 - Cara: buat Network lalu masukkan container-container dalam Network yang sama
@@ -248,15 +336,6 @@ https://docs.docker.com/storage/volumes/#backup-restore-or-migrate-data-volumes
     $ sudo docker create --name=mongoserver1 -v /home/btiums/Documents/CobaMongo:/data/db -p 27017:27017 mongo:4-xenial
     ```
 - Rekomendasi menggunakan volumes. Karena untuk backup, restore, dan migrate harus dilakukan secara manual. Tidak ada feature bawaan.
-## 20. Docker Exec (Menjalakan Command di Container yang Sedang Berjalan)
-```js
-// -ti -> singkatan dari 2 flag -t dan -i
-// -t untuk tty, dan -i untuk interactive
-// redis1 -> nama container
-// karena container redis pake debian, maka masuk terminalnya menggunakan /bin/bash. Jika menggunakan windows atau linux lain, maka perlu disesuaikan.
-// /bin/bash -> masuk ke bash dalam container
-$ sudo docker exec -ti redis1 /bin/bash 
-```
 ## 21. Kitematic (Hanya Untuk Windows dan Mac)
 - Adalah aplikasi UI Dekstop untuk mempermudah membuat container di Docker.
 ## 22. Membersihkan Sampah Sisa Docker yang Dibuat
