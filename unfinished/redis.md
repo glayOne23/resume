@@ -249,6 +249,12 @@ Namun perlu diingat proses penyimpanan data ke disk redis tidak realtime, dia di
     maxmemory-policy allkeys-lfu
     ```
 
+## 19. Next..
+1. Redis Collection
+2. Redis PubSub
+3. Redis Scalability
+
+
 
 
 
