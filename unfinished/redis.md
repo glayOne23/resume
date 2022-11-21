@@ -254,8 +254,14 @@ Namun perlu diingat proses penyimpanan data ke disk redis tidak realtime, dia di
 2. Redis PubSub
 3. Redis Scalability
 
+---
 
-
-
-
-
+# 8 Kesalahan Menggunakan Redis
+1. Terburu-buru dalam menggunakan redis
+2. Digunakan pada data yang sering berubah
+3. Caching data yang jarang diakses
+4. Caching data pencarian
+5. Cache data dari aplikasi lain
+6. Cache data yang terlalu besar
+7. menghidupkan feature persistance
+8. Tidak menentukan waktu expired
