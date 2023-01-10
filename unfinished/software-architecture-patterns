@@ -1,0 +1,222 @@
+# Software Architecture Patterns
+- Slides: https://docs.google.com/presentation/d/1eaaTjJLmRcSMQK9VfT3zHuEJp7LXL-uJVuFw4e6ZIcM/edit#slide=id.p
+
+
+## 1. Klasifikasi
+- Software Architecture Patterns secara garis besar dibagi menjadi dua klasifikasi, Monolithic dan Distributed
+- Monolithic adalah single deployment unit atau `berjalan dalam satu aplikasi`
+- Distributed adalah multiple deployment units, biasanya `terdiri dari beberapa aplikasi`
+
+## 2. Pilih Mana?
+- Jika aplikasi yang akan kita buat sederhana atau masih belum jelas secara business requirement, sangat disarankan menggunakan `Monolithic`, karena mudah untuk dibuat
+- Namun jika aplikasi yang akan kita buat sudah sangat jelas, dan juga memang membutuhkan scalability yang baik, termasuk fault tolerance yang baik, maka kita bisa gunakan arsitektur `Distributed`
+
+---
+## 3.1. Architecture Partitioning
+- Selain dilihat secara klasifikasi monolithic atau distributed, software architecture juga bisa dilihat secara struktur partisinya
+- Software architecture baik itu monolithic atau distributed, secara partisi bisa dibagi berdasarkan teknis atau domain
+- Partisi secara struktur bisa digunakan di monolithic atau distributed
+
+## 3.2. Technical Partitioning
+- Arsitektur Technical Partitioning membagi komponen-komponen dalam system atau aplikasi secara teknis
+- Contoh arsitektur klasik yang sering digunakan adalah` Layered (N-Tier) Architecture`
+- Dalam Technical Partitioning, komponen dalam system dikelompokan secara teknis, misal :
+    - `Presentation Layer` merupakan komponen yang menangani user interface
+    - `Business Layer`, merupakan komponen yang menangani logika dan aturan bisnis
+    - `Persistence Layer`, merupakan komponen yang menangani interaksi dengan sistem basis data
+    -`Database Layer`, merupakan komponen untuk menyimpan data
+
+## 3.3. Domain Partitioning
+- Berbeda dengan Technical Partitioning, dalam Domain Partitioning, pembagian struktur komponen dalam system dikelompokan `berdasarkan Domain / Fitur / Departemen secara bisnis nya`
+- Artinya semua Technical Partitioning seperti Presentation, Business Logic, Persistence, digabung dalam per domain system
+- Partisi system berdasarkan Domain, populer sejak dikenalkan dalam buku berjudul “Domain Driven Design” karya Eric Evans.
+
+## 3.4. Pilih yang Mana?
+- Technical Partitioning ketika aplikasi yang akan dibuat sederhana dan tidak kompleks. Selain itu ketika jumlah anggota tim pengembang tidak terlalu banyak.
+- Domain Partitioning ketika aplikasi yang akan dibuat kompleks dan fitur aplikasi sangat banyak. Dan sangat cocok ketika anggota tim pengembang banyak pembagian tim berdasarkan jenis domain nya.
+
+---
+## 4. Architecture Patterns
+
+## 4.1. Layered Architecture
+- Layered Architecture dikenal juga dengan N-Tier Architecture
+- Arsitektur ini adalah salah satu standard arsitektur untuk kebanyakan aplikasi, dimana aplikasi dibagi secara teknis
+- Layered Architecture dibagi secara teknis, oleh karena itu komponen-komponen dalam Layered Architecture sama dengan Technical Partition
+- Rata-rata banyak yang membagi menjadi 4 layer, `Presentation Layer, Business Layer, Persistence Layer dan Database Layer`. Namun tidak menutup kemungkina bisa lebih banyak layer ketika aplikasi sangat kompleks
+    ![](img_softarch/1.png?raw=true)
+- Dalam Layered Architecture, tiap Layer akan terisolasi, dan arah komunikasi hanya dilakukan dengan layer dibawah atau diatasnya
+- Artinya, misal ketika Presentation Layer ingin mengambil data Product, Presentation - Layer akan mengirim request ke Business Layer, lalu akan mengambil data ke Persistence Layer dan baru masuk ke Database Layer
+- Tidak direkomendasikan untuk langsung mengakses dari Presentation Layer langsung ke Database Layer misalnya
+- Contoh: 
+    - Misal kita ingin menampilkan halaman Product, namu di dalam halaman Product kita juga ingin menampilkan data Seller nya
+    - ![](img_softarch/2.png?raw=true)
+- Pertimbangan:
+    - Layered Architecture adalah salah satu arsitektur yang banyak dimengerti dan digunakan
+    - Gunakan Layered Architecture jika kita masih bingung ingin menggunakan arsitektur apa, karena ini adalah arsitektur yang bagus untuk memulai aplikasi
+    - Namun jangan gunakan Layered Architecture ketika pembagian tim di perusahaan sudah berdasarkan domain, lebih cocok menggunakan Distributed Architecture yang akan kita bahas di materi-materi selanjutnya
+
+## 4.2. Model-View-Controller Architecture
+- MVC mirip dengan Layered Architecture, hanya saja layer nya berbeda
+- dalam MVC pusat interaksi antar layer biasanya dilakukan oleh Controller
+- ![](img_softarch/3.png?raw=true)
+- Tugas tiap layer:
+    - `Controller` adalah layer yang bertanggung jawab untuk menerima request dan mengekseksi logika dan aturan bisnis yang terjadi di aplikasi
+    - `Model` merupakan layer yang bertanggung jawab sebagai representasi data di database dan juga berinteraksi ke database
+    - `View` merupakan layer yang berisi template untuk tampilan halaman web
+    - `Database` merupakan layer untuk menyimpan data aplikasi
+- Contoh: 
+    - Misal kita memiliki web, dimana terdapat satu halaman web yang perlu untuk menampilkan data wishlist. Pada halaman itu, selain data wishlist, kita juga harus menampilkan detail product yang terdapat di wishlist tersebut
+    - ![](img_softarch/4.png?raw=true)
+- Pertimbangan:
+- MVC adalah pilihan utama ketika kita ingin membuat aplikasi Web.
+- Banyak sekali web framework yang sudah secara otomatis menggunakan arsitektur ini, seperti Laravel, NestJS, Rails, Django, dan lain-lain
+- Namun ketika kita membuat RESTful API misalnya, kita tidak wajib mengikuti aturan MVC, karena biasanya kita tidak memerlukan layer View. Pada kasus seperti ini, kita bisa saja menggabungkan arsitektur MVC ini dengan Layered Architecture
+
+## 4.3. Hexagonal Architecture
+- Salah satu masalah ketika menggunakan Layered Architecture adalah, perubahan jenis teknologi yang digunakan, akan menyulitkan pengembangan
+- Contoh ketika kita harus mengganti teknologi database yang digunakan, secara otomatis akan terjadi perombakan besar-besaran pada kode program Persistence Layer dan Database Layer, yang mungkin bisa menyebabkan perombakan juga pada Business Layer
+- Hexagonal Architecture merupakan arsitektur yang dikembangkan dari Layered Architecture, namun lebih baik ketika menangani perubahan teknologi yang terjadi
+- Hexagonal Architecture juga dikenal dengan Port & Adapter Architecture
+- ![](img_softarch/5.png?raw=true)
+- `Port` merupakan technology-agnostic(tidak bergantung bahasa pemrograman) yang merupakan Interface (Interface disini interface dalam OOP yang merupakan contract), yang digunakan oleh kode aplikasi untuk berkomunikasi dengan pihak lain
+- `Adapter` merupakan bagian yang berinteraksi langsung melalui Port (Implementasi dari `Port`), dan menggunakan teknologi yang sudah ditentukan
+- ![](img_softarch/6.png?raw=true)
+- `BELUM SELESAI`
+
+## 4.4. Microkernel Architecture
+- Microkernel Architecture sangat flexible dan extensible, sehingga pengembang bisa dengan mudah menambah fitur pada aplikasi dalam bentuk extension atau plug-in, tanpa takut menggangu fungsionalitas dari aplikasinya itu sendiri
+- Oleh karena itu, Microkernel Architecture juga sering disebut sebagai Plug-in Architecture
+- Microkernel Architecture sangat banyak digunakan pada aplikasi berbasis desktop biasanya, contoh seperti Visual Studio, Eclipse, dan lain-lain, dimana ada banyak sekali extension atau plug-in yang tersedia untuk aplikasi tersebut
+- ![](img_softarch/9.png?raw=true)
+- Topologi:
+    - Dalam Microkernel Architecture, hanya terdapat dua layer, Core System dan juga Plugin Modules
+    - Logic aplikasi di Microkernel Architecture biasanya di tempatkan di Plugin, maka dari itu arsitektur ini terlihat seperti Hexagonal Architecture, tetapi sebenarnya bukan
+    - Dalam Hexagonal Architecture, logic aplikasi ditempatkan di aplikasi, sedangkan di Microkernel Architecture, detail logic aplikasi berada di tiap Plugin masing-masing
+- Pertimbangan:
+    - Microkernel Architecture sangat populer digunakan ketika membuat aplikasi Desktop berbasis plugin, seperti Visual Studio, Eclipse, IntelliJ IDEA, bahkan seperti Browser
+    - Gunakan Microkernel Architecture jika memang kita ingin membuat aplikasi yang berbasis Plugin
+    - Salah satu keunggulan Microkernel Architecture adalah, orang lain bisa berkontribusi membuat Plugin untuk aplikasi kita
+
+## 4.5. Client-Server Architecture
+- Client-Server Architecture adalah salah satu Distributed System Architecture yang banyak dikenal dan digunakan
+- Arsitektur ini sangat sederhana, dimana terdapat aplikasi Client dan Server yang saling berinteraksi
+- Biasanya komunikasi antara Client dan Server menggunakan jaringan TCP/IP, walaupun tidak tertutup kemungkinan menggunakan jaringan lain seperti UDP
+- ![](img_softarch/10.png?raw=true)
+- Contoh:
+    - Client-Server Architecture adalah arsitektur yang saat ini sangat banyak digunakan, bahkan mungkin secara tidak sadar, kita sudah menggunakan arsitektur ini
+    - Ketika kita membuat aplikasi Mobile lalu terkoneksi ke RESTful API, sebenarnya itu adalah Client-Server Architecture
+- Pertimbangan:
+    - Saat kita ingin membuat aplikasi, yang ingin memisahkan aplikasi Client, atau bahkah membuat banyak jenis aplikasi Client, maka arsitektur Client-Server sangat cocok digunakan
+    - Namun jika kita ingin membuat aplikasi yang standalone, tidak butuh menyimpan data di Server, maka kita tidak butuh membuat aplikasi Client-Server, contoh seperti aplikasi editor untuk Photo, Video dan sejenis nya
+
+## 4.6. Master-Slave Architecture
+- Master-Slave Architecture merupakan arsitektur dimana aplikasi bisa mendistribusikan semua pekerjaannya ke aplikasi lain
+- Aplikasi yang memerintah semua aplikasi dinamakan Master, dan aplikasi yang menerima perintah dinamakan Slave
+- Sama seperti Client-Server Architecture, biasanya komunikasi Master dan Slave menggunakan jaringan TCP/IP
+- ![](img_softarch/11.png?raw=true)
+- Topologi:
+    - Biasanya, semua request ke aplikasi akan lewat aplikasi Master
+    - Semua pekerjaan yang diterima oleh Master, biasanya akan didistribusikan ke aplikasi Slave
+    - Dengan begitu, pekerjaan bisa lebih cepat karena bisa dikerjakan oleh banyak aplikasi Slave
+    - Pada diagram, kita hanya membuat 3 aplikasi Slave, namun kenyataanya, tidak ada batasan jumlah aplikasi Slave
+- Fault Tolerance:
+    - Salah satu keunggukan Master-Slave Architecture adalah, Fault Torelance, dimana ketika misal terjadi kesalahan yang menyebabkan salah satu aplikasi Slave mati, maka pekerjaan masih bisa dikerjaan oleh aplikasi Slave lain
+    - Begitu juga ketika terjadi masalah yang menyebabkan aplikasi Master mati, maka secara otomatis salah satu Slave akan dipromosikan menjadi Master baru
+- `Master-Master Architecture`:
+    - Salah satu kekurangan Master-Slave Architecture adalah, semua request harus melewati aplikasi Master, sehingga ketika terjadi kelambatan di aplikasi Master, secara otomatis semua pengguna akan merasakan dampaknya, padahal mungkin aplikasi Slave tidak lambat
+    - Pada kasus seperti itu, terdapat juga Master-Master Architecture, dimana ini adalah improvement dari Master-Slave Architecture
+    - Yang membedakan Master-Master Architecture adalah, semua aplikasi bisa berjalan sebagai Master, sehingga bisa menerima request dari pengguna secara mandiri
+    - Dan karena semua aplikasi adalah Master, tiap aplikasi bisa saja mengirim request ke aplikasi lain, ketika misal aplikasi sudah terlalu banyak menangani request dari pengguna
+    - ![](img_softarch/12.png?raw=true)
+- Replication:
+    - Yang perlu diingat dalam Master-Slave / Master-Master Architecture, biasanya data di aplikasi selalu di replikasi/duplikasi ke semua Slave / Master
+    - Hal ini agar data selalu sama, sehingga pekerjaan yang dikerjakan oleh semua aplikasi Slave/Master akan selalu konsisten
+- Contoh:
+    - Master-Slave / Master-Master Architecture jangan digunakan ketika membuat aplikasi sistem informasi, arsitektur ini rata-rata sering digunakan ketika kita membuat aplikasi statefull (menyimpan data) seperti sistem basis data
+    - Hampir kebanyakan aplikasi sistem basis data seperti MySQL, PostgreSQL, MongoDB mengimplementasikan arsitektur Master-Slave Architecture
+    - Atau seperti aplikasi sistem basis data Elasticsearch dan Cassandra, yang menggunakan Master-Master Architecture
+- Pertimbangan:
+    - Gunakan arsitektur Master-Slave / Master-Master ketika kita ingin membuat aplikasi yang statefull (menyimpan data)
+    - Jika kita membuat aplikasi yang stateless (tidak menyimpan data), maka disarankan tidak menggunakan arsitektur ini
+
+## 4.7. Peer-to-Peer Architecture
+- Peer-to-Peer Architecture merupakan arsitektur yang hampir mirip dengan Client-Server Architecture
+- Hanya saja, dalam Peer-to-Peer, semua aplikasi bisa menjadi Client dan juga Server secara berbarengan
+- Biasanya logika aplikasi akan terpusat di aplikasi Server, pada Peer-to-Peer, logika aplikasi tidak terpusat di satu aplikasi, semua aplikasi bisa menjadi Server sekaligus Client
+- ![](img_softarch/13.png?raw=true)
+- Topologi:
+    - Dalam Peer-to-Peer Architecture seakan terlihat sederhana, namun sebenarnya arsitektur ini sangat kompleks
+    - Setiap Peer bisa menjadi Client yang melakukan request ke Peer lain, atau bahkan menjadi Server pada saat yang bersamaan dengan mengirim response ke Peer lain
+    - Oleh karena itu pembuatan aplikasi Peer-to-Peer Architecture sangat kompleks karena setiap Peer harus tahu ketika terdapat Peer baru, karena pada kenyataanya Peer baru bisa datang dan hilang kapan saja
+- vs Master-Master Architecture:
+    - Apa bedanya Peer-to-Peer Architecture dan Master-Master Architecture?
+    - Pada Peer-to-Peer, tiap Peer bisa menjadi Client ataupun Server
+    - Sedangkan pada Master-Master, tiap Master adalah Server, biasanya Client adalah aplikasi yang terpisah dan terkoneksi ke Master-Master dengan arsitektur Client-Server
+- Contoh:
+    - Peer-to-Peer banyak sekali digunakan untuk aplikasi berbagi file seperti Torrent misalnya, dimana setiap orang bisa berbagi file, sekaligus meminta file ke Peer lain di dalam jaringan Torrent nya
+    - Selain itu, Peer-to-Peer juga sering digunakan dalam Cryptocurrency dimana semua data terdistribusi di semua aplikasi Peer untuk menjaga data tetap aman karea untuk mengubah data, kita harus mengubah seluruh data di semua Peer, dan itu sangat sulit untuk dilakukan
+- Pertimbangan:
+    - Peer-to-Peer Architecture mungkin terlihat sangat menarik, namun ini adalah jenis arsitektur yang jarang sekali digunakan, kecuali pada jenis aplikasi yang membutuhkan logika yang tidak terpusat
+    - Peer-to-Peer Architecture juga merupakan arsitektur yang sangan scalable, karena sulit untuk terjadi kegagalan sistem karena semua logic terdistribusi di semua Peer
+    - Kekurangannya adalah, karena kita tidak bisa menjadi kualitas resource di tiap Peer, jadi besar kemungkinan kualitas dan kecepatan aplikasi tidak bisa dijaga dengan baik, terutama jika Peer berjalan di hardware dengan resource yang kurang
+
+## 4.8. Microservices Architecture
+- Microservices Architecture adalah jenis arsitektur yang saat sedang banyak sekali digunakan oleh banyak orang. Namun arsitektur ini bukanlah jenis arsitektur yang sederhana, ini adalah jenis arsitektur yang kompleks.
+- Pada Microservices Architectures, system akan dibuat dalam jumlah aplikasi-aplikasi kecil atau disebut Service, dan digunakan untuk menyelesaikan tugas spesifik tertentu saja.
+Selain itu pada arsitektur ini, tiap Service akan di deploy dan dijalankan secara mandiri
+- Pada arsitektur ini, tidak aneh jika sebuah system memiliki ratusan bahkan ribuan Service mandiri, hal ini karena tiap Service memang memiliki tugas masing-masing
+- ![](img_softarch/14.png?raw=true)
+- Topology:
+    - Biasanya dalam Microservices Architecture, setiap Service akan berjalan secara independent dan memiliki database masing-masing, tidak melakukan sharing database dengan Service lain
+    - Biasanya juga tiap Service tidak akan di expose secara terbuka ke pengguna, melainkan pengguna akan melewati API Gateway, yaitu aplikasi yang bertugas sebagai gerbang untuk menerima request dan meneruskan ke Service yang dituju
+    - Karena tiap Service memiliki tugas masing-masing, maka tidak jarang database yang digunakanpun bisa berbeda-beda, hal ini karena biasanya Service akan menggunakan database yang sesuai dengan tugas yang harus dikerjakan
+- Bounded Context:
+    - Seperti yang dijelaskan sebelumnya, bahwa tiap Service akan memiliki dan melakukan manajemen database nya sendiri
+    - Artinya database dan table tersebut hanya boleh diakses oleh Service tersebut
+    - Contoh misal ketika kita memiliki Service yang digunakan untuk melakukan management data Seller, maka Seller Service yang hanya boleh melakukan management data Seller tersebut
+    - Konsep ini, disebut dengan Bounded Context, yang dikenalkan oleh Eric Evans pada buku Domain-Driven Design
+- Komunikasi Antar Service:
+    - Dengan adanya Bounded Context, artinya tidak ada yang boleh mengakses database Seller secara langsung dari Service lain kecuali Seller Service
+    - Jika ada Service lain yang membutuhkan data Seller, maka Service lain tersebut harus meminta data Seller ke Seller Service, dengan cara komunikasi yang sudah ditentukan, misal RESTful API (Client-Server Architecture)
+- Contoh:
+    - Pada halaman web toko online, kita ingin menampilkan data detail Product
+    - Namun pada halaman data detail Product, selain informasi Product, kita juga ingin menampilkan data Seller yang menjual Product tersebut
+    - Pada kasus ini, kita bisa mengambil data Product ke Product Service, lalu Product Service meminta data Seller ke Seller Service
+    - ![](img_softarch/15.png?raw=true)
+- Tambahan:
+    - Untuk menggunakan Microservices Architecture biasanya tidak hanya melibatkan tim programmer
+    - Banyak sekali yang harus diubah seperti infrastructure dan tim product/bisnis
+    - Hal ini karena biasanya dalam Microservice Architecture, pembagian Service akan dilakukan berdasarkan domain bisnis, jadi tidak sederhana membuat aplikasi kecil
+    - Pada beberapa kasus, kesalahan pembuatan jenis Service bisa mempersulit tim pengembang, oleh karena itu diperlukan orang Domain Expert atau yang sudah ahli di bidangnya secara bisnis
+- Pertimbangan:
+    - Microservice Architecture biasanya digunakan di perusahaan yang sudah besar dengan tim pengembang yang banyak, hal ini dikarenakan arsitektur ini menuntut banyak sekali pekerjaan selain pekerjaan membuat aplikasi, seperti infrastruktur, automation, deployment dan lain-lain
+    - Jangan gunakan arsitektur ini jika tim masih kecil, kita bisa mulai dengan Monolith Architecture dan Layered Architecture, jika sudah waktunya membutuhkan scaling tim secara cepat, kita baru bisa mempertimbangkan penggunaan Microservices Architecture
+
+## 4.9. Event-Driven Architecture
+- Masalah Microservices Architecture:
+    - Dengan meningkatnya penggunaan Microservices Architecture, akhirnya terdapat salah satu masalah yang sering dialami pengguna arsitektur tersebut, yaitu ketergantungan antar Service
+    - Contoh pada kasus sebelumnya misalnya, ketika Seller Service bermasalah, misal mati, maka kita tidak bisa melihat data Product, hal ini karena Product Service butuh memanggil Seller Service ketika ingin menampilkan data Product
+- Event-Driven Architecture merupakan arsitektur yang menggunakan Async Proses untuk saling berkomunikasi antar Service
+- Biasanya, pada arsitektur ini, Service akan mengirim setiap perubahan data yang terjadi pada Service tersebut ke aplikasi bernama Message Broker dalam bentuk data Event
+- Pengirim data Event kita sebut dengan nama Producer/Publisher
+- Service yang membutuhkan data Event nya akan mengambil data tersebut pada Message Broker
+- Penerima data Event kita sebut dengan nama Consumer/Listener
+- ![](img_softarch/16.png?raw=true)
+- Duplicate Data:
+    - Seperti yang sudah kita tahu, dalam Microservices Architecture terdapat aturan Bounded Context, dimana data hanya bisa diakses oleh Service itu sendiri
+    - Pada kasus Event-Driven Architecture, karena kita tidak akan memanggil secara Sync ke Service Lain (seperti menggunakan API Call), maka biasanya Service akan meng-consume event data dan men-duplicate data yang dibutuhkan di database Service itu
+    - Pada kasus sebelumnya, contohnya Product Service akan meng-consume data Seller Event, lalu menyimpan data Seller ke database Product sebagai data duplicate
+    - ![](img_softarch/17.png?raw=true)
+- Pertimbangan:
+    - Event-Driven Architecture saat ini banyak yang menggunakan, karena permasalahan yang terjadi di Microservices Architecture, namun perlu diperhatikan, ada juga akibat yang terjadi ketika kita menggunakan Async Process
+    - Pada kasus sebelumnya, kita harus memastikan data Seller Event diterima dengan baik oleh Product Service, jika gagal secara otomatis data Seller tidak akan ada di database Product
+    - Async Process juga akan menyebabkan proses menjadi delay, oleh karena itu kadang pengguna tidak menerima hasil secara realtime, karena Async Process belum selesai
+    - Ketika terjadi masalah pada Async Process, melakukan pencarian masalah lebih sulit dibanding Sync Process pada arsitektur Microservices
+
+## 4.10. Pipeline Architecture
+- Pipeline Architecture adalah arsitektur yang erat kaitannya dengan Data Stream (aliran data)
+Pada beberapa kasus, kadang kita menemui sumber data yang masuk tanpa henti, misal data log aktivitas pengguna misalnya
+- Pada kasus seperti ini, menyimpan data di database akan sangat menyulitkan untuk memprosesnya, karena data masuk biasanya dalam jumlah banyak dan terus menerus
+- Pipeline Architecture adalah arsitektur dimana kita memanfaatkan Message Queue seperti Message Broker sebagai tempat aliran data, dan kita bisa fokus membuat Filter untuk memproses data tersebut
+
+ 
