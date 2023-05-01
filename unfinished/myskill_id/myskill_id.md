@@ -85,9 +85,113 @@
 	4. IELTS
 15. Foreign Language (6)
 
----
+
 ---
 # 1. Digital Marketing
+
+## 1.1. Marketing Management
+### 1.1.1. Marketing Introduction
+1. Introduction to Marketing
+	- is about solving problems your consumers face with what your company offer
+2. Marketing Mix
+	-  kumpulan variabel pemasaran yang digabungkan dan dikendalikan oleh sebuah perusahaan untuk menghasilkan respon yang diinginkan dari target market
+	- 4P:
+		1. Products
+			- What are the best product/service that relevant for our consumer
+		2. Price
+			- How much should I sell it to the consumer, so they what to buy?
+		3. Place
+			- How to distribute it using the best channel to our consumer			
+		4. Promotion
+			- How can we exite our consumer so they want to buy our product
+	- Digital Marketing is part of marketing. Not the whole marketing.
+	- Promotion mix:
+		1. Advertising
+		2. Branding
+		3. Personal selling
+		4. Sales promotion
+		5. Public relations
+		6. Direct marketing
+		7. Social media
+	- Where do we start?
+		- R.A.I.S.E
+			- Research
+			- Analysis
+			- Insight
+			- Strategy
+			- Execution
+3. 4C Diamonds
+	- Apa yang mau diriset?
+		- 4C:
+			1. Company
+				- Questions that we need to ask ourselves:
+					1. What makes this product unique?
+					2. What do we want to say for this product?
+					3. How confident we can sell this product?
+					4. How much we want to gain profit from this?
+					5. Do we have enough stocks to sell?
+			2. Customer
+				- Questions that we need to ask ourselves:
+					1. Who will buy our products the most?
+					2. Who is our segments?
+					3. Who has the most money?
+					4. Who has the need to buy our products?
+					5. How old are they? Where do they live?
+			3. Competitor
+				- Dibagi 2:
+					1. Direct
+						- Similar category, product, uniqueness. 
+						- Big threat to your product
+					2. Indirect
+						- Can be category, product, uniqueness, but consumer can replace you with their products. 
+						- Small - Medium threat to your product
+					- Contoh: McD direct competitornya KFC dan indirent competitornya Mie Gacoan
+				- Questions that we need to ask ourselves:
+					1. Who is our direct/indirect competitor?
+					2. What have they done?
+					3. Who are they targeting?
+					4. How much budget they are going through?
+					5. What channels they are using?
+			4. Change
+				- Responsive to change not just reactive. 							
+				- (S.T.E.E.P.L.E)
+					- Socio Culture
+					- Technology
+					- Economic
+					- Environment
+					- Politic
+					- Legal
+					- Ethics
+				- Contoh: Coffe shop jual online dalam bentuk botol literan
+				- Questions that we need to ask ourselves:
+					1. What are the thrends that we need to pay attention?
+					2. How can we anticipate the change?
+4. SWOT
+	- Dari 4C, baru bisa SWOT
+	- Example: 
+		- Bolpen hitam
+			- Products: 1 Colour pen with black colour (Affordable price)
+			- Price: Rp5.000 - Rp7.000 Cheaper in dozen (RP3.000 if you buy 12)
+			- Place: Available on Indomaret & Alfamart (Available on Tokopedia)
+			- Promotion: Social Media
+5. Case Study
+	- https://youtu.be/aupWDALD6Os
+### 1.1.2. Branding Introduction
+1. Introduction to Branding
+2. Brand Equility Model
+3. Growing Brand and Building a Positioning
+4. Emotion and Insight
+5. Case Study
+### 1.1.3. Brand Positioning Introduction
+### 1.1.4. Cosumer and Audience Insight
+### 1.1.5. Finding the Brand Benefit
+### 1.1.6. Campaign & Media Planning
+### 1.1.7. Assessing Marketing Materials
+### 1.1.8. Build a Marketing Team
+### 1.1.9. Content Marketing
+### 1.1.10. Creative Brief & Briefing Process
+
+---
 ## 1.3. Copywriting
 ### 1.3.1. Copywriting Introduction
 1. Definition of Copywriting
@@ -362,4 +466,396 @@
 		3. Kata kunci yang menggangu -> jangan terlalu sering mengulang kata kunci hingga terlalu berlebihan dan tidak alamiah, sehingga menggangu kenyamanan pembaca.
 	- References:
 		![](img_copywriting/12.png?raw=true)    
-		
+
+---
+## 1.6. Google Ads
+### 1.6.12. Google Tag Manager
+1. Google Tag Manager
+	- adalah Tools yang dibuat oleh google dengan tujuan mengelola tag. Yang mana tag ini merupakan kode atau script yang terdapat di bagian head dalam struktur HTML
+	- Gunakan `Google Tag Assistant` -> chrome extension untuk memverifikasi apakah convertion tracking sudah terpasang dengan baik
+2. Create Account
+3. Connect GA and Google Ads
+4. Demo Session Part 1
+5. Demo Session Part 2
+
+---
+## 1.8. SEO
+### 1.8.1. SEO Fundamentals
+1. SEO Fundamentals
+ - SEO adalah sebuah teknik untuk membuat sebuah website muncul di halaman pertama pencarian Google dengan pencarian sebuah keyword secara gratis atau tidak berbayar
+2. What is SEO
+3. SEO Components:
+	1. Keyword Research
+	2. Competitor Research
+	3. Onpage/Onsite
+	4. Offpage/Offsite
+4. How Search Engine Works
+	- Crawling & Indexing -> Proses robot Google merayapi sebuah halaman hingga memunculkan di laman Google
+	- Algorithm -> adalah otak dibalik hasil pencarian yang ditampilkan ketika kita mengetikkan keyword di dalam kotak pencarian Google
+	- Search Result -> Hasil yang keluar di laman Google saat kamu mencari suatu keyword
+5. How Crawling and Index Works
+	- Crawling -> Indexing -> Ranking
+6. Bentuk-Bentuk Search Result
+	- Feature snippet -> Apa yang ditampilkan web kita saat search keyword
+	- Knowledge Panel
+	- Orang juga bertanya
+7. Competitor Research
+	1. Cari keyword di Google SERP
+		- example: cari di laman pencarian Google dengan keyword "rekomendasi wfc Solo"
+	2. Competitor Keyword Research
+		1. Masuk ke `Ahrefs` berbayar lalu masuukan website kompetitor yang ingin dianalisa di menu site explorer
+		2. Pilih menu organic keywords
+		3. Export hasil keywords untuk diolah di Google Spreadsheet
+		4. Analisa dan gruping
+	3. Traffic Projection from All Competitors
+		1. Masuk ke `Ahrefs` berbayar lalu masuk ke menu more dan pilih Batch Analysis
+		2. Masukkan daftar url kompetitor pilihan. Bisa apple to apple kompetitor maupun SEO kompetitor
+		3. Pilih Analyze
+### 1.8.2. SEO On-Page
+1. SEO On-Page
+2. What is SEO On-Page
+	- ada 2 strategi:
+		1. `Content`:
+			- Strategy to beat competitor:
+				1. From `the target keyword`, list down the landing pages/page groups to be created 	
+					- Include the sub-topics and the content brief for writer (on separate docs)
+				2. List down the features that need to be developed (optional)
+				3. UI Mockup to show the SEO elements exist within each page (optional)
+		2. `Technical`
+			- If the site hasn't been built:
+				1. site structure & site navigation (i.e. to show how link juice to each other pages)
+				2. Internal link structure (i.e how each of the pages will link to each other pages)
+				3. List down SEO technical elements should exist on each type of SEO landing pages, and where the target keywords should exist at
+			- If the site has been built: recommendation from technical SEO audit
+3. On-Page Content
+	- Higth quality content:
+		1. Long tailed keywords
+		2. more than 2000 words
+		3. url friendly
+		4. Internal link is found
+		5. Rich media
+		6. structured data
+		7. engaging with viewers
+		8. up to date content
+4. How to Do a Content Strategy
+	- https://developers.google.com/search/blog/2022/12/google-raters-guidelines-e-e-a-t
+5. How to Analyze Competitor's Content
+	1. Type down your target keywords at Google (incognito mode)
+	2. See the top 3 competitors
+	3. Open each of their landing page
+	4. On each analyze their main content, to see the outlines of content & other offering (if any)
+	![](img_seo/1.png?raw=true)    
+	5. Recap & synthesize all of it as your own benchmark	
+	- Content brief checklist:
+		1. Topic
+		2. Sub topic
+		3. Length
+		4. Main keyword
+		5. LSI -> yang berkaitan dengan keyword: misal barista LSI-nya biji kopi, 
+		6. Target audience
+		7. Reference
+### 1.8.3. SEO On-Page Technical
+1. Introduction	
+2. Basic HTML Structure
+3. On-Page Checklist Part 1
+	1. `<title></title>` 
+		- Good title:
+			1. Contains keyword
+			2. Summarized the content
+			3. Unique
+			4. Enticing to be clicked
+			5. 50-60 chars
+	2. `Meta description`
+		- Good meta description:
+			1. Contains keywords
+			2. Adding more value
+			3. Give unique selling points
+			4. Have target keywords
+			5. 140-150 chars
+	3. Friendly URL	
+4. On-Page Checklist Part 2
+	1. `Heading` h1, h2, h3, h4, h5
+	2. `Internal Links` -> agar robo google bisa kemana-mana di web kita
+	3. `Alt-text` -> di images
+	4. `Site map` -> memberi tahu google alamat website kita disini dan isinya apa aja
+		- https://docs.djangoproject.com/en/4.2/ref/contrib/sitemaps/
+5. On-Page Checklist Part 3
+	1. `Redirection & Other Status Code`
+	2. `Canonical` -> prevent duplicate content appearing on multiple URLs
+6. Recap: Basic Technical On-Page Checklist
+### 1.8.4. Technical SEO Fundamentals
+1. Technical SEO Introdcution
+	- adalah proses optimasi di berbagai aspek teknis dalam sebuah website
+	- Guna: Meningkat index website di laman pencarian
+		![](img_seo/3.png?raw=true)    	
+2. SSL (Secure Socker Layer)
+3. Mobile Friendly
+4. Broken Links
+	- Tools untuk cari broken link:
+		1. broken link checker (plugin)
+		2. Online broken link checker (website)
+		3. Screaming frog (software)
+5. Schema and Structured Data
+	![](img_seo/2.png?raw=true)    	
+### 1.8.5. Part of Technical SEO
+1. Technical SEO
+2. Domain Version
+	![](img_seo/4.jpeg?raw=true)    	
+3. Page Speed
+	- Cara meningkatkan:
+		1. Pilih hosting/server website yang baik
+		2. Optimalkan semua file multimedia
+		3. gunakan clean code
+		4. lakukan cache browser
+	- check page speed di: https://pagespeed.web.dev/ 
+4. Sitemap
+	- adalah daftar berisi semua halaman website yang dapat diakses oleh pengunjung dan mesin pencari. 
+	- Tahapan SE) : crawling, indexation, lalu identification
+	- Guana sitemap:
+		1. Mempermudah pengunjung menemukan website
+		2. menambah visibility website
+		3. website lebih cepat terindeks google
+		4. punya interaksi lebih baik dengan search engine
+	- Sitemap untuk index google ada di google search console
+5. Robots.txt
+	- adalah sebuah file txt yang digunakan untuk memberi instruksi pada robot search engine dan berfungsi untuk mengontrol halaman website
+	- Fungsi:
+		1. mencegah crawling di konten duplikat
+		2. meringankan beban server
+		3. memastikan ada bagian dari website yang sepenuhnya private untuk test dan pengaturan
+		4. mencegah muncul gambar atau video di hasil pencarin google
+6. Website Structures
+7. Redirection
+8. Error Code
+9. AMP (Accelerated Mobile Page) (Optional)
+### 1.8.6. Off Page SEO
+1. Off Page SEO
+	- Metode optimasi website yang difokuskan secara eksternal atau dari luar website
+2. SEO Method Optimization
+3. Link Building
+	- Menanamkan link pada website lain dan dibagi menjadi beberapa tier atau level
+	- Faktor penentu link building bagus/tidak:
+		1. Page dan Domain Authority
+		2. Anchor Text
+		3. Dofollow dan Nofollow
+		4. Relevansi
+		5. Traffic Website
+4. Google My Business
+	- Manfaat Google My Business:
+		1. Dipromosikan oleh Google Maps
+		2. Mendapat Review tentang Bisnis dari user
+		3. Meningkatkan Pengunjung Toko Fisik/Offline
+5. Local SEO
+	- Cara optimasi Local SEO:
+		1. Melengkapi profil Google My Business
+		2. Riset kata kunci lokal
+		3. Dapatkan backlink dari website lokal
+		4. Tambahkan informasi/biodata bisnis di berbagai platform
+6. Google My Busines & Local SEO
+7. E.A.T (Expertise, Authoritativeness, Trustworthiness)
+	- Cara meningkatkan E.A.T:
+		1. Brand Mention (guestt blogging, hubungi pemilik website, narasumber, viral)
+		2. Cari backlink dari "Seed Sites"
+		3. Dapatkan review positif (Google My Business, App/Play Store, Blog Review)	
+8. Engagement Social Media
+9. Community & Forum
+### 1.8.7. Crawl Budget
+1. Crawl
+	- adalah proses yang digunakan bot search engine untuk mengunjungi halaman baru dan yang diperbaharui untuk ditambahkan indeks
+	- Tahap cara kerja search engine: Crawling -> Indexing -> Rangking	
+2. Crawl Budget
+	- adalah jumlah halaman yang akan dirayapi Google di website pada hari tertentu.
+	- website dengan jumlah konten yang banyak, budget pada proses crawl bisa menjadi masalah penting yang harus diperhatikan
+	- Bisa dicheck di google search content
+3. Checking Crawl Budget
+	1. Log in ke `Google Search Console` dan pilih website
+	2. Buka bagian `Setting` -> menu `Crawl` -> `Crawl Stats`
+	3. Kita bisa melihat laporan dan kita dapat menemukan jumlah halaman yang dicrawl oleh Google setiap hari
+4. Crawl Report
+	- Jika kita punya website kurang dari `seribu halaman`, tidak perlu menggunkan laporan ini atau merasa mengkhawatirkan mengenai crawl budget
+	- Dalam mendefinisikan crawl budget ada 2 istilah yang wajib diketahui: 
+		1. Crawl Rate Limit
+		2. Crawl Demand
+5. Crawl Rate Limit
+	- Hal utama yang membatasi crawl budget adalah tingkat kesehatan server dan batasan budget yang bisa kita tetapkan sendiri
+	- Faktor kapasitas crawl:
+		1. Kualitas crawl: jika situs merespons dengan cepat untuk sementara waktu, batasnya akan naik, yang berarti lebih banyak koneksi dapat digunakan untuk melakukan crawl.
+		2. Batas yang disetel oleh pemilik situs di Search Console: secara opsional, pemilik dapat mengurangi crawling Googlebot di situs mereka
+6. Crawl Demand
+	- adalah penilaian google terhadap suatau URL mengenai seberapa perlu UTL tersebut dicrawl
+	- 2 hal yang mempengaruhi dari Crawl Demand:
+		1. Popularitas
+		2. Konten kadaluarsa	
+7. Crawl Budget Optimization
+	1. Izinkan crawling di halaman penting melalui robots.txt
+	2. Perhatikan redirect chains
+	3. Cek Http yang error
+	4. Cel seluruh parameter url di website
+	5. Update dan cek sitemap secara berkala
+### 1.8.8. Keyword Research
+1. Keyword Research
+2. Important Things in Keyword Research
+	1. Search Volume (Jumlah volume pencarian kata kunci)
+	2. Keyword difficulty (Tingkat kesulitan kata kunci berdasarkan persaingan)
+	3. Keyword suggestion (Saran berdasarkan topik)
+	4. Search engine result page/SERP (Daftar hasil pencarian kata kunci di mesin pencari)
+3. Keyword Research Usage
+	- Pada dasarnya, research keyword bisa dilakukan pada semua platform seperti: facebook, twitter, instagram, youtube, pinterest, tiktok, etc. Dari semua platform tersebut cari tahu mana saja bagian platform2 tersebut yang terindex Google.
+		- Misal: kita ketik di Google: "tutorial kirim uang ke luar negeri youtube". Dari result2 yang ada, perhatikan hal2 yang terindex di laman depan google seperti: judul video youtubenya, deskripsinya, thumbnailnya, dan pemilik channelnya
+4. Choosing the Right Keyword
+	1. Kenali target pasar
+	2. Fokus pencarian long tail (terlusuri main keyword dan turunan2nya)
+	3. Buat prioritas kata kunci berdasarkan kebutuhan
+	4. Buat keyword bank sendiri
+	5. Satukan kata kunci dan konten website
+5. Keyword Value	
+	- Tentukan Keyword Value-nya ketika research keyword: 
+		1. Transaksi
+		2. Perbandingan harga
+		3. Navigasi pencarian
+		4. Sumber informasi
+6. Easy Way on Keyword Research
+	1. Cek niche kata kunci
+	2. Posisikan diri sebagai pencari
+	3. Buat kata kunci yang relevan
+	4. Tulis semua daftar kata kunci yang sudah diriset
+	5. Gunakan tools untuk membantu
+	6. Cari tahu kata kunci kompetitor yang kita kejar
+7. Tools Keyword Research
+	1. Google Keyword Planner
+	2. Google Trends
+	3. KWFinder
+	4. MOZ
+	5. SEMRush
+	6. Answer The Public
+	7. Soovle
+	8. Google Related Search
+	9. Keyword Shitter
+	10. Ahrefs
+	11. Ubersuggest by Neil Patel
+### 1.8.9. SEO Analytics
+1. Type of SEO Analytics
+	1. Site Audit
+	2. SEO Content Audit
+	3. On-Page SEO
+	4. Off-Page SEO
+	5. Technical SEO
+2. SEO Analytics Introduction
+	- adalah proses mengambil data mentah dan membautnya menjadi data dengan metrik, visualisasi data, ringkasan tertulis
+	- Tujuan akhir dari analisis ini: mengambil data dan memperoleh informasi yang dapat ditindaklanjuti menjadi sebuah strategi
+	- Insight dari SEO Analytics:
+		1. Mengidentifikasi peluang baru -> untuk menentukan peringkat kata kunci dengan volume pencarian tinggi
+		2. Mengidentifikasi kecepatan loading halaman -> secara negatif mempengaruhi bouce rate &UX website kita
+		3. Mengidentifikasi sumber traffic mana yang mendorong konversi organik paling banyak
+	- Langkah-langkah SEO Analytics:
+		1. Siapkan dan rencanakan pengerjaan website
+		2. Siapkan tools yang tepat
+		3. Siapkan dashboard dan laporan
+		4. Tinjau dan tindak lanjuti data
+	- Bagaimana analitik membantu meningkatkan SEO?
+		1. Tahu apa yang sedang terjadi
+		2. Tahu mengapa hal itu terjadi
+		3. Temukan celah dan peluang
+		4. Rekomendasikan bagaimana kita ingin bertindak
+		5. Perkirakan hasil yang diharapkan dari tindakan yang direkomendasikan
+3. SEO Matrix
+	- adalah kumpulan data atau tanda yang harus dilacak dan dipantau untuk mempertahankan situs web yang berkinerja tinggi dan dioptimalkan
+	- Salah satu daftar metrik SEO paling luas dan terperinci yang bisa kita gunakan:
+		1. leads: Lead SEO adalah klien potensial yang bisa menemukan situs web, layanan, atau produk kita melalui hasil mesin pencari
+		2. Organic Traffic: Pengunjung yang masuk ke situs web kita dari sumber mesin pencari dan menghasilkan lalu lintas organik.
+4. SEO KPIs (Key performance Indicator)
+	1. Organic Sessions
+	2. Keyword Ranking Increases
+	3. Leads/Conversions
+	4. Bounce Rate
+	5. Pages/Session
+	6. Average Session Duration
+	7. Page Load Time
+	8. Crawl Errors
+5. SEO Report
+	1. Clean Dashboards for Quick Info
+	2. Overall Keyword Growth
+	3. Number of Optimized Pages
+	4. Earned High-Quality Links
+	5. Total Work Completed for the Time Period
+	6. Increase in Ranking for Top Terms
+	7. Traffic and Keyword Growth for Translated Pages
+	8. Goal Reports
+	9. Click-Through Rate for Top Pages in SERPS
+6. Tools for SEO
+	- FREE
+		- Google Search Console
+		- Google Analytics
+		- Google Ads (keyword planner)
+	- PAID
+		- Ahrefs
+		- SEMRush
+		- Majestic
+		- Screaming Frog
+		- Ubersuggest	
+### 1.8.10. Google Analytics for SEO
+1. Google Analytics Introduction
+	- Tool dari Google yang bisa digunakan untuk mengetahui seluruh data pengunjung di website ataupun aplikasi	
+2. Functions of Google Analytics
+	- Google Analytics -> Measurement, Collection & Analysis -> Improve Online Presence
+3. How Google Analytics Works
+	- Mirip Meta Pixel dan Tiktok Pixel
+4. Google Analytics for SEO
+	1. Mengkoneksikan GA dengan Google Search Console
+	2. Membuat SEO Goals
+	3. Menggunakan Segmen "Organic Traffic"
+	4. Membandingkan Non Organic vs Organic Visitor
+	5. Menemukan content terbaik di website
+	6. Mengecek top landing page
+	7. Menggunakan content drilldown report
+	8. Menambahkan anotasi untuk melacak pembaruan konten
+	9. Menggunakan multi-channel funnel report
+	10. Melakukan tracking keywords di GA
+	11. Mencari halaman referal website
+	12. Mengecek bagaimana pengguna masuk ke website
+	13. Membuat custom dashboards	
+### 1.8.11. SEO Schema & Structured Data
+1. Schema Markup
+	- adalah kode yang dipasangkan atau ditempelkan pada website yang dapat membantu search engine dalam menemukan hasil yang lebih informatif pada website untuk pengguna
+	![](img_seo/5.png?raw=true)    
+2. Structured Data SEO
+	- adalah kumpulan data dengan format dan struktur yang seragam satu sama lain. Data yang telah terstruktur telah diurutkan dengan baik dan mudah diakses oleh seseorang maupun sebuah program komputer
+3. The Importance of Schema
+4. Types of Schema and Structured Data
+	- https://developers.google.com/search/docs/appearance/structured-data/search-gallery
+	- https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data
+5. Rich Snippet
+	- adalah hasil dari pencarian google organic dengan tampilan data tambahan, bergantung apa jenis website yang dibuat
+	- Google yang menentukan rich snippet, kita cuma bisa berusaha
+6. Examples of Schema Dan Structured Data
+	![](img_seo/6.png?raw=true)    
+7. Implementing Schema Markup
+8. Checking Schema Markup
+	- https://developers.google.com/search/docs/advanced/structured-data 
+	- https://search.google.com/test/rich-results 
+	- https://validator.schema.org/
+### 1.8.12. SEO Content Optimization
+1. SEO Content
+2. Goals of SEO Content Optimization
+3. Types of SEO Content
+4. SEO Strategy
+5. Seo Content Effort
+	1. Riset kata kunci
+	2. Optimasi kata kunci
+	3. Organisasi konten
+	4. Promosi konten
+6. Topical Optimization
+1. SEO Friendly
+2. How to Make SEO Frendly
+	- Apa saja yang SEO friendly?
+		1. UI/UX
+		2. Struktur Website
+		3. Artikel di Website
+		4. Navigasi 
+		5. URLs
+3. Layout and Website Structure Design
+4. Website Article
+5. Navigation
+6. SEO Frendly URL
+### 1.8.13. SEO Friendly Content
+
