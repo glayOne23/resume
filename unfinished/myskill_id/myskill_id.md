@@ -1,3 +1,9 @@
+# Steps to make list of question:
+1. Fundamental theory underlying the list of questions given
+2. Questions
+3. Tools/Framework
+
+---
 # Learning Path
 1. Digital Marketing (10)
 	1. Marketing Management
@@ -178,15 +184,163 @@
 	- https://youtu.be/aupWDALD6Os
 ### 1.1.2. Branding Introduction
 1. Introduction to Branding
-2. Brand Equility Model
+	- Why do we need a 'brand'? your brand is what other people say about you when you are not in the room
+	- Brand menentukan 2 aspek: 
+		1. Meaning - what is in it for me?
+		2. Experiences - how can it excite me?
+2. Brand Equity Model
+	- Marketing terms that describe a `brand value`
+	- The value is determinated by consumers perception of and experiences with the brand
+	- The Elements of Brand Equity:
+		1. Brand Awareness - Do they know your brand?
+		2. Brand Association - What word that come into your mind when you hear the brand?
+		3. Perceived Quality - Do they satisfied with the experiences we give them?
+		4. Brand Loyalty - Do they want to repurchase and talk about us to their friends?
+		5. Brand Asset - Are they able to distinguish us compared to others?
+			- the elements of brand assets:
+				1. COLOR ASSETS: Single color, combinations, color and design
+				2. WORD ASSETS: Taglines, fonts, words
+				3. STORY ASSETS: Style, components, moments
+				4. HUMAN FACE ASSETS: Spokespeople, celebrity, characters
+				5. MUSIC ASSETS: Background instrumental, jingles, popular songs
+				6. SHAPE ASSETS: symbolic images, pack shapes, logos
+				7. SOUND ASSETS: non-vocal, vocal, styles
 3. Growing Brand and Building a Positioning
+	- How brand help business grow?
+		1. Physical avaibility - Can I easily find your products / services in the market?
+		2. Mental avaibility - Can I remember you when I want to buy/download?
+		- Example: Supermarket test
+	- Positioning: Know what you stands for is a start:
+		1. To (Target) - Who is in the consumer target? What slice of the population is the most motivated to buy what you do?
+		2. Your brand is the (Category) - Where do you play? What is the frame of reference that helps to define the space in the marketplace that you compete in?
+		3. That is the (Benefit) - Where do you win? What promise will you make to the consumer target, thinking about main benefit (rational/emotional)
+		4. That's because (Support Points) - Why should they believe us? What support points help to back up the main benefit?
 4. Emotion and Insight
+	- `Emotion` make our custumer feel. 
+		- Analysis conducted by Procter & Gamble into its own creativity showed that work yielding an `emotional response was eight times more likely to be successful than work eliciting indifference`.
+		- Emotional intensity is linked to memory encoding, which is crucial for long-term brand-building. In other words, `if you want to have 'mental availability', emotional appeals help`.	
+	- `Emotion` are driven by insight(why people do what they are doing. A deep understanding of a person or thing)
+		![](img_digital_marketing/1.png?raw=true)    
+	- Insight comes from observation of fact
+		![](img_digital_marketing/2.png?raw=true)    
+	- A GOOD INSIGHT..
+		```
+		Has a clear tension in it
+		Is not what a consumer does but what drives them to do it.
+		Answer the question "why?" not "what?"
+		Creates a reason for the brand to play a role in your life
+		```
+	- In summary: 
+		1. Focus on building your brand equity
+		2. Build an emotional connection
+		3. Insight is the key!
 5. Case Study
+	- Look at video
 ### 1.1.3. Brand Positioning Introduction
-### 1.1.4. Cosumer and Audience Insight
+1. Introduction to Brand Positioning
+	- Positioning is not what you do to a product. Positioning is what you do to the mind of the prospect. That is, you position (place) the product in the mind of the potential buyer
+2. Importance of Brand Positioning Part 1
+	- Perbedaan Marketing, Advertising, dan Branding (secara ilustrasi)
+		|Marketing|Advertising|Branding|
+		|:---:|:---:|:---:|		
+		|Man said: "I'am a great lover"|Man said repeatedly: "I'am a great lover" 99 x times|Woman said, "You are a great lover"|
+		|Persona yang ingin ditampikan|Memberi tahu secara berulang kepada orang lain persona tersebut|Pengertian di kepala konsumen tentang persona|
+3. Importance of Brand Positioning Part 2
+4. Importance of Brand Positioning Part 3
+	- Enemy of branding: `Inconsistency`
+5. Build a Strong Brand Positioning
+	- Point of Differences (POD): Some attributes that uniquely just owned by you.
+	- Point of Parity (POP): Something that can be owned by competitor, but you need to serve this well to not degrade your brand.
+6. Case Study
+	- POD:
+		- "THE MOST"
+		- UNIQUE AND DIFFERENT
+		- SERVICES/PEOPLE
+### 1.1.4. Consumer and Audience Insight
+1. Consumer and Audience Persona
+2. Understanding Your Consumer
+	- Main key: Have empathy to the customer
+3. Passion Points and Pain Points
+	- Passion Points: Something that they cherished, happy about, feel good, and dreaming.
+	- Pain Points: Something that they fear, avoid, regret or even want to forget	
+		|Passion Points|Pain Points|
+		|:---:|:---:|
+		|"Mau liat anak tumbuh dengan sempurna"|"Takut anaknya sakit dan terluka"|
+		|"Jalan2 mendapatkan pengalaman seperti orang lokal"|"Atraksi turis selalu ramai dan repot"|
+		|"Terlihat cantik dari luar dan dalam"|"Buat jadi cantik itu sulit dan sakit. Penuh perjuangan."|
+	- Tool to get pain and passion points: "Say Do Think Feel":
+	![](img_digital_marketing/6.png?raw=true)    
+	![](img_digital_marketing/7.png?raw=true)    
+	
+4. Case Study
 ### 1.1.5. Finding the Brand Benefit
+1. Finding The Brand Benefit for Customer
+	- Left brain -> Functional benefit
+	- Right brain -> Emotional benefit
+2. Functional Benefit and Emotional Benefit Part-1
+	![](img_digital_marketing/3.png?raw=true)    
+	![](img_digital_marketing/4.png?raw=true)    
+	![](img_digital_marketing/5.png?raw=true)    
+3. Functional Benefit and Emotional Benefit Part-2
+4. Case Study
 ### 1.1.6. Campaign & Media Planning
+1. Campaign and Media Planning
+	- Type of Marketing Campaign:
+		1. Always On Campaign
+			- Menjelaskan secara keseluruhan apa yang merek/bisnis ini coba tawarkan, membangun persepsi dan image yang baik. Biasanya berupa corporate action,message emotional, social media konten.
+			- Exp: 
+				1. Dekoruma ->  #SatuSudutDulu
+				2. McDonald -> #BedaRodaSatuJalur
+		2. Tactical Campaign
+			- Mengkomunikasikan tentang promosi, diskon, produk baru. Hal2 yang bersifat hanya sementara namun memiliki kepentingan untuk menaikan bisnis.
+		3. Seasonal Campaign			
+			- Menumpang kepada momentum yang banyak dibicarakan oleh orang2, sehingga merek/bisnisnya bisa terangkat dan jadi omongan dari orang orang.
+			- Exp: Sirup marjan ketika puasa
+	- How can I decide or determine what type of campaign that I need to do for my business? Questions Guidelines: 
+		1. What do I want to achieve from this campaign? - OBJECTIVES
+		2. What do I want to say/deliver to my audiences? - MESSAGES
+		3. What are the best medium to deliver the messages? - Channel
+		4. What are the success will look like? - KPI		
+2. Objective
+	- Sebelum cari tahu apa yang mau didapatkan, tentukan dulu posisi brand kita di marketing funnel: 
+	- Marketing Funnel: proses seseorang dari tidak mengenal brand, mengenal, menimbang, melakukan pembelian, menilai produk, hingga menjadi pelanggan
+		![](img_digital_marketing/8.png?raw=true)    
+	- What do you want to achieve?
+		1. Increasing awareness? 
+		2. Make people like you more? 
+		3. Product understanding?
+		4. Loyalty?
+		5. Referral?
+3. Message
+	- Komunikasi biasanya bentuknya ada 2:
+		|Nama|Stimulus|Responses|
+		|:--:|:--:|:--:|
+		|Pengertian|What do we need to say so they response like we want them to do?|What are the responses that we want consumer will do?|		
+		|Contoh|Baju Jokowi ketika kampanye: kotak2 lengan digulung|Terlihat relevans untuk millenials dan mendukung anak muda|		
+	- Untuk menentukan Message:
+		1. What kind of responses that you want?
+		2. What kind of stimulus that you want to say?
+4. Channel
+	- What are the best ideas to deliver the message?
+	- Type of channel:
+		1. Paid (Sifatnya Investasi)
+			- Exp: TVC, Paid Ads, FB Ads, etc
+		2. Owned (Kontrol oleh brand)
+			- Exp: Akun Social Media, Website, CRM, App, etc			
+		3. Earned (Organic)
+			- Exp: Word of mouth, News coverage, review, etc			
+	- Marketing Flunnel x Channel:
+		![](img_digital_marketing/9.png?raw=true)    
+5. KPI
+	- What are the success will look like?	
+	![](img_digital_marketing/10.png?raw=true)
+6. Case Study
 ### 1.1.7. Assessing Marketing Materials
+1. How to Assess Creative Works
+	
+2. Creative Works Guideline
+3. A.B.C.D.E
+4. Case Study
 ### 1.1.8. Build a Marketing Team
 ### 1.1.9. Content Marketing
 ### 1.1.10. Creative Brief & Briefing Process
