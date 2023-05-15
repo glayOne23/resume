@@ -336,14 +336,74 @@
 	![](img_digital_marketing/10.png?raw=true)
 6. Case Study
 ### 1.1.7. Assessing Marketing Materials
-1. How to Assess Creative Works
-	
+1. How to Assess Creative Works	
 2. Creative Works Guideline
+	- Lihat tujuannya apa? apakah TOFU, MOFU, atau BOFU
+	- Can my cosumer understand it or not?
 3. A.B.C.D.E
+	- Tools untuk test materi bagus atau tidak
+	1. Attention -> maksimal 8 detik iklan sudah harus bisa dimengerti
+	2. Branding -> The Elements of Brand Equity
+	3. Communication -> message-nya
+	4. Deliverables -> berbicara tentang media/channel
+	5. Emotion -> Apakah materi bisa kita merasakan sesuatu
 4. Case Study
-### 1.1.8. Build a Marketing Team
-### 1.1.9. Content Marketing
-### 1.1.10. Creative Brief & Briefing Process
+### 1.1.8. Content Marketing
+1. Content Marketing Principles
+	- Content Marketing is a marketing strategy used to attract, engage, and retain an audience by creating and sharing relevant articles, videos, post, podcasts, and other media.
+	- Sign of Great Content = Shareability
+		![](img_digital_marketing/11.png?raw=true)
+		- At least ada 1 unsur diatas di sebuah content marketing
+2. Content Marketing Strategy
+	- Content is King, but Context is King Kong
+	- Content Strategy Check List:
+		1. Understand your brand positioning and audiences
+		2. Content Pillar & Content Mapping		
+			- TOFU, MOFU, BOFU
+			![](img_digital_marketing/12.png?raw=true)
+			![](img_digital_marketing/13.png?raw=true)
+		3. What kind of emotions that you want to show?
+			- Ask yourself.. Will you like the content if you are not the customers?
+		4. Pick right format
+			![](img_digital_marketing/14.png?raw=true)
+### 1.1.9. Creative Brief & Briefing Process
+1. Principles of Creative Brief
+	- Should be brief. Can you explain it in 5 minutes?
+	- Points that need to be shown in creative brief:
+		1. What's currently happening?
+		2. Problems that the brand facing.
+		3. Possible solutions.
+		4. Consumer Story.
+		5. Timeline & Budget (If Any)	
+		2. Creative Brief Guidelines
+2. Creative Brief Guidelines
+	1. Background & Objectives -> What do you want to achieve? What's the story behind?
+	2. Target Audiences -> Who you are talking to?
+	3. Desired Behaviour -> What do you want them to do? Any actions/thought?
+	4. Insight -> What are the tension that can be highlighted?
+	5. Proposition -> One single thought that could spark the creatives?
+	6. Reason To Believe -> Why should people believe this campaign?
+	- Examples:
+		1. Adidas
+			![](img_digital_marketing/15.png?raw=true)
+			![](img_digital_marketing/16.png?raw=true)
+		2. Lazada
+			![](img_digital_marketing/17.png?raw=true)
+			![](img_digital_marketing/18.png?raw=true)
+### 1.1.10. Build a Marketing Team
+1. How to Build a Marketing Team
+	- Basic Skill:
+		1. Consumer Research
+		2. Competitor Review
+		3. Trend Hunting
+2. What Kind Of Person
+	1. Empathy
+	2. Creativity
+	3. Flexibility
+3. Tips
+	1. Strich on the Why, Loose on the What & How
+	2. Inspire, Not Direct
+	3. Live your Life Well
 
 ---
 ## 1.3. Copywriting
