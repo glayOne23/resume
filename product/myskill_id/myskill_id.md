@@ -21,14 +21,14 @@
 	2. UX Design
 	3. UI Design
 	4. UX Writing
-3. Product Management (4)
+3. Product and Project Management (4)
 	1. Product Management
 	2. Scrum Framework
 	3. Product Growth
 	4. Project Management
 
 ---
-4. Sales and Business Development (4)
+4. Sales, Business Development and Customer Service (4)
 	1. Sales Marketing
 	2. Business Development
 	3. Key Account Management
@@ -64,32 +64,36 @@
 9. Building Startup & UMKM (2)
 	1. Membangun Online Shop - MySkill x Tokopedia
 	2. Building A Startup & Pitching Strategy
-10. Microsoft Excel (3)
+10. Accounting, Finance and Tax
+	1. Accounting for Business
+	2. Corporate Tax
+	3. Corporate Finance
+11. Microsoft Excel (3)
 	1. Microsoft Excel Basic
 	2. Microsoft Excel Intermediate
 	3. Microsoft Excel Advanced
-11. Career & Self Development (4)
+12. Career & Self Development (4)
 	1. Career Preparation
 	2. Personal Finance Management
 	3. Self-Management
 	4. Emotional Intelligence
-12. Website Development (6)
+13. Website Development (6)
 	1. Frontend - HTML
 	2. Frontend - CSS
 	3. Frontend - Javascript
 	4. Frontend - React
 	5. Backend - Basic Golang
 	6. Backend - Advanced Golang
-13. Graphic Design (3)
+14. Graphic Design (3)
 	1. Fundamental Design Grafis
 	2. Adobe Photoshop
 	3. Adobe Illustrator
-14. English, TOEFL, and IELTS (4)
+15. English, TOEFL, and IELTS (4)
 	1. Basic English
 	2. TOEFL ITP
 	3. TOEFL iBT
 	4. IELTS
-15. Foreign Language (6)
+16. Foreign Language (6)
 
 
 ---
@@ -1073,3 +1077,26 @@
 6. SEO Frendly URL
 ### 1.8.13. SEO Friendly Content
 
+
+---
+# 3. Product and Project Management
+
+## 3.1. Product Management Fundamental 	
+## 3.1.1. Product Management Introduction
+1. Introduction To Product Management
+2. Speaker's Journey
+3. Motivation
+4. Definition of Product Management Part 1
+	- Product is something (physical or not) created through a process that provides benefits to a market
+5. Definition of Product Management Part 2
+	- Product vs Project Management
+		|Product|Project Management|
+		|:---:|:---:|
+		|responsible for the success of the product|responsible for the accomplishing the project, not the goal|
+		|success is defined by outcome (Usually measured by KPI & Metrics)|success is defined by the project triagle (scope, time, cost)|
+		|method to accomplished their goal is not defined|a project usually have certain timeline and budget as an important constraint to manage|
+		|as a Product Manager, you need to be skilled in project management||
+6. Types of Product Management
+## 3.2. Scrum Framework
+## 3.3. Product Growth
+## 3.4. Project Management
